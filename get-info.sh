@@ -122,6 +122,11 @@ check_os() {
     iscentos=${?}
 }
 
+#Check if Oracle is installed
+check_oracle() {
+    sudo yum list installed | grep oracle > /dev/null 2>&1
+    isoracle=${?}
+}
 
 check_os;
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ] && [$issuse -ne 0];
@@ -132,8 +137,15 @@ else
     get_info;
 fi
 
-echo "================================================================"
+check_oracle;
+if [ $isoracle -ne 0 ]; then
+    echo "No Oracle database found" >> $location
+    exit 1
+else
+    get_oracle;
+fi
 
+echo "================================================================"
 echo " installig PIP moudle for for python package management"
 sudo curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 sudo python get-pip.py

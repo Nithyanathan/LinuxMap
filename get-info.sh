@@ -86,6 +86,14 @@ get_fileshare() {
     sudo cat /etc/fstab | grep cifs  >> $location
 }
 
+get_cluster() {
+    echo "12> Cluster Information  " >> $location
+    echo "================================================================" >> $location
+    pcs status >> $location
+    pcs cluster status >> $location
+    pcs status resources >> $location
+}
+
 #Check OS Version details
 check_os() {
     grep ubuntu /proc/version > /dev/null 2>&1
@@ -126,6 +134,15 @@ check_fileshare() {
     isfileshare=${?}
 }
 
+#Check if cluster is configured
+check_cluster() {
+    if [ -x "$(command -v pcs)" ]; then
+        iscluster=${?}
+    else
+        echo "No cluster configuration found" >> $location
+    fi
+}
+
 check_os;
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ] && [$issuse -ne 0] && [$isredhat -ne 0];
 then
@@ -149,6 +166,20 @@ then
     exit 1
 else
     get_fileshare;
+fi
+
+check_cluster;
+if [$iscluster -ne 0]; then
+    exit 1
+else
+    get_cluster;
+fi
+
+check_web;
+if [$isweb -ne 0]; then
+    exit 1
+else
+    get_web;
 fi
 
 echo "================================================================"

@@ -64,7 +64,7 @@ get_oracle() {
     cat /var/opt/oracle/oratab >> $location
 }
 
-get_web($isapache) {
+get_web() {
     echo "================================================================" >> $location
     echo "8> Web Server Name" >> $location
     if [ $isapache -eq 0 ]

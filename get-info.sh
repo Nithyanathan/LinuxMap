@@ -118,6 +118,8 @@ check_os() {
     iscentos=${?}
     grep suse /proc/version > /dev/null 2>&1
     issuse=${?}
+    grep 'Red Hat' /proc/version > /dev/null 2>&1
+    iscentos=${?}
 }
 
 

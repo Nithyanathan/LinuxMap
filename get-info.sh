@@ -102,3 +102,6 @@ sudo pip install python-hwinfo
 
 echo "getting hardware information of the machine "
 sudo hwinfo >> $location
+
+echo "================================================================"
+echo "Please copy/export content of: $location & $packagecsv and share with Microsoft Engagement Team."

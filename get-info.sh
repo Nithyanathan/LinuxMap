@@ -39,7 +39,7 @@ sudo uname -a|awk -F ' ' '{print $3}' >> $location
 echo "================================================================" >> $location
 echo "6> List of Packages" >> $location
 echo "================================================================" >> $location
-if [ $iscentos -eq 0 ];then
+if [ $iscentos -eq 0 || $isredhat -eq 0];then
     #check if yum is installed
     if [ -x "$(command -v yum)" ]; then
         sudo yum list installed >> $location
@@ -77,7 +77,13 @@ check_os() {
     iscentos=${?}
     grep suse /proc/version > /dev/null 2>&1
     issuse=${?}
+    grep 'Red Hat' /proc/version > /dev/null 2>&1
+    isredhat=${?}
 }
+
+check_oracle {}
+
+check_web {}
 
 
 check_os;

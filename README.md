@@ -1,5 +1,5 @@
 # LinuxMap
-This script allows to get hardware & software inventory for linux servers
+get-info.sh bash script allows to get hardware & software inventory for linux servers
 
 Current capabilities
     1. Get OS information

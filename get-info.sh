@@ -42,6 +42,8 @@ get_info() {
         #check if yum is installed
         if [ -x "$(command -v yum)" ]; then
             sudo yum list installed >> $location
+            echo "NAME,VERSION,RELEASE" > $packagecsv
+            sudo rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
         else
             sudo rpm -qa >> $location
             echo "NAME,VERSION,RELEASE" > $packagecsv
@@ -56,16 +58,6 @@ get_info() {
     else
         echo "ERROR:No suitable package manager was found." >> $location
     fi
-
-    echo "================================================================" >> $location
-    if [ -x "$(command -v apachectl)" ]; then
-            sudo apachectl -S >> $location
-    elif [ -x "$(command -v apache2ctl)" ]; then
-            sudo apache2ctl -S >> $location
-    else        
-            echo "No apache installation detected" >> $location
-    fi
-    echo "================================================================" >> $location
 }
 
 get_oracle() {
@@ -76,26 +68,22 @@ get_oracle() {
 
 get_web() {
     echo "================================================================" >> $location
-    echo "8> Web Server Name" >> $location
-    if [ $isapache -eq 0 ]; then
-        sudo cat /etc/apache2/sites-available/000-default.conf | grep 'ServerName' >> $location
-    else
-        sudo cat /etc/httpd/httpd.conf | grep 'ServerName' >> $location
+    if [ -x "$(command -v apachectl)" ]; then
+        echo "8> Apache Configuration" >> $location
+        sudo apachectl -S >> $location
+    elif [ -x "$(command -v apache2ctl)" ]; then
+        echo "8> Apache Configuration" >> $location
+        sudo apache2ctl -S >> $location
+    else        
+        echo "================================================================" >> $location
+        echo "8> Web Server Configuration" >> $location
+        sudo httpd -S >> $location
     fi
-    echo "================================================================" >> $location
-    echo "9> Web Sites Configured" >> $location
-    if [$isapache -eq 0]; then
-         find /etc/apache2/sites-available/ -printf "%f\n" | grep '.conf' >> $location
-    else
-        sudo cat /etc/httpd/httpd.conf | grep 'ServerName' >> $location
-    fi
-    echo "================================================================" >> $location
-    echo "10> Web Site Root Path" >> $location
 }
 
 get_fileshare() {
-    echo "11> NFS and CIFS shares information " >> $location
     echo "================================================================" >> $location
+    echo "9> NFS and CIFS shares information " >> $location    
     sudo cat /proc/mounts | grep nfs  >> $location
     sudo cat /etc/fstab | grep nfs  >> $location
     sudo cat /proc/mounts | grep cifs  >> $location
@@ -103,8 +91,8 @@ get_fileshare() {
 }
 
 get_cluster() {
-    echo "12> Cluster Information  " >> $location
     echo "================================================================" >> $location
+    echo "10> Cluster Information  " >> $location    
     pcs status >> $location
     pcs cluster status >> $location
     pcs status resources >> $location
@@ -128,24 +116,70 @@ check_oracle() {
     isoracle=${?}
 }
 
+#Check web service installed
+check_web() {
+    sudo netstat -tulpen | egrep ':80|:443' > /dev/null 2>&1
+    isweb=${?}
+}
+
+#Check file share configured
+check_fileshare() {
+    sudo cat /etc/fstab | egrep 'nfs|cifs' > /dev/null 2>&1
+    isfileshare=${?}
+}
+
+#Check if cluster is configured
+check_cluster() {
+    if [ -x "$(command -v pcs)" ]; then
+        iscluster=${?}
+    fi
+}
+
 check_os;
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ] && [$issuse -ne 0];
 then
     echo "unsupported operating system."
-    exit 1 
 else
     get_info;
 fi
 
 check_oracle;
 if [ $isoracle -ne 0 ]; then
-    echo "No Oracle database found" >> $location
-    exit 1
+    echo "No Oracle database found"
+    echo "================================================================" >> $location
+    echo "7> No Oracle Database configured " >> $location
 else
     get_oracle;
 fi
 
+check_web;
+if [$isweb -ne 0]; then
+    echo "No Web Applications found"
+    echo "================================================================" >> $location
+    echo "8> No Web Applications configured" >> $location
+else
+    get_web;
+fi
+
+check_fileshare;
+if [ $isfileshare -ne 0 ]; then
+    echo "No file share found."
+    echo "================================================================" >> $location
+    echo "9> No file share deployed " >> $location
+else
+    get_fileshare;
+fi
+
+check_cluster;
+if [$iscluster -ne 0]; then
+    echo "No Cluster configuration found"
+else
+    get_cluster;
+fi
+
 echo "================================================================"
+echo "================================================================" >> $location
+echo "11> Computer Hardware Information" >> $location
 echo " installig PIP moudle for for python package management"
 sudo curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 sudo python get-pip.py

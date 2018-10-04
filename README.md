@@ -11,3 +11,8 @@ Added capabilities
     2. Cluster Information
     3. Oracle database Information
     4. Web Server Information
+
+Other capabilties required
+    1. Additional cluster scan apart from pcs
+    2. Scan for mysql and other databases
+    3. Parsing the data - making it catalog ready

@@ -204,11 +204,12 @@ else
     get_fileshare;
 fi
 
-check_cluster;
-if [$iscluster -ne 0]; then
-    echo "No Cluster configuration found"
-else
+if [ -x "$(command -v pcs)" ]; then
     get_cluster;
+else
+    echo "No cluster configuration using pcs found."
+    echo "================================================================" >> $location
+    echo "10> No Cluster configuration found using pcs" >> $location
 fi
 
 echo "================================================================"

@@ -1,0 +1,502 @@
+================================================================
+* System Name: 	DemoOracle
+* System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
+* Generated on: 		Thu Oct  4 14:12:14 UTC 2018
+* Running as: 			root
+================================================================
+ Ouput of Server : DemoOracle
+================================================================
+1> BIOS and Serial Information 
+================================================================
+Getting SMBIOS data from sysfs.
+SMBIOS 2.3 present.
+BIOS Information
+		BIOS is upgradeable
+		BIOS shadowing is allowed
+		BIOS ROM is socketed
+		BIOS boot specification is supported
+BIOS Language Information
+System Information
+	Manufacturer: Microsoft Corporation
+	Product Name: Virtual Machine
+	Version: 7.0
+	Serial Number: 0000-0017-0310-6857-9801-4178-06
+	UUID: A3825AEC-618C-4E48-96CB-D84BD90751FB
+	Wake-up Type: Power Switch
+
+Handle 0x0002, DMI type 2, 8 bytes
+Base Board Information
+	Manufacturer: Microsoft Corporation
+================================================================
+2> Disk Info and Disk Layout 
+================================================================
+Disk /dev/sdb: 128.8 GB, 128849018880 bytes, 251658240 sectors
+/dev/sdb1            2048   251656191   125827072   83  Linux
+Disk /dev/sdc: 53.7 GB, 53687091200 bytes, 104857600 sectors
+Disk /dev/sdd: 53.7 GB, 53687091200 bytes, 104857600 sectors
+Disk /dev/sda: 32.2 GB, 32212254720 bytes, 62914560 sectors
+/dev/sda1   *        2048     1026047      512000   83  Linux
+/dev/sda2         1026048    62914559    30944256   83  Linux
+================================================================
+3> Block Device Details:
+================================================================
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+fd0      2:0    1    4K  0 disk 
+sda      8:0    0   30G  0 disk 
+├─sda1   8:1    0  500M  0 part /boot
+└─sda2   8:2    0 29.5G  0 part /
+sdb      8:16   0  120G  0 disk 
+└─sdb1   8:17   0  120G  0 part /mnt/resource
+sdc      8:32   0   50G  0 disk 
+sdd      8:48   0   50G  0 disk 
+sr0     11:0    1  628K  0 rom  
+================================================================
+4> File System Disk Usage:
+================================================================
+Filesystem     Type      Size  Used Avail Use% Mounted on
+devtmpfs       devtmpfs  3.4G     0  3.4G   0% /dev
+tmpfs          tmpfs     3.4G     0  3.4G   0% /dev/shm
+tmpfs          tmpfs     3.4G   33M  3.4G   1% /run
+tmpfs          tmpfs     3.4G     0  3.4G   0% /sys/fs/cgroup
+/dev/sda2      btrfs      30G   17G   11G  61% /
+/dev/sda1      xfs       497M  117M  381M  24% /boot
+/dev/sdb1      ext4      118G  2.1G  110G   2% /mnt/resource
+tmpfs          tmpfs     696M     0  696M   0% /run/user/54322
+tmpfs          tmpfs     696M     0  696M   0% /run/user/54321
+================================================================
+5> Current Patch level of the System 
+================================================================
+4.1.12-124.14.1.el7uek.x86_64
+================================================================
+6> List of Packages
+================================================================
+Loaded plugins: ulninfo
+Installed Packages
+GeoIP.x86_64                          1.5.0-11.el7                   installed  
+NetworkManager.x86_64                 1:1.10.2-13.el7                installed  
+NetworkManager-libnm.x86_64           1:1.10.2-13.el7                installed  
+WALinuxAgent.noarch                   2.2.14-1.0.1.el7               installed  
+acl.x86_64                            2.2.51-12.el7                  installed  
+acpid.x86_64                          2.0.19-8.el7                   installed  
+audit-libs.x86_64                     2.8.1-3.el7                    @ol7_latest
+audit-libs-python.x86_64              2.8.1-3.el7                    @ol7_latest
+authconfig.x86_64                     6.2.8-30.el7                   installed  
+basesystem.noarch                     10.0-7.0.1.el7                 installed  
+bash.x86_64                           4.2.46-28.el7                  installed  
+bind-libs.x86_64                      32:9.9.4-61.el7                @ol7_latest
+bind-libs-lite.x86_64                 32:9.9.4-61.el7                installed  
+bind-license.noarch                   32:9.9.4-61.el7                installed  
+bind-utils.x86_64                     32:9.9.4-61.el7                @ol7_latest
+binutils.x86_64                       2.25.1-31.base.el7             installed  
+btrfs-progs.x86_64                    4.9.1-1.0.2.el7                installed  
+bzip2-libs.x86_64                     1.0.6-13.el7                   installed  
+ca-certificates.noarch                2017.2.14-71.el7               installed  
+checkpolicy.x86_64                    2.5-4.el7                      installed  
+chkconfig.x86_64                      1.7.4-1.el7                    installed  
+chrony.x86_64                         3.1-2.el7                      installed  
+compat-libcap1.x86_64                 1.10-7.el7                     @ol7_latest
+compat-libstdc++-33.x86_64            3.2.3-72.el7                   @ol7_latest
+coreutils.x86_64                      8.22-18.0.1.el7                installed  
+cpio.x86_64                           2.11-24.el7                    installed  
+cpp.x86_64                            4.8.5-28.0.1.el7_5.1           @ol7_latest
+cracklib.x86_64                       2.9.0-11.el7                   installed  
+cracklib-dicts.x86_64                 2.9.0-11.el7                   installed  
+cronie.x86_64                         1.4.11-19.el7                  installed  
+cronie-anacron.x86_64                 1.4.11-19.el7                  installed  
+crontabs.noarch                       1.11-6.20121102git.el7         installed  
+cryptsetup-libs.x86_64                1.7.4-3.el7                    installed  
+curl.x86_64                           7.29.0-46.el7                  installed  
+cyrus-sasl-lib.x86_64                 2.1.26-21.el7                  installed  
+dbus.x86_64                           1:1.10.24-7.0.1.el7            installed  
+dbus-glib.x86_64                      0.100-7.el7                    installed  
+dbus-libs.x86_64                      1:1.10.24-7.0.1.el7            installed  
+dbus-python.x86_64                    1.1.1-9.el7                    installed  
+device-mapper.x86_64                  7:1.02.140-8.0.1.el7           installed  
+device-mapper-libs.x86_64             7:1.02.140-8.0.1.el7           installed  
+dhclient.x86_64                       12:4.2.5-68.0.1.el7            installed  
+dhcp-common.x86_64                    12:4.2.5-68.0.1.el7            installed  
+dhcp-libs.x86_64                      12:4.2.5-68.0.1.el7            installed  
+diffutils.x86_64                      3.3-4.el7                      installed  
+dmidecode.x86_64                      1:3.0-5.el7                    installed  
+dnsmasq.x86_64                        2.76-5.el7                     installed  
+dracut.x86_64                         033-502.0.1.el7                installed  
+e2fsprogs.x86_64                      1.42.9-10.0.1.el7              installed  
+e2fsprogs-libs.x86_64                 1.42.9-10.0.1.el7              installed  
+ebtables.x86_64                       2.0.10-15.el7                  installed  
+elfutils-default-yama-scope.noarch    0.168-8.el7                    installed  
+elfutils-libelf.x86_64                0.168-8.el7                    installed  
+elfutils-libs.x86_64                  0.168-8.el7                    installed  
+ethtool.x86_64                        2:4.8-1.el7                    installed  
+expat.x86_64                          2.1.0-10.el7_3                 installed  
+file.x86_64                           5.11-33.el7                    installed  
+file-libs.x86_64                      5.11-33.el7                    installed  
+filesystem.x86_64                     3.2-21.el7                     installed  
+findutils.x86_64                      1:4.5.11-5.el7                 installed  
+fipscheck.x86_64                      1.4.1-6.el7                    installed  
+fipscheck-lib.x86_64                  1.4.1-6.el7                    installed  
+firewalld-filesystem.noarch           0.4.4.4-6.el7                  installed  
+fontconfig.x86_64                     2.10.95-11.el7                 @ol7_latest
+fontpackages-filesystem.noarch        1.44-8.el7                     @ol7_latest
+freetype.x86_64                       2.4.11-15.el7                  installed  
+gawk.x86_64                           4.0.2-4.el7_3.1                installed  
+gcc.x86_64                            4.8.5-28.0.1.el7_5.1           @ol7_latest
+gcc-c++.x86_64                        4.8.5-28.0.1.el7_5.1           @ol7_latest
+gdbm.x86_64                           1.10-8.el7                     installed  
+gettext.x86_64                        0.19.8.1-2.el7                 installed  
+gettext-libs.x86_64                   0.19.8.1-2.el7                 installed  
+glib2.x86_64                          2.54.2-2.el7                   installed  
+glibc.x86_64                          2.17-222.el7                   installed  
+glibc-common.x86_64                   2.17-222.el7                   installed  
+glibc-devel.x86_64                    2.17-222.el7                   @ol7_latest
+glibc-headers.x86_64                  2.17-222.el7                   @ol7_latest
+gmp.x86_64                            1:6.0.0-15.el7                 installed  
+gnupg2.x86_64                         2.0.22-4.el7                   installed  
+gobject-introspection.x86_64          1.50.0-1.el7                   installed  
+gpgme.x86_64                          1.3.2-5.el7                    installed  
+grep.x86_64                           2.20-3.el7                     installed  
+groff-base.x86_64                     1.22.2-8.el7                   installed  
+grub2.x86_64                          1:2.02-0.64.0.1.el7            installed  
+grub2-common.noarch                   1:2.02-0.64.0.1.el7            installed  
+grub2-pc.x86_64                       1:2.02-0.64.0.1.el7            installed  
+grub2-pc-modules.noarch               1:2.02-0.64.0.1.el7            installed  
+grub2-tools.x86_64                    1:2.02-0.64.0.1.el7            installed  
+grub2-tools-extra.x86_64              1:2.02-0.64.0.1.el7            installed  
+grub2-tools-minimal.x86_64            1:2.02-0.64.0.1.el7            installed  
+grubby.x86_64                         8.28-23.0.1.el7                installed  
+gssproxy.x86_64                       0.7.0-17.el7                   @ol7_latest
+gzip.x86_64                           1.5-9.el7                      installed  
+hardlink.x86_64                       1:1.0-19.el7                   installed  
+hostname.x86_64                       3.13-3.el7                     installed  
+hwdata.x86_64                         0.252-8.6.el7                  installed  
+hyperv-daemons-license.noarch         0-0.32.20161211git.el7         installed  
+hypervkvpd.x86_64                     0-0.32.20161211git.el7         installed  
+info.x86_64                           5.1-4.el7                      installed  
+initscripts.x86_64                    9.49.39-1.0.1.el7              installed  
+iproute.x86_64                        3.10.0-87.0.1.el7              installed  
+ipset.x86_64                          6.29-1.el7                     installed  
+ipset-libs.x86_64                     6.29-1.el7                     installed  
+iptables.x86_64                       1.4.21-18.el7                  installed  
+iptables-services.x86_64              1.4.21-18.el7                  installed  
+iputils.x86_64                        20160308-10.el7                installed  
+irqbalance.x86_64                     3:1.0.7-10.0.1.el7             installed  
+kbd.x86_64                            1.15.5-13.el7                  installed  
+kbd-legacy.noarch                     1.15.5-13.el7                  installed  
+kbd-misc.noarch                       1.15.5-13.el7                  installed  
+kernel.x86_64                         3.10.0-862.0.0.0.1.el7         installed  
+kernel-headers.x86_64                 3.10.0-862.6.3.el7             @ol7_latest
+kernel-tools.x86_64                   3.10.0-862.0.0.0.1.el7         installed  
+kernel-tools-libs.x86_64              3.10.0-862.0.0.0.1.el7         installed  
+kernel-uek.x86_64                     4.1.12-124.14.1.el7uek         installed  
+kernel-uek-firmware.noarch            4.1.12-124.14.1.el7uek         installed  
+keyutils.x86_64                       1.5.8-3.el7                    @ol7_latest
+keyutils-libs.x86_64                  1.5.8-3.el7                    installed  
+kmod.x86_64                           20-15.0.1.el7                  installed  
+kmod-libs.x86_64                      20-15.0.1.el7                  installed  
+kpartx.x86_64                         0.4.9-111.el7                  installed  
+krb5-libs.x86_64                      1.15.1-19.el7                  installed  
+ksh.x86_64                            20120801-137.0.1.el7           @ol7_latest
+less.x86_64                           458-9.el7                      installed  
+libICE.x86_64                         1.0.9-9.el7                    @ol7_latest
+libSM.x86_64                          1.2.2-2.el7                    @ol7_latest
+libX11.x86_64                         1.6.5-1.el7                    @ol7_latest
+libX11-common.noarch                  1.6.5-1.el7                    @ol7_latest
+libXau.x86_64                         1.0.8-2.1.el7                  @ol7_latest
+libXaw.x86_64                         1.0.13-4.el7                   @ol7_latest
+libXcursor.x86_64                     1.1.14-8.el7                   @ol7_latest
+libXext.x86_64                        1.3.3-3.el7                    @ol7_latest
+libXfixes.x86_64                      5.0.3-1.el7                    @ol7_latest
+libXft.x86_64                         2.3.2-2.el7                    @ol7_latest
+libXi.x86_64                          1.7.9-1.el7                    @ol7_latest
+libXinerama.x86_64                    1.1.3-2.1.el7                  @ol7_latest
+libXmu.x86_64                         1.1.2-2.el7                    @ol7_latest
+libXpm.x86_64                         3.5.12-1.el7                   @ol7_latest
+libXrandr.x86_64                      1.5.1-2.el7                    @ol7_latest
+libXrender.x86_64                     0.9.10-1.el7                   @ol7_latest
+libXt.x86_64                          1.1.5-3.el7                    @ol7_latest
+libXtst.x86_64                        1.2.3-1.el7                    @ol7_latest
+libXv.x86_64                          1.0.11-1.el7                   @ol7_latest
+libXxf86dga.x86_64                    1.1.4-2.1.el7                  @ol7_latest
+libXxf86misc.x86_64                   1.0.3-7.1.el7                  @ol7_latest
+libXxf86vm.x86_64                     1.1.4-1.el7                    @ol7_latest
+libacl.x86_64                         2.2.51-12.el7                  installed  
+libaio.x86_64                         0.3.109-13.el7                 @ol7_latest
+libaio-devel.x86_64                   0.3.109-13.el7                 @ol7_latest
+libassuan.x86_64                      2.1.0-3.el7                    installed  
+libattr.x86_64                        2.4.46-12.el7                  installed  
+libbasicobjects.x86_64                0.1.1-29.el7                   @ol7_latest
+libblkid.x86_64                       2.23.2-43.el7                  installed  
+libcap.x86_64                         2.22-9.el7                     installed  
+libcap-ng.x86_64                      0.7.5-4.el7                    installed  
+libcgroup.x86_64                      0.41-15.el7                    @ol7_latest
+libcollection.x86_64                  0.7.0-29.el7                   @ol7_latest
+libcom_err.x86_64                     1.42.9-10.0.1.el7              installed  
+libcroco.x86_64                       0.6.11-1.el7                   installed  
+libcurl.x86_64                        7.29.0-46.el7                  installed  
+libdaemon.x86_64                      0.14-7.el7                     installed  
+libdb.x86_64                          5.3.21-20.el7                  installed  
+libdb-utils.x86_64                    5.3.21-20.el7                  installed  
+libdmx.x86_64                         1.1.3-3.el7                    @ol7_latest
+libedit.x86_64                        3.0-12.20121213cvs.el7         installed  
+libestr.x86_64                        0.1.9-2.el7                    installed  
+libevent.x86_64                       2.0.21-4.el7                   @ol7_latest
+libfastjson.x86_64                    0.99.4-2.el7                   installed  
+libffi.x86_64                         3.0.13-18.el7                  installed  
+libfontenc.x86_64                     1.1.3-3.el7                    @ol7_latest
+libgcc.x86_64                         4.8.5-28.0.1.el7_5.1           @ol7_latest
+libgcrypt.x86_64                      1.5.3-14.el7                   installed  
+libgomp.x86_64                        4.8.5-28.0.1.el7_5.1           @ol7_latest
+libgpg-error.x86_64                   1.12-3.el7                     installed  
+libgudev1.x86_64                      219-57.0.1.el7                 installed  
+libidn.x86_64                         1.28-4.el7                     installed  
+libini_config.x86_64                  1.3.1-29.el7                   @ol7_latest
+libmnl.x86_64                         1.0.3-7.el7                    installed  
+libmount.x86_64                       2.23.2-43.el7                  installed  
+libmpc.x86_64                         1.0.1-3.el7                    @ol7_latest
+libndp.x86_64                         1.2-7.el7                      installed  
+libnetfilter_conntrack.x86_64         1.0.6-1.el7_3                  installed  
+libnfnetlink.x86_64                   1.0.1-4.el7                    installed  
+libnfsidmap.x86_64                    0.25-19.el7                    @ol7_latest
+libnl.x86_64                          1.1.4-3.el7                    installed  
+libnl3.x86_64                         3.2.28-4.el7                   installed  
+libpath_utils.x86_64                  0.2.1-29.el7                   @ol7_latest
+libpipeline.x86_64                    1.2.3-3.el7                    installed  
+libpng.x86_64                         2:1.5.13-7.el7_2               @ol7_latest
+libpwquality.x86_64                   1.2.3-4.el7                    installed  
+libref_array.x86_64                   0.1.5-29.el7                   @ol7_latest
+libseccomp.x86_64                     2.3.1-3.el7                    installed  
+libselinux.x86_64                     2.5-12.el7                     installed  
+libselinux-python.x86_64              2.5-12.el7                     installed  
+libselinux-utils.x86_64               2.5-12.el7                     installed  
+libsemanage.x86_64                    2.5-11.el7                     @ol7_latest
+libsemanage-python.x86_64             2.5-11.el7                     @ol7_latest
+libsepol.x86_64                       2.5-8.1.el7                    installed  
+libss.x86_64                          1.42.9-10.0.1.el7              installed  
+libssh2.x86_64                        1.4.3-10.el7_2.1               installed  
+libstdc++.x86_64                      4.8.5-28.0.1.el7_5.1           @ol7_latest
+libstdc++-devel.x86_64                4.8.5-28.0.1.el7_5.1           @ol7_latest
+libsysfs.x86_64                       2.1.0-16.el7                   installed  
+libtasn1.x86_64                       4.10-1.el7                     installed  
+libtirpc.x86_64                       0.2.4-0.10.el7                 @ol7_latest
+libunistring.x86_64                   0.9.3-9.el7                    installed  
+libuser.x86_64                        0.60-7.el7_1                   installed  
+libutempter.x86_64                    1.1.6-4.el7                    installed  
+libuuid.x86_64                        2.23.2-43.el7                  installed  
+libverto.x86_64                       0.2.5-4.el7                    installed  
+libverto-libevent.x86_64              0.2.5-4.el7                    @ol7_latest
+libxcb.x86_64                         1.12-1.el7                     @ol7_latest
+libxkbfile.x86_64                     1.0.9-3.el7                    @ol7_latest
+libxml2.x86_64                        2.9.1-6.0.1.el7_2.3            installed  
+libxml2-python.x86_64                 2.9.1-6.0.1.el7_2.3            installed  
+linux-firmware.noarch                 20180220-62.git6d51311.0.1.el7 installed  
+lm_sensors-libs.x86_64                3.4.0-4.20160601gitf9185e5.el7 @ol7_latest
+logrotate.x86_64                      3.8.6-14.el7                   installed  
+lua.x86_64                            5.1.4-15.el7                   installed  
+lz4.x86_64                            1.7.5-2.el7                    installed  
+lzo.x86_64                            2.06-8.el7                     installed  
+m2crypto.x86_64                       0.21.1-17.el7                  installed  
+mailx.x86_64                          12.5-19.el7                    @ol7_latest
+make.x86_64                           1:3.82-23.el7                  installed  
+man-db.x86_64                         2.6.3-9.el7                    installed  
+mozjs17.x86_64                        17.0.0-20.el7                  installed  
+mpfr.x86_64                           3.1.1-4.el7                    @ol7_latest
+ncurses.x86_64                        5.9-13.20130511.el7            installed  
+ncurses-base.noarch                   5.9-13.20130511.el7            installed  
+ncurses-libs.x86_64                   5.9-13.20130511.el7            installed  
+net-tools.x86_64                      2.0-0.22.20131004git.el7       installed  
+newt.x86_64                           0.52.15-4.el7                  installed  
+newt-python.x86_64                    0.52.15-4.el7                  installed  
+nfs-utils.x86_64                      1:1.3.0-0.54.0.1.el7           @ol7_latest
+nspr.x86_64                           4.17.0-1.el7                   installed  
+nss.x86_64                            3.34.0-4.el7                   installed  
+nss-pem.x86_64                        1.0.3-4.el7                    installed  
+nss-softokn.x86_64                    3.34.0-2.0.1.el7               installed  
+nss-softokn-freebl.x86_64             3.34.0-2.0.1.el7               installed  
+nss-sysinit.x86_64                    3.34.0-4.el7                   installed  
+nss-tools.x86_64                      3.34.0-4.el7                   installed  
+nss-util.x86_64                       3.34.0-2.el7                   installed  
+numactl-libs.x86_64                   2.0.9-6.el7_2                  installed  
+omi.x86_64                            1.4.1-0                        installed  
+openldap.x86_64                       2.4.44-5.el7                   installed  
+openssh.x86_64                        7.4p1-16.el7                   installed  
+openssh-clients.x86_64                7.4p1-16.el7                   installed  
+openssh-server.x86_64                 7.4p1-16.el7                   installed  
+openssl.x86_64                        1:1.0.2k-12.0.1.el7            installed  
+openssl-libs.x86_64                   1:1.0.2k-12.0.1.el7            installed  
+oracle-logos.noarch                   70.0.3-4.0.7.el7               installed  
+oracle-rdbms-server-12cR1-preinstall.x86_64
+                                      1.0-6.el7                      @ol7_latest
+oraclelinux-release.x86_64            7:7.4-1.0.4.el7                installed  
+os-prober.x86_64                      1.58-9.0.1.el7                 installed  
+p11-kit.x86_64                        0.23.5-3.el7                   installed  
+p11-kit-trust.x86_64                  0.23.5-3.el7                   installed  
+pam.x86_64                            1.1.8-18.el7                   installed  
+parted.x86_64                         3.1-29.el7                     installed  
+passwd.x86_64                         0.79-4.el7                     installed  
+pciutils.x86_64                       3.5.1-2.el7                    installed  
+pciutils-libs.x86_64                  3.5.1-2.el7                    installed  
+pcre.x86_64                           8.32-17.el7                    installed  
+pinentry.x86_64                       0.8.1-17.el7                   installed  
+pkgconfig.x86_64                      1:0.27.1-4.el7                 installed  
+policycoreutils.x86_64                2.5-22.0.1.el7                 installed  
+policycoreutils-python.x86_64         2.5-22.0.1.el7                 @ol7_latest
+polkit.x86_64                         0.112-14.el7                   installed  
+polkit-pkla-compat.x86_64             0.1-4.el7                      installed  
+popt.x86_64                           1.13-16.el7                    installed  
+procps-ng.x86_64                      3.3.10-16.el7                  installed  
+psmisc.x86_64                         22.20-15.el7                   installed  
+pth.x86_64                            2.0.7-23.el7                   installed  
+pyOpenSSL.x86_64                      0.13.1-3.el7                   installed  
+pygobject2.x86_64                     2.28.6-11.el7                  installed  
+pygpgme.x86_64                        0.3-9.el7                      installed  
+pyliblzma.x86_64                      0.5.3-11.el7                   installed  
+python.x86_64                         2.7.5-58.0.1.el7               installed  
+python-IPy.noarch                     0.75-6.el7                     @ol7_latest
+python-configobj.noarch               4.7.2-7.el7                    installed  
+python-decorator.noarch               3.4.0-3.el7                    installed  
+python-dmidecode.x86_64               3.12.2-1.el7                   installed  
+python-ethtool.x86_64                 0.8-5.el7                      installed  
+python-firewall.noarch                0.4.4.4-6.el7                  installed  
+python-gobject-base.x86_64            3.22.0-1.el7                   installed  
+python-gudev.x86_64                   147.2-7.el7                    installed  
+python-hwdata.noarch                  1.7.3-4.el7                    installed  
+python-iniparse.noarch                0.4-9.el7                      installed  
+python-libs.x86_64                    2.7.5-58.0.1.el7               installed  
+python-linux-procfs.noarch            0.4.9-3.el7                    installed  
+python-perf.x86_64                    3.10.0-862.0.0.0.1.el7         installed  
+python-pycurl.x86_64                  7.19.0-19.el7                  installed  
+python-pyudev.noarch                  0.15-9.el7                     installed  
+python-schedutils.x86_64              0.4-6.el7                      installed  
+python-slip.noarch                    0.4.0-2.el7                    installed  
+python-slip-dbus.noarch               0.4.0-2.el7                    installed  
+python-urlgrabber.noarch              3.10-8.el7                     installed  
+python2-pyasn1.noarch                 0.1.9-7.el7                    installed  
+pyxattr.x86_64                        0.5.1-5.el7                    installed  
+qemu-guest-agent.x86_64               10:2.8.0-2.el7                 installed  
+qrencode-libs.x86_64                  3.4.1-3.el7                    installed  
+quota.x86_64                          1:4.01-17.el7                  @ol7_latest
+quota-nls.noarch                      1:4.01-17.el7                  @ol7_latest
+readline.x86_64                       6.2-10.el7                     installed  
+redhat-release-server.x86_64          1:7.4-18.0.1.el7               installed  
+rhn-check.noarch                      2.0.2-17.0.1.el7               installed  
+rhn-client-tools.noarch               2.0.2-17.0.1.el7               installed  
+rhn-setup.noarch                      2.0.2-17.0.1.el7               installed  
+rhnlib.noarch                         2.5.65-4.0.1.el7               installed  
+rhnsd.x86_64                          5.0.13-7.0.1.el7               installed  
+rootfiles.noarch                      8.1-11.el7                     installed  
+rpcbind.x86_64                        0.2.0-44.el7                   @ol7_latest
+rpm.x86_64                            4.11.3-25.el7                  installed  
+rpm-build-libs.x86_64                 4.11.3-25.el7                  installed  
+rpm-libs.x86_64                       4.11.3-25.el7                  installed  
+rpm-python.x86_64                     4.11.3-25.el7                  installed  
+rsyslog.x86_64                        8.24.0-12.el7                  installed  
+scx.x86_64                            1.6.3-474                      installed  
+sed.x86_64                            4.2.2-5.el7                    installed  
+selinux-policy.noarch                 3.13.1-166.0.2.el7             installed  
+selinux-policy-targeted.noarch        3.13.1-166.0.2.el7             installed  
+setools-libs.x86_64                   3.3.8-2.el7                    @ol7_latest
+setup.noarch                          2.8.71-7.el7                   installed  
+shadow-utils.x86_64                   2:4.1.5.1-24.el7               installed  
+shared-mime-info.x86_64               1.8-3.el7                      installed  
+slang.x86_64                          2.2.4-11.el7                   installed  
+smartmontools.x86_64                  1:6.5-1.el7                    @ol7_latest
+sqlite.x86_64                         3.7.17-8.el7                   installed  
+stix-fonts.noarch                     1.1.0-5.el7                    @ol7_latest
+sudo.x86_64                           1.8.19p2-10.el7                installed  
+sysstat.x86_64                        10.1.5-13.el7                  @ol7_latest
+systemd.x86_64                        219-57.0.1.el7                 installed  
+systemd-libs.x86_64                   219-57.0.1.el7                 installed  
+systemd-sysv.x86_64                   219-57.0.1.el7                 installed  
+sysvinit-tools.x86_64                 2.88-14.dsf.el7                installed  
+tar.x86_64                            2:1.26-32.el7                  installed  
+tcp_wrappers.x86_64                   7.6-77.el7                     @ol7_latest
+tcp_wrappers-libs.x86_64              7.6-77.el7                     installed  
+tmpwatch.x86_64                       2.11-5.el7                     installed  
+tzdata.noarch                         2017b-1.el7                    installed  
+uname26.x86_64                        1.0-1.el7                      installed  
+unzip.x86_64                          6.0-19.el7                     @ol7_latest
+usermode.x86_64                       1.111-5.el7                    installed  
+ustr.x86_64                           1.0.4-16.el7                   installed  
+util-linux.x86_64                     2.23.2-43.el7                  installed  
+vim-minimal.x86_64                    2:7.4.160-2.el7                installed  
+virt-what.x86_64                      1.13-10.el7                    installed  
+which.x86_64                          2.20-7.el7                     installed  
+wpa_supplicant.x86_64                 1:2.6-9.el7                    installed  
+xfsprogs.x86_64                       4.5.0-12.0.1.el7               installed  
+xorg-x11-apps.x86_64                  7.7-7.el7                      @ol7_latest
+xorg-x11-utils.x86_64                 7.5-22.el7                     @ol7_latest
+xorg-x11-xauth.x86_64                 1:1.0.9-1.el7                  @ol7_latest
+xz.x86_64                             5.2.2-1.el7                    installed  
+xz-libs.x86_64                        5.2.2-1.el7                    installed  
+yum.noarch                            3.4.3-158.0.1.el7              installed  
+yum-metadata-parser.x86_64            1.1.4-10.el7                   installed  
+yum-plugin-ulninfo.noarch             0.2-13.el7                     installed  
+yum-rhn-plugin.noarch                 2.0.1-9.0.1.el7                installed  
+zlib.x86_64                           1.2.7-17.el7                   installed  
+================================================================
+7> List of Oracle Databases
+# /etc/oratab
+cdb1:/u01/app/oracle/product/12.2.0/dbhome_1:N
+cdb2:/u01/app/oracle/product/12.2.0/dbhome_1:N
+cdb3:/u01/app/oracle/product/12.2.0/dbhome_1:N
+================================================================
+================================================================
+8> Web Server Configuration
+================================================================
+9> No file share deployed 
+================================================================
+10> Cluster Information  
+================================================================
+11> Computer Hardware Information
+RC: 1
+
+Bios Info:
+
++----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Key                  | Value                                                                                                                                                                                                                                                                                                                                                                                          |
++----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| bios_vendor_name     | American Megatrends Inc.                                                                                                                                                                                                                                                                                                                                                                       |
+| system_product_name  | Virtual Machine                                                                                                                                                                                                                                                                                                                                                                                |
+| system_serial_number | 0000-0017-0310-6857-9801-4178-06                                                                                                                                                                                                                                                                                                                                                               |
+| chassis_type         | Desktop                                                                                                                                                                                                                                                                                                                                                                                        |
+| system_uuid          | A3825AEC-618C-4E48-96CB-D84BD90751FB                                                                                                                                                                                                                                                                                                                                                           |
+| system_manufacturer  | Microsoft Corporation                                                                                                                                                                                                                                                                                                                                                                          |
+| socket_count         | 64                                                                                                                                                                                                                                                                                                                                                                                             |
+| bios_release_date    | 06/02/2017                                                                                                                                                                                                                                                                                                                                                                                     |
+| bios_version         | 090007                                                                                                                                                                                                                                                                                                                                                                                         |
+| socket_designation   | None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None |
++----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+CPU Info:
+
++-----------+--------------+------------+-------+----------+-------------------------------------------+----------+
+| processor |  vendor_id   | cpu_family | model | stepping |                 model_name                | cpu_mhz  |
++-----------+--------------+------------+-------+----------+-------------------------------------------+----------+
+|     0     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
+|     1     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
+|     2     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
+|     3     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
++-----------+--------------+------------+-------+----------+-------------------------------------------+----------+
+
+Ethernet Controller Info:
+
++-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
+| vendor_name | vendor_id | device_name | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
++-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
++-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
+
+Storage Controller Info:
+
++-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
+|    vendor_name    | vendor_id |       device_name       | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
++-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
+| Intel Corporation |    8086   | 82371AB/EB/MB PIIX4 IDE |    7111   |    unknown     |   unknown    |    unknown     |   unknown    |
++-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
+
+GPU Info:
+
++-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
+|      vendor_name      | vendor_id |     device_name     | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
++-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
+| Microsoft Corporation |    1414   | Hyper-V virtual VGA |    5353   |    unknown     |   unknown    |    unknown     |   unknown    |
++-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
+

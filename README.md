@@ -5,12 +5,14 @@ Current capabilities
     1. Get OS information
     2. Get package information in txt and csv
     3. Get system info using hwinfo
+    4. NFS and CIFS Share information
+    5. Cluster Information
+    6. Oracle database Information
+    7. Web Server Information
+    8. MySQL database detection (with no information)
 
-Added capabilities
-    1. NFS and CIFS Share information
-    2. Cluster Information
-    3. Oracle database Information
-    4. Web Server Information
+URGENT REQUIREMENT:
+    1. Run script without prompting for password for sudo or mysql. This will allow us to execute the script without password prompt on multiple servers. Password prompt can be removed from sudoers file but will customer agree to take that action on server inventory?
 
 Other capabilties required
     1. Additional cluster scan apart from pcs
@@ -20,4 +22,4 @@ Other capabilties required
 Fixes Required:
     1. check_web function - returning isweb 1 even though no port 80/443 configured - Tested for Ubuntu
     2. check_cluster - returning iscluster 127 even though pcs command not found - Tested for Ubuntu / CentOS / RedHat
-    3. Find way to collect Mysql database inventory.
+    3. Find way to collect Mysql database inventory. Requires password prompt.

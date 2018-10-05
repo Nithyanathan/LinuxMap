@@ -73,7 +73,7 @@ get_info() {
             echo "NAME,VERSION,RELEASE" > $packagecsv
             sudo rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
         fi
-    elif [ $isubuntu -eq 0 ];then    
+    elif [ $isubuntu -eq 0 ];then
         sudo dpkg -l >> $location
         echo "Name,Version,Section,Homepage,Source" > $packagecsv
         sudo dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\n' | sort >> $packagecsv
@@ -134,10 +134,17 @@ check_os() {
     iscentos=${?}
 }
 
-#Check if Oracle is installed
-check_oracle() {
+#Check if database is installed
+check_db() {
     sudo yum list installed | grep oracle > /dev/null 2>&1
     isoracle=${?}
+    if [ $isubuntu -eq 0 ];then
+        sudo dpkg -l | grep mysql-server > /dev/null 2>&1
+        ismysql=${?}
+    else
+        sudo yum list installed | grep mysql > /dev/null 2>&1
+        ismysql=${?}
+    fi
 }
 
 #Check web service installed
@@ -167,11 +174,14 @@ else
     get_info;
 fi
 
-check_oracle;
-if [ $isoracle -ne 0 ]; then
-    echo "No Oracle database found"
+check_db;
+if [ $isoracle -ne 0 ] && [$ismysql -ne 0]; then
+    echo "No database found"
     echo "================================================================" >> $location
-    echo "7> No Oracle Database configured " >> $location
+    echo "7> No Database configured " >> $location
+elif [ -x "$(command -v mysql)" ]; then
+    echo "================================================================" >> $location
+    echo "7> MySql Database Configured: Collect MySql database inventory manually" >> $location
 else
     get_oracle;
 fi

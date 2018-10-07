@@ -21,7 +21,7 @@ else
     mkdir -p /tmp/cloudmo/
 
     for host in `cat /tmp/servers.txt`; do
-        ssh $username@$host $password "bash -s" < /tmp/get-info.sh &
+        ssh $username@$host $password "bash -s" < /tmp/get-info.sh -o StrictHostKeyChecking=no &
     done
     wait
 fi

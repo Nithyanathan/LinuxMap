@@ -1,6 +1,16 @@
+######################################################################################
+## Author: Cloud Modernization - Delivery <CloudMo-Delivery@microsoft.com>
+## Version: 0.2 	Date: 10/4/2018
+##  Pre-Requisites
+##  1. sshpass
+######################################################################################
+
+############### Starting of the script ###############################################
 #!/bin/bash
 
 username="akundnani"
+password="Microsoft~123"
+outputfile="/tmp/linuxinventory.tar.gz"
 
 check_script() {
     cat /tmp/get-info.sh
@@ -20,7 +30,15 @@ else
     mkdir -p /tmp/cloudmo/
 
     for host in `cat /tmp/servers.txt`; do
-        ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 $username@$host "bash -s" < /tmp/get-info.sh &
+        echo "Running get-info.sh script on $host"
+        sshpass -p $password ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 $username@$host "bash -s" < /tmp/get-info.sh &
+    done
+    wait
+    for host in `cat /tmp/servers.txt`; do
+        echo "Copying files from $host to /tmp/cloudmo"
+        sshpass -p $password scp $username@$host:/tmp/cloudmo* /tmp/cloudmo/
     done
     wait
 fi
+
+echo "Scan complete, please copy /tmp/cloudmo files to your local machine for analysis."

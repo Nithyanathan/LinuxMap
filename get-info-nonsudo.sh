@@ -63,7 +63,10 @@ get_info() {
     echo "================================================================" >> $location
     uname -a|awk -F ' ' '{print $3}' >> $location
     echo "================================================================" >> $location
-    echo "6> List of Packages" >> $location
+    echo "6> IP Configuration of machine" >> $location
+    ip -o addr | awk '!/^[0-9]*: ?lo|link\/ether/ {print $2" "$4}' >> $location
+    echo "================================================================" >> $location
+    echo "7> List of Packages" >> $location
     echo "================================================================" >> $location
     if [ $iscentos -eq 0 ];then
         #check if yum is installed
@@ -89,7 +92,7 @@ get_info() {
 
 get_oracle() {
     echo "================================================================" >> $location
-    echo "7> List of Oracle Databases" >> $location
+    echo "8> List of Oracle Databases" >> $location
     cat /etc/oratab >> $location
 }
 
@@ -99,28 +102,28 @@ get_mysql() {
     echo "Enter MySQL admin Password"
     read -s -p "MySQL Password: " mysqlpass
     echo "================================================================" >> $location
-    echo "7> List of MySQL Databases" >> $location
+    echo "8> List of MySQL Databases" >> $location
     mysql -u $mysqluser -p$mysqlpass -e "show databases;" >> $location
 }
 
 get_web() {
     echo "================================================================" >> $location
     if [ -x "$(command -v apachectl)" ]; then
-        echo "8> Apache Configuration" >> $location
+        echo "9> Apache Configuration" >> $location
         apachectl -S >> $location
     elif [ -x "$(command -v apache2ctl)" ]; then
-        echo "8> Apache Configuration" >> $location
+        echo "9> Apache Configuration" >> $location
         apache2ctl -S >> $location
     else        
         echo "================================================================" >> $location
-        echo "8> Web Server Configuration" >> $location
+        echo "9> Web Server Configuration" >> $location
         httpd -S >> $location
     fi
 }
 
 get_fileshare() {
     echo "================================================================" >> $location
-    echo "9> NFS and CIFS shares information " >> $location    
+    echo "10> NFS and CIFS shares information " >> $location    
     cat /proc/mounts | grep nfs  >> $location
     cat /etc/fstab | grep nfs  >> $location
     cat /proc/mounts | grep cifs  >> $location
@@ -129,7 +132,7 @@ get_fileshare() {
 
 get_cluster() {
     echo "================================================================" >> $location
-    echo "10> Cluster Information  " >> $location    
+    echo "11> Cluster Information  " >> $location    
     pcs status >> $location
     pcs cluster status >> $location
     pcs status resources >> $location

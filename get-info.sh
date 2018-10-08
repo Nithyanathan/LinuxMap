@@ -60,6 +60,9 @@ get_info() {
     echo "================================================================" >> $location
     sudo uname -a|awk -F ' ' '{print $3}' >> $location
     echo "================================================================" >> $location
+    echo "6> IP Configuration of machine" >> $location
+    ip -o addr | awk '!/^[0-9]*: ?lo|link\/ether/ {print $2" "$4}' >> $location
+    echo "================================================================" >> $location
     echo "6> List of Packages" >> $location
     echo "================================================================" >> $location
     if [ $iscentos -eq 0 ];then

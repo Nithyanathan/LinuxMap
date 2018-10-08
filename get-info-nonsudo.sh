@@ -187,7 +187,7 @@ check_db;
 if [ $isoracle -ne 0 ] && [$ismysql -ne 0]; then
     echo "No database found"
     echo "================================================================" >> $location
-    echo "7> No Database configured " >> $location
+    echo "8> No Database configured " >> $location
 elif [ -x "$(command -v mysql)" ]; then
     get_mysql;
 else
@@ -198,7 +198,7 @@ check_web;
 if [$isweb -ne 0]; then
     echo "No Web Applications found"
     echo "================================================================" >> $location
-    echo "8> No Web Applications configured" >> $location
+    echo "9> No Web Applications configured" >> $location
 else
     get_web;
 fi
@@ -207,7 +207,7 @@ check_fileshare;
 if [ $isfileshare -ne 0 ]; then
     echo "No file share found."
     echo "================================================================" >> $location
-    echo "9> No file share deployed " >> $location
+    echo "10> No file share deployed " >> $location
 else
     get_fileshare;
 fi
@@ -215,7 +215,8 @@ fi
 if [ -x "$(command -v pcs)" ]; then
     get_cluster;
 else
-    echo "10> No cluster configured on given node." >> $location    
+    echo "================================================================" >> $location
+    echo "11> No cluster configured on given node." >> $location    
 fi
 
 echo "================================================================"

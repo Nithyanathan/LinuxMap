@@ -25,8 +25,8 @@
 #!/bin/bash
 
 hostname=`sudo uname -n`
-location="/tmp/$hostname.sysinfo.txt"
-packagecsv="/tmp/$hostname.packages.csv"
+location="/tmp/cloudmo-$hostname.sysinfo.txt"
+packagecsv="/tmp/cloudmo-$hostname.packages.csv"
 
 
 get_info() {
@@ -88,6 +88,16 @@ get_oracle() {
     echo "================================================================" >> $location
     echo "7> List of Oracle Databases" >> $location
     cat /etc/oratab >> $location
+}
+
+get_mysql() {
+    echo "Enter MySQL admin Username"
+    read -p "MySQL UserName: " mysqluser
+    echo "Enter MySQL admin Password"
+    read -s -p "MySQL Password: " mysqlpass
+    echo "================================================================" >> $location
+    echo "7> List of MySQL Databases" >> $location
+    mysql -u $mysqluser -p$mysqlpass -e "show databases;" >> $location
 }
 
 get_web() {
@@ -180,8 +190,7 @@ if [ $isoracle -ne 0 ] && [$ismysql -ne 0]; then
     echo "================================================================" >> $location
     echo "7> No Database configured " >> $location
 elif [ -x "$(command -v mysql)" ]; then
-    echo "================================================================" >> $location
-    echo "7> MySql Database Configured: Collect MySql database inventory manually" >> $location
+    get_mysql;
 else
     get_oracle;
 fi

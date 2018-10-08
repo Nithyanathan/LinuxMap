@@ -169,13 +169,6 @@ check_fileshare() {
     isfileshare=${?}
 }
 
-#Check if cluster is configured
-check_cluster() {
-    if [ -x "$(command -v pcs)" ]; then
-        iscluster=${?}
-    fi
-}
-
 check_os;
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ] && [$issuse -ne 0];
 then
@@ -213,11 +206,10 @@ else
     get_fileshare;
 fi
 
-check_cluster;
-if [$iscluster -ne 0]; then
-    echo "No Cluster configuration found"
-else
+if [ -x "$(command -v pcs)" ]; then
     get_cluster;
+else
+    echo "10> No cluster configured on given node." >> $location    
 fi
 
 echo "================================================================"

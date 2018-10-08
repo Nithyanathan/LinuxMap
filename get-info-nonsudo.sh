@@ -51,19 +51,19 @@ get_info() {
     ## Requires Sudo - sudo lvmdiskscan >> $location
     ## Requires Sudo - sudo fdisk -l|grep /dev/sd  >> $location
     ## Requires Sudo - echo "================================================================" >> $location
-    echo "4> Block Device Details:"  >> $location
+    echo "3> Block Device Details:"  >> $location
     echo "================================================================" >> $location
     lsblk >> $location
     echo "================================================================" >> $location
-    echo "5> File System Disk Usage:"  >> $location
+    echo "4> File System Disk Usage:"  >> $location
     echo "================================================================" >> $location
     df -hT >> $location
     echo "================================================================" >> $location
-    echo "6> Current Patch level of the System " >> $location
+    echo "5> Current Patch level of the System " >> $location
     echo "================================================================" >> $location
     uname -a|awk -F ' ' '{print $3}' >> $location
     echo "================================================================" >> $location
-    echo "7> List of Packages" >> $location
+    echo "6> List of Packages" >> $location
     echo "================================================================" >> $location
     if [ $iscentos -eq 0 ];then
         #check if yum is installed
@@ -89,7 +89,7 @@ get_info() {
 
 get_oracle() {
     echo "================================================================" >> $location
-    echo "8> List of Oracle Databases" >> $location
+    echo "7> List of Oracle Databases" >> $location
     cat /etc/oratab >> $location
 }
 
@@ -99,17 +99,17 @@ get_mysql() {
     echo "Enter MySQL admin Password"
     read -s -p "MySQL Password: " mysqlpass
     echo "================================================================" >> $location
-    echo "9> List of MySQL Databases" >> $location
+    echo "7> List of MySQL Databases" >> $location
     mysql -u $mysqluser -p$mysqlpass -e "show databases;" >> $location
 }
 
 get_web() {
     echo "================================================================" >> $location
     if [ -x "$(command -v apachectl)" ]; then
-        echo "10> Apache Configuration" >> $location
+        echo "8> Apache Configuration" >> $location
         apachectl -S >> $location
     elif [ -x "$(command -v apache2ctl)" ]; then
-        echo "10> Apache Configuration" >> $location
+        echo "8> Apache Configuration" >> $location
         apache2ctl -S >> $location
     else        
         echo "================================================================" >> $location
@@ -120,7 +120,7 @@ get_web() {
 
 get_fileshare() {
     echo "================================================================" >> $location
-    echo "11> NFS and CIFS shares information " >> $location    
+    echo "9> NFS and CIFS shares information " >> $location    
     cat /proc/mounts | grep nfs  >> $location
     cat /etc/fstab | grep nfs  >> $location
     cat /proc/mounts | grep cifs  >> $location
@@ -129,7 +129,7 @@ get_fileshare() {
 
 get_cluster() {
     echo "================================================================" >> $location
-    echo "12> Cluster Information  " >> $location    
+    echo "10> Cluster Information  " >> $location    
     pcs status >> $location
     pcs cluster status >> $location
     pcs status resources >> $location
@@ -172,13 +172,6 @@ check_fileshare() {
     isfileshare=${?}
 }
 
-#Check if cluster is configured
-check_cluster() {
-    if [ -x "$(command -v pcs)" ]; then
-        iscluster=${?}
-    fi
-}
-
 check_os;
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ] && [$issuse -ne 0];
 then
@@ -191,7 +184,7 @@ check_db;
 if [ $isoracle -ne 0 ] && [$ismysql -ne 0]; then
     echo "No database found"
     echo "================================================================" >> $location
-    echo "8> No Database configured " >> $location
+    echo "7> No Database configured " >> $location
 elif [ -x "$(command -v mysql)" ]; then
     get_mysql;
 else
@@ -202,7 +195,7 @@ check_web;
 if [$isweb -ne 0]; then
     echo "No Web Applications found"
     echo "================================================================" >> $location
-    echo "9> No Web Applications configured" >> $location
+    echo "8> No Web Applications configured" >> $location
 else
     get_web;
 fi
@@ -216,11 +209,10 @@ else
     get_fileshare;
 fi
 
-check_cluster;
-if [$iscluster -ne 0]; then
-    echo "No Cluster configuration found"
-else
+if [ -x "$(command -v pcs)" ]; then
     get_cluster;
+else
+    echo "10> No cluster configured on given node." >> $location    
 fi
 
 echo "================================================================"

@@ -1,74 +1,50 @@
 ================================================================
-* System Name: 	DemoOracle
+* System Name: 	demooracle
 * System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
-* Generated on: 		Thu Oct  4 14:12:14 UTC 2018
-* Running as: 			root
+* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
+* Running as: 			akundnani
 ================================================================
- Ouput of Server : DemoOracle
+ Ouput of Server : demooracle
 ================================================================
-1> BIOS and Serial Information 
+1> BIOS and System Information 
 ================================================================
-Getting SMBIOS data from sysfs.
-SMBIOS 2.3 present.
-BIOS Information
-		BIOS is upgradeable
-		BIOS shadowing is allowed
-		BIOS ROM is socketed
-		BIOS boot specification is supported
-BIOS Language Information
-System Information
-	Manufacturer: Microsoft Corporation
-	Product Name: Virtual Machine
-	Version: 7.0
-	Serial Number: 0000-0017-0310-6857-9801-4178-06
-	UUID: A3825AEC-618C-4E48-96CB-D84BD90751FB
-	Wake-up Type: Power Switch
-
-Handle 0x0002, DMI type 2, 8 bytes
-Base Board Information
-	Manufacturer: Microsoft Corporation
+ BIOS 090007  06/02/2017
+0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
 ================================================================
-2> Disk Info and Disk Layout 
-================================================================
-Disk /dev/sdb: 128.8 GB, 128849018880 bytes, 251658240 sectors
-/dev/sdb1            2048   251656191   125827072   83  Linux
-Disk /dev/sdc: 53.7 GB, 53687091200 bytes, 104857600 sectors
-Disk /dev/sdd: 53.7 GB, 53687091200 bytes, 104857600 sectors
-Disk /dev/sda: 32.2 GB, 32212254720 bytes, 62914560 sectors
-/dev/sda1   *        2048     1026047      512000   83  Linux
-/dev/sda2         1026048    62914559    30944256   83  Linux
+2> Amount of Physical Memory: 
+7339576K
 ================================================================
 3> Block Device Details:
 ================================================================
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 fd0      2:0    1    4K  0 disk 
 sda      8:0    0   30G  0 disk 
-├─sda1   8:1    0  500M  0 part /boot
-└─sda2   8:2    0 29.5G  0 part /
+|-sda1   8:1    0  500M  0 part /boot
+`-sda2   8:2    0 29.5G  0 part /
 sdb      8:16   0  120G  0 disk 
-└─sdb1   8:17   0  120G  0 part /mnt/resource
+`-sdb1   8:17   0  120G  0 part /mnt/resource
 sdc      8:32   0   50G  0 disk 
 sdd      8:48   0   50G  0 disk 
-sr0     11:0    1  628K  0 rom  
 ================================================================
 4> File System Disk Usage:
 ================================================================
 Filesystem     Type      Size  Used Avail Use% Mounted on
 devtmpfs       devtmpfs  3.4G     0  3.4G   0% /dev
 tmpfs          tmpfs     3.4G     0  3.4G   0% /dev/shm
-tmpfs          tmpfs     3.4G   33M  3.4G   1% /run
+tmpfs          tmpfs     3.4G   17M  3.4G   1% /run
 tmpfs          tmpfs     3.4G     0  3.4G   0% /sys/fs/cgroup
 /dev/sda2      btrfs      30G   17G   11G  61% /
 /dev/sda1      xfs       497M  117M  381M  24% /boot
 /dev/sdb1      ext4      118G  2.1G  110G   2% /mnt/resource
 tmpfs          tmpfs     696M     0  696M   0% /run/user/54322
-tmpfs          tmpfs     696M     0  696M   0% /run/user/54321
 ================================================================
 5> Current Patch level of the System 
 ================================================================
 4.1.12-124.14.1.el7uek.x86_64
 ================================================================
-6> List of Packages
+6> IP Configuration of machine
+================================================================
+7> List of Packages
 ================================================================
 Loaded plugins: ulninfo
 Installed Packages
@@ -433,70 +409,16 @@ yum-plugin-ulninfo.noarch             0.2-13.el7                     installed
 yum-rhn-plugin.noarch                 2.0.1-9.0.1.el7                installed  
 zlib.x86_64                           1.2.7-17.el7                   installed  
 ================================================================
-7> List of Oracle Databases
+8> List of Oracle Databases
 # /etc/oratab
 cdb1:/u01/app/oracle/product/12.2.0/dbhome_1:N
 cdb2:/u01/app/oracle/product/12.2.0/dbhome_1:N
 cdb3:/u01/app/oracle/product/12.2.0/dbhome_1:N
 ================================================================
 ================================================================
-8> Web Server Configuration
+9> Web Server Configuration
 ================================================================
-9> No file share deployed 
+10> No file share deployed 
 ================================================================
-10> Cluster Information  
+11> No cluster configured on given node.
 ================================================================
-11> Computer Hardware Information
-RC: 1
-
-Bios Info:
-
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Key                  | Value                                                                                                                                                                                                                                                                                                                                                                                          |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| bios_vendor_name     | American Megatrends Inc.                                                                                                                                                                                                                                                                                                                                                                       |
-| system_product_name  | Virtual Machine                                                                                                                                                                                                                                                                                                                                                                                |
-| system_serial_number | 0000-0017-0310-6857-9801-4178-06                                                                                                                                                                                                                                                                                                                                                               |
-| chassis_type         | Desktop                                                                                                                                                                                                                                                                                                                                                                                        |
-| system_uuid          | A3825AEC-618C-4E48-96CB-D84BD90751FB                                                                                                                                                                                                                                                                                                                                                           |
-| system_manufacturer  | Microsoft Corporation                                                                                                                                                                                                                                                                                                                                                                          |
-| socket_count         | 64                                                                                                                                                                                                                                                                                                                                                                                             |
-| bios_release_date    | 06/02/2017                                                                                                                                                                                                                                                                                                                                                                                     |
-| bios_version         | 090007                                                                                                                                                                                                                                                                                                                                                                                         |
-| socket_designation   | None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-CPU Info:
-
-+-----------+--------------+------------+-------+----------+-------------------------------------------+----------+
-| processor |  vendor_id   | cpu_family | model | stepping |                 model_name                | cpu_mhz  |
-+-----------+--------------+------------+-------+----------+-------------------------------------------+----------+
-|     0     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
-|     1     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
-|     2     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
-|     3     | GenuineIntel |     6      |   63  |    2     | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2.40GHz | 2394.417 |
-+-----------+--------------+------------+-------+----------+-------------------------------------------+----------+
-
-Ethernet Controller Info:
-
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-| vendor_name | vendor_id | device_name | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-
-Storage Controller Info:
-
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-|    vendor_name    | vendor_id |       device_name       | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-| Intel Corporation |    8086   | 82371AB/EB/MB PIIX4 IDE |    7111   |    unknown     |   unknown    |    unknown     |   unknown    |
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-
-GPU Info:
-
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-|      vendor_name      | vendor_id |     device_name     | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-| Microsoft Corporation |    1414   | Hyper-V virtual VGA |    5353   |    unknown     |   unknown    |    unknown     |   unknown    |
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-

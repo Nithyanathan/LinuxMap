@@ -1,7 +1,6 @@
 #!/bin/bash
 
 username="akundnani"
-password="Microsoft~123"
 
 check_script() {
     cat /tmp/get-info.sh
@@ -21,7 +20,7 @@ else
     mkdir -p /tmp/cloudmo/
 
     for host in `cat /tmp/servers.txt`; do
-        ssh $username@$host $password "bash -s" < /tmp/get-info.sh -o StrictHostKeyChecking=no &
+        ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 $username@$host "bash -s" < /tmp/get-info.sh &
     done
     wait
 fi

@@ -15,8 +15,11 @@ URGENT REQUIREMENT:
     1. Run script without prompting for password for sudo or mysql. This will allow us to execute the script without password prompt on multiple servers. Password prompt can be removed from sudoers file but will customer agree to take that action on server inventory?
 
 Other capabilties required
-    1. Additional cluster scan apart from pcs
+    1. Additional cluster scan apart from pcs - Coro
     2. Parsing the data - making it catalog ready
+    3. IP Information along with load balancing.
+    4. Databases - Postgress, SQLite, MariaDB, SQL Server
+    5. Web Application - Tomcat
 
 Fixes Required:
     1. check_web function - returning isweb 1 even though no port 80/443 configured - Tested for Ubuntu

@@ -21,4 +21,3 @@ Other capabilties required
 Fixes Required:
     1. check_web function - returning isweb 1 even though no port 80/443 configured - Tested for Ubuntu
     2. check_cluster - returning iscluster 127 even though pcs command not found - Tested for Ubuntu / CentOS / RedHat
-    3. Find way to collect Mysql database inventory. Requires password prompt.

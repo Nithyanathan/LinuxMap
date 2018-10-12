@@ -36,7 +36,7 @@ get_info() {
     echo -e "* Generated on: \t\t`date`" >> $location
     echo -e "* Running as: \t\t\t`whoami`" >> $location      
     echo "================================================================" >> $location
-    echo " Ouput of Server : $hostname" >> $location
+    echo " Output of Server : $hostname" >> $location
     echo "================================================================" >> $location
     echo "1> BIOS and Serial Information " >> $location
     echo "================================================================" >> $location

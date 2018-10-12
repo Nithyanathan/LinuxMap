@@ -81,8 +81,8 @@ get_info() {
         fi
     elif [ $isubuntu -eq 0 ];then
         dpkg -l >> $location
-        echo "Name,Version,Section,Homepage,Source" > $packagecsv
-        dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\n' | sort >> $packagecsv
+        echo "Name,Version,Section,Homepage,Source,Architecture" > $packagecsv
+        dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source},${Architecture}\n' | sort >> $packagecsv
     elif [ $issuse -eq 0 ];then
         zypper se --installed-only -s >> $location
     else

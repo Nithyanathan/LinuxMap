@@ -8,7 +8,7 @@ Current capabilities
     4. NFS and CIFS Share information
     5. Cluster Information (requires sudo)
     6. Oracle database Information with database names and directory
-    7. Web Server Information
+    7. Web Server Information (httpd if running locally, apache works ok)
     8. MySQL database detection along with database names (When running locally)
     9. IP Address information
 
@@ -22,3 +22,4 @@ Other capabilties required
 Fixes Required:
     1. check_web function - returning isweb 1 even though no port 80/443 configured - Tested for Ubuntu
     2. MySQL username / password prompt when running on multiple computers.
+    3. httpd command not returning output when running remotely.

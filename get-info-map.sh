@@ -40,7 +40,8 @@ GetLinuxNetworkAdapters() {
     #important : do not remove bash global variable IFS=' '
     #loop through all reported interfaces.
     #TODO : remove Lo as this is present by default in all machines.
-    for i in $(ip -o link show | awk -F': ' '{print $2}')do
+    for i in $(ip -o link show | awk -F': ' '{print $2}') 
+    do
         #echo the interface name
         echo $i
         #get link type from specified file path

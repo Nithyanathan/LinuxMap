@@ -77,8 +77,9 @@ GetLinuxNetworkAdapters() {
             echo "inet addr:$l_ipv4 Bcast:$l_ipv4bcast Mask:$l_ipv4prefix"
         fi
         #get the ipv6 address details for specified interface in variable
-        $itemp="$(ip -6 addr show $i | grep -w inet6 )"
-        for line in $temp ;do
+        $itemp="$(ip -6 addr show $i | grep -w inet6 )" 2>/dev/null
+        for line in $temp
+        do
             #get the IP address
             ipv6=$(echo "$line" | awk '{ print $2}' )
             #ipv6="$(grep -v ::1 <<< $line | awk '{ print $2}')"
@@ -133,8 +134,12 @@ GetLinuxFileSystems() {
     #split on new line only. Also IFS=$'\n' in bash/ksh93/zsh/mksh IFS=' ' 
     #disable globbing #no longer required. 
     #ser -o noglog #skips the tmpfs file system as these are RAM drives
+
+    ## Separator Regex (?<=mode=[^\n]*)\n
+    ## Parser Regex (?sxn)^(?>filesystem=(?'filesystem'[^\n]*)\n)(?>1kb_blocks=(?'onekb_blocks'[^\n]*)\n)(?>blocks_used=(?'blocks_used'[^\n]*)\n)(?>blocks_available=(?'blocks_available'[^\n]*)\n)(?>percent_used=(?'percent_used'[^\n]*)\n)(?>mount_point=(?'mount_point'[^\n]*)\n)(?>type=(?'type'[^\n]*)\n)(?>mode=(?'mode'[^\n]*))
     df -T -x tmpfs -x devtmpfs | awk 'NR>1 { print $1 " " $2 " " $3 " " $4 " " $5 " " $6 " " $7}' | {
-        while read output do
+        while read output 
+        do
             l_filesystem=$(echo $output | awk '{ print $1 }')
             l_1kb_blocks=$(echo $output | awk '{ print $3 }')
             l_blocks_used=$(echo $output | awk '{ print $4 }')
@@ -157,7 +162,59 @@ GetLinuxFileSystems() {
     }
 }
 
-GetLinuxSmBiosInfo() {}
+GetLinuxSmBiosInfo() {
+     # First try identifying Xen
+     # Detect Xen paravirtualized systems (which includes dom0 and domU PV).
+     # If /proc/xen is detected, this means that the machine is either
+     # Xen dom0 or Xen domU PV (paravirtualized). Detect which one it is.
+     #Dom0 vs Xen DomU PV. Fully virtualized Xen VMs are detected below.
+     virt_info=""
+     if [ -e /proc/xen ]; then
+        # /dev/xvc0 only exists on Xen domU PV systems. It does not exist on HVM DomU
+        if [ -e /dev/xvc0 ]; then
+            machine_type="Virtual"
+            virt_info="Xen (domU PV)"
+        else
+            machine_type="Physical"
+            virt_info="Xen (dom0)"
+        fi
+    fi
+    # Try hal first as regular user, then dmicode as root
+    # Return "Access Denied" if not running as root.
+    # NOTE: Consider using lshw or parsing dmesg incase the
+    # options below fail.
+    if [ "$(which dmesg 2> /dev/null)" != "" ]; then
+        echo
+        echo "BIOS Information"
+        #biosvendor=$(hal-get-property --udi /org/freedesktop/Hal/devices/computer --key system.firmware.vendor 2> /dev/null)
+        #if [ $? -ne 0 ]; then# biosvendor=$(hal-get-property --udi /org/freedesktop/Hal/devices/computer --key smbios.bios.vendor)#fi
+        #echo "Vendor: $biosvendor"
+        version=`dmesg|grep -i 'DMI:'|sed 's/.*\(BIOS.*\)/\1/' | awk '{print $2}'`
+        echo "Version: $version"
+        biosdate=`dmesg|grep -i 'DMI:'|sed 's/.*\(BIOS.*\)/\1/' | awk '{print $3}'`
+        echo "Release Date: $biosdate"
+        echo
+        echo "System Information"
+        hwvendor=`dmesg|grep -i 'DMI:'|sed 's/.*\(DMI.*\)/\1/' | awk '{print $2,$3}'`
+        echo "Manufacturer: $hwvendor"
+        # If we got a Xen (dom0) VM, we will append this information to the end of the 'Product Name'
+        # If we got a Xen (domU PV) VM, we append that as well, but it will be the only string since there is no hal entry
+        prodname=`dmesg|grep -i 'DMI:'|sed 's/.*\(Virtual.*\)/\1/' | awk '{print $1,$2}'|awk -F"/" '{print $1}'|awk -F"," '{print $1}'`
+        if [ -n "$virt_info" ]; then
+            echo "Product Name: $prodname $virt_info"
+        else
+            echo "Product Name: $prodname"
+        fi
+        echo "Version: $hwver"
+        echo "Serial Number: $hwserial"
+        echo "UUID: $hwid"
+        echo
+    elif [ `id -u` != "0" ]; then
+        echo __MAP_INVENTORY_ACCESS_DENIED__ 1>&2
+    else
+        dmidecode -t 0,1
+    fi
+}
 
 GetLinuxPCIDevices() {}
 

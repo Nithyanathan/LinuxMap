@@ -36,7 +36,7 @@ GetLinuxDistribution() {
         l_description=$l_distributor' '$l_release' '$c_codename
         echo "Distributor ID: $l_distributor" >> $location
         echo "Description: $l_description" >> $location
-        echo "Current Patch Level: $l_path" >> $location
+        echo "Current Patch Level: `uname -a|awk -F ' ' '{print $3}'`" >> $location
         echo "Release: $l_release" >> $location
         echo "Codename: $c_codename" >> $location
     elif [ -e /etc/os-release ];then
@@ -48,13 +48,13 @@ GetLinuxDistribution() {
         l_release=`cat /etc/os-release | sed -n -e 's/^VERSION_ID="\(.*\)"/\1/p'`
         echo "Distributor ID: $l_description" >> $location
         echo "Description: $l_description" >> $location
-        echo "Current Patch Level: $l_path" >> $location
+        echo "Current Patch Level: `uname -a|awk -F ' ' '{print $3}'`" >> $location
         echo "Release: $l_release" >> $location
         echo "Codename: $c_codename" >> $location
     else
         echo "Distributor ID: UNKNOWN" >> $location
         echo "Description: UNKNOWN" >> $location
-        echo "Current Patch Level: $l_path" >> $location
+        echo "Current Patch Level: `uname -a|awk -F ' ' '{print $3}'`" >> $location
         echo "Release: UNKNOWN" >> $location
         echo "Codename: UNKNOWN" >> $location
     fi
@@ -304,7 +304,8 @@ GetLinuxMySQLInstall() {
     read -p "MySQL UserName: " mysqluser
     echo "Enter MySQL admin Password"
     read -s -p "MySQL Password: " mysqlpass
-    if [ -z "$mysqluser" ]; then
+    ## TODO Need to fix MySQL prompt filter not working
+    if [ [$mysqluser == *"echo"*] ]; then
         echo "Unable to connect MySQL instance with empty credentials" >> $location
     else
         mysql -u $mysqluser -p$mysqlpass -e "show databases;" | grep -v Database | grep -v schema >> $location

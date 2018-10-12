@@ -300,9 +300,9 @@ GetLinuxOracleInstall() {
 
 GetLinuxMySQLInstall() {
     echo "Database Installed: MySQL" >> $location
-    echo "Enter MySQL admin Username"
+    echo "Enter MySQL admin Username for $hostname"
     read -p "MySQL UserName: " mysqluser
-    echo "Enter MySQL admin Password"
+    echo "Enter MySQL admin Password for $hostname"
     read -s -p "MySQL Password: " mysqlpass
     ## TODO Need to fix MySQL prompt filter not working
     if [ [$mysqluser == *"echo"*] ]; then

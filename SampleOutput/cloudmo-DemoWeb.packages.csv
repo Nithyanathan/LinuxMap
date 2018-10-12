@@ -7,7 +7,7 @@ apache2,2.4.29-1ubuntu4.4,httpd,http://httpd.apache.org/,
 apache2-bin,2.4.29-1ubuntu4.4,httpd,http://httpd.apache.org/,apache2
 apache2-data,2.4.29-1ubuntu4.4,httpd,http://httpd.apache.org/,apache2
 apache2-utils,2.4.29-1ubuntu4.4,httpd,http://httpd.apache.org/,apache2
-apparmor,2.12-4ubuntu5,admin,http://apparmor.net/,
+apparmor,2.12-4ubuntu5.1,admin,http://apparmor.net/,
 apport,2.20.9-0ubuntu7.4,utils,https://wiki.ubuntu.com/Apport,
 apport-symptoms,0.20,utils,https://wiki.ubuntu.com/Apport,
 apt,1.6.3ubuntu0.1,admin,,
@@ -131,7 +131,7 @@ language-selector-common,0.188.1,admin,,language-selector
 less,487-0.1,text,http://www.greenwoodsoftware.com/less/,
 libaccountsservice0,0.6.45-1ubuntu1,libs,https://www.freedesktop.org/wiki/Software/AccountsService/,accountsservice
 libacl1,2.2.52-3build1,libs,http://savannah.nongnu.org/projects/acl/,acl
-libapparmor1,2.12-4ubuntu5,libs,http://apparmor.net/,apparmor
+libapparmor1,2.12-4ubuntu5.1,libs,http://apparmor.net/,apparmor
 libapr1,1.6.3-2,libs,http://apr.apache.org/,apr
 libaprutil1,1.6.1-2,libs,http://apr.apache.org/,apr-util
 libaprutil1-dbd-sqlite3,1.6.1-2,libs,http://apr.apache.org/,apr-util
@@ -505,6 +505,7 @@ software-properties-common,0.96.24.32.5,admin,,software-properties
 sosreport,3.5-1ubuntu3.18.04.1,admin,https://github.com/sosreport/sos,
 squashfs-tools,1:4.3-6ubuntu0.18.04.1,kernel,http://squashfs.sourceforge.net/,
 ssh-import-id,5.7-0ubuntu1.1,misc,http://launchpad.net/ssh-import-id,
+sshpass,1.06-1,utils,http://sourceforge.net/projects/sshpass,
 ssl-cert,1.0.39,utils,,
 strace,4.21-1ubuntu1,utils,https://strace.io,
 sudo,1.8.21p2-3ubuntu1,admin,http://www.sudo.ws/,

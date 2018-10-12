@@ -24,7 +24,7 @@
 
 #!/bin/bash
 
-hostname=`sudo uname -n`
+hostname=`uname -n`
 location="/tmp/cloudmo-$hostname.sysinfo.txt"
 packagecsv="/tmp/cloudmo-$hostname.packages.csv"
 
@@ -38,48 +38,51 @@ get_info() {
     echo "================================================================" >> $location
     echo " Output of Server : $hostname" >> $location
     echo "================================================================" >> $location
-    echo "1> BIOS and Serial Information " >> $location
+    echo "1> BIOS and System Information " >> $location
     echo "================================================================" >> $location
-    sudo dmidecode | grep -i bios  >> $location
-    sudo dmidecode | egrep -A10 "System Information" >> $location
+    dmesg | grep "DMI:" | cut -c "6-" | cut -d "," -f "2"  >> $location
+    dmesg | grep "DMI:" | cut -c "6-" | cut -d "," -f "1" >> $location
     echo "================================================================" >> $location
-    echo "2> Disk Info and Disk Layout "  >> $location
+    echo "2> Amount of Physical Memory: " >> $location
+    dmesg | grep "Memory:" | cut -d '/' -f '2-' | cut -d ' ' -f '1' >> $location
     echo "================================================================" >> $location
-    sudo lvmdiskscan >> $location
-    sudo fdisk -l|grep /dev/sd  >> $location
-    echo "================================================================" >> $location
+    ## Requires Sudo - echo "3> Disk Info and Disk Layout "  >> $location
+    ## Requires Sudo - echo "================================================================" >> $location
+    ## Requires Sudo - sudo lvmdiskscan >> $location
+    ## Requires Sudo - sudo fdisk -l|grep /dev/sd  >> $location
+    ## Requires Sudo - echo "================================================================" >> $location
     echo "3> Block Device Details:"  >> $location
     echo "================================================================" >> $location
-    sudo lsblk >> $location
+    lsblk >> $location
     echo "================================================================" >> $location
     echo "4> File System Disk Usage:"  >> $location
     echo "================================================================" >> $location
-    sudo df -hT >> $location
+    df -hT >> $location
     echo "================================================================" >> $location
     echo "5> Current Patch level of the System " >> $location
     echo "================================================================" >> $location
-    sudo uname -a|awk -F ' ' '{print $3}' >> $location
+    uname -a|awk -F ' ' '{print $3}' >> $location
     echo "================================================================" >> $location
     echo "6> IP Configuration of machine" >> $location
     ip -o addr | awk '!/^[0-9]*: ?lo|link\/ether/ {print $2" "$4}' >> $location
     echo "================================================================" >> $location
-    echo "6> List of Packages" >> $location
+    echo "7> List of Packages" >> $location
     echo "================================================================" >> $location
     if [ $iscentos -eq 0 ];then
         #check if yum is installed
         if [ -x "$(command -v yum)" ]; then
-            sudo yum list installed >> $location
+            yum list installed >> $location
             echo "NAME,VERSION,RELEASE" > $packagecsv
-            sudo rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
+            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
         else
-            sudo rpm -qa >> $location
+            rpm -qa >> $location
             echo "NAME,VERSION,RELEASE" > $packagecsv
-            sudo rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
+            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
         fi
     elif [ $isubuntu -eq 0 ];then
-        sudo dpkg -l >> $location
+        dpkg -l >> $location
         echo "Name,Version,Section,Homepage,Source" > $packagecsv
-        sudo dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\n' | sort >> $packagecsv
+        dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\n' | sort >> $packagecsv
     elif [ $issuse -eq 0 ];then
         zypper se --installed-only -s >> $location
     else
@@ -89,7 +92,7 @@ get_info() {
 
 get_oracle() {
     echo "================================================================" >> $location
-    echo "7> List of Oracle Databases" >> $location
+    echo "8> List of Oracle Databases" >> $location
     cat /etc/oratab >> $location
 }
 
@@ -99,37 +102,37 @@ get_mysql() {
     echo "Enter MySQL admin Password"
     read -s -p "MySQL Password: " mysqlpass
     echo "================================================================" >> $location
-    echo "7> List of MySQL Databases" >> $location
+    echo "8> List of MySQL Databases" >> $location
     mysql -u $mysqluser -p$mysqlpass -e "show databases;" >> $location
 }
 
 get_web() {
     echo "================================================================" >> $location
     if [ -x "$(command -v apachectl)" ]; then
-        echo "8> Apache Configuration" >> $location
-        sudo apachectl -S >> $location
+        echo "9> Apache Configuration" >> $location
+        apachectl -S >> $location
     elif [ -x "$(command -v apache2ctl)" ]; then
-        echo "8> Apache Configuration" >> $location
-        sudo apache2ctl -S >> $location
+        echo "9> Apache Configuration" >> $location
+        apache2ctl -S >> $location
     else        
         echo "================================================================" >> $location
-        echo "8> Web Server Configuration" >> $location
-        sudo httpd -S >> $location
+        echo "9> Web Server Configuration" >> $location
+        httpd -S >> $location
     fi
 }
 
 get_fileshare() {
     echo "================================================================" >> $location
-    echo "9> NFS and CIFS shares information " >> $location    
-    sudo cat /proc/mounts | grep nfs  >> $location
-    sudo cat /etc/fstab | grep nfs  >> $location
-    sudo cat /proc/mounts | grep cifs  >> $location
-    sudo cat /etc/fstab | grep cifs  >> $location
+    echo "10> NFS and CIFS shares information " >> $location    
+    cat /proc/mounts | grep nfs  >> $location
+    cat /etc/fstab | grep nfs  >> $location
+    cat /proc/mounts | grep cifs  >> $location
+    cat /etc/fstab | grep cifs  >> $location
 }
 
 get_cluster() {
     echo "================================================================" >> $location
-    echo "10> Cluster Information  " >> $location    
+    echo "11> Cluster Information  " >> $location    
     pcs status >> $location
     pcs cluster status >> $location
     pcs status resources >> $location
@@ -149,26 +152,26 @@ check_os() {
 
 #Check if database is installed
 check_db() {
-    sudo yum list installed | grep oracle > /dev/null 2>&1
+    yum list installed | grep oracle > /dev/null 2>&1
     isoracle=${?}
     if [ $isubuntu -eq 0 ];then
-        sudo dpkg -l | grep mysql-server > /dev/null 2>&1
+        dpkg -l | grep mysql-server > /dev/null 2>&1
         ismysql=${?}
     else
-        sudo yum list installed | grep mysql > /dev/null 2>&1
+        yum list installed | grep mysql > /dev/null 2>&1
         ismysql=${?}
     fi
 }
 
 #Check web service installed
 check_web() {
-    sudo netstat -tulpen | egrep ':80|:443' > /dev/null 2>&1
+    netstat -tulpen | egrep ':80|:443' > /dev/null 2>&1
     isweb=${?}
 }
 
 #Check file share configured
 check_fileshare() {
-    sudo cat /etc/fstab | egrep 'nfs|cifs' > /dev/null 2>&1
+    cat /etc/fstab | egrep 'nfs|cifs' > /dev/null 2>&1
     isfileshare=${?}
 }
 
@@ -184,7 +187,7 @@ check_db;
 if [ $isoracle -ne 0 ] && [$ismysql -ne 0]; then
     echo "No database found"
     echo "================================================================" >> $location
-    echo "7> No Database configured " >> $location
+    echo "8> No Database configured " >> $location
 elif [ -x "$(command -v mysql)" ]; then
     get_mysql;
 else
@@ -195,7 +198,7 @@ check_web;
 if [$isweb -ne 0]; then
     echo "No Web Applications found"
     echo "================================================================" >> $location
-    echo "8> No Web Applications configured" >> $location
+    echo "9> No Web Applications configured" >> $location
 else
     get_web;
 fi
@@ -204,7 +207,7 @@ check_fileshare;
 if [ $isfileshare -ne 0 ]; then
     echo "No file share found."
     echo "================================================================" >> $location
-    echo "9> No file share deployed " >> $location
+    echo "10> No file share deployed " >> $location
 else
     get_fileshare;
 fi
@@ -212,23 +215,24 @@ fi
 if [ -x "$(command -v pcs)" ]; then
     get_cluster;
 else
-    echo "10> No cluster configured on given node." >> $location    
+    echo "================================================================" >> $location
+    echo "11> No cluster configured on given node." >> $location    
 fi
 
 echo "================================================================"
 echo "================================================================" >> $location
-echo "11> Computer Hardware Information" >> $location
-echo " installig PIP moudle for for python package management"
-sudo curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-sudo python get-pip.py
-echo "pip installed suessfully"
-*******************************************
+## Requires Sudo - echo "13> Computer Hardware Information" >> $location
+## Requires Sudo - echo " installig PIP moudle for for python package management"
+## Requires Sudo - curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+## Requires Sudo - sudo python get-pip.py
+## Requires Sudo - echo "pip installed suessfully"
+## Requires Sudo - *******************************************
 
-echo "installing hwinfo package using PIP"
-sudo pip install python-hwinfo
+## Requires Sudo - echo "installing hwinfo package using PIP"
+## Requires Sudo - sudo pip install python-hwinfo
 
-echo "getting hardware information of the machine "
-sudo hwinfo >> $location
+## Requires Sudo - echo "getting hardware information of the machine "
+## Requires Sudo - sudo hwinfo >> $location
 
-echo "================================================================"
+## Requires Sudo - echo "================================================================"
 echo "Please copy/export content of: $location & $packagecsv and share with Microsoft Engagement Team."

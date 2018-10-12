@@ -1,49 +1,18 @@
 ================================================================
 * System Name: 	DemoWeb
 * System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
-* Generated on: 		Thu Oct  4 14:15:44 UTC 2018
-* Running as: 			root
+* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
+* Running as: 			akundnani
 ================================================================
  Ouput of Server : DemoWeb
 ================================================================
-1> BIOS and Serial Information 
+1> BIOS and System Information 
 ================================================================
-Getting SMBIOS data from sysfs.
-SMBIOS 2.3 present.
-BIOS Information
-		BIOS is upgradeable
-		BIOS shadowing is allowed
-		BIOS ROM is socketed
-		BIOS boot specification is supported
-BIOS Language Information
-System Information
-	Manufacturer: Microsoft Corporation
-	Product Name: Virtual Machine
-	Version: 7.0
-	Serial Number: 0000-0007-2672-6375-0381-6535-62
-	UUID: E081DA64-929A-3A4E-B608-BF8571F3AB5B
-	Wake-up Type: Power Switch
-
-Handle 0x0002, DMI type 2, 8 bytes
-Base Board Information
-	Manufacturer: Microsoft Corporation
+ BIOS 090007  06/02/2017
+0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
 ================================================================
-2> Disk Info and Disk Layout 
-================================================================
-  /dev/sda1  [      29.89 GiB] 
-  /dev/sda14 [       4.00 MiB] 
-  /dev/sda15 [     106.00 MiB] 
-  /dev/sdb1  [     <20.00 GiB] 
-  0 disks
-  4 partitions
-  0 LVM physical volume whole disks
-  0 LVM physical volumes
-Disk /dev/sdb: 20 GiB, 21474836480 bytes, 41943040 sectors
-/dev/sdb1        2048 41940991 41938944  20G  7 HPFS/NTFS/exFAT
-Disk /dev/sda: 30 GiB, 32212254720 bytes, 62914560 sectors
-/dev/sda1  227328 62914526 62687199 29.9G Linux filesystem
-/dev/sda14   2048    10239     8192    4M BIOS boot
-/dev/sda15  10240   227327   217088  106M EFI System
+2> Amount of Physical Memory: 
+4193848K
 ================================================================
 3> Block Device Details:
 ================================================================
@@ -59,7 +28,7 @@ sdb       8:16   0   20G  0 disk
 ================================================================
 Filesystem     Type      Size  Used Avail Use% Mounted on
 udev           devtmpfs  2.0G     0  2.0G   0% /dev
-tmpfs          tmpfs     395M  648K  394M   1% /run
+tmpfs          tmpfs     395M  656K  394M   1% /run
 /dev/sda1      ext4       29G  1.3G   28G   5% /
 tmpfs          tmpfs     2.0G     0  2.0G   0% /dev/shm
 tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
@@ -72,7 +41,11 @@ tmpfs          tmpfs     395M     0  395M   0% /run/user/1000
 ================================================================
 4.15.0-1023-azure
 ================================================================
-6> List of Packages
+6> IP Configuration of machine
+eth0 10.0.1.5/24
+eth0 fe80::20d:3aff:fea2:b0a9/64
+================================================================
+7> List of Packages
 ================================================================
 Desired=Unknown/Install/Remove/Purge/Hold
 | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
@@ -87,7 +60,7 @@ ii  apache2                             2.4.29-1ubuntu4.4                 amd64 
 ii  apache2-bin                         2.4.29-1ubuntu4.4                 amd64        Apache HTTP Server (modules and other binary files)
 ii  apache2-data                        2.4.29-1ubuntu4.4                 all          Apache HTTP Server (common files)
 ii  apache2-utils                       2.4.29-1ubuntu4.4                 amd64        Apache HTTP Server (utility programs for web servers)
-ii  apparmor                            2.12-4ubuntu5                     amd64        user-space parser utility for AppArmor
+ii  apparmor                            2.12-4ubuntu5.1                   amd64        user-space parser utility for AppArmor
 ii  apport                              2.20.9-0ubuntu7.4                 all          automatically generate crash reports for debugging
 ii  apport-symptoms                     0.20                              all          symptom scripts for apport
 ii  apt                                 1.6.3ubuntu0.1                    amd64        commandline package manager
@@ -211,7 +184,7 @@ ii  language-selector-common            0.188.1                           all   
 ii  less                                487-0.1                           amd64        pager program similar to more
 ii  libaccountsservice0:amd64           0.6.45-1ubuntu1                   amd64        query and manipulate user account information - shared libraries
 ii  libacl1:amd64                       2.2.52-3build1                    amd64        Access control list shared library
-ii  libapparmor1:amd64                  2.12-4ubuntu5                     amd64        changehat AppArmor library
+ii  libapparmor1:amd64                  2.12-4ubuntu5.1                   amd64        changehat AppArmor library
 ii  libapr1:amd64                       1.6.3-2                           amd64        Apache Portable Runtime Library
 ii  libaprutil1:amd64                   1.6.1-2                           amd64        Apache Portable Runtime Utility Library
 ii  libaprutil1-dbd-sqlite3:amd64       1.6.1-2                           amd64        Apache Portable Runtime Utility Library - SQLite3 Driver
@@ -585,6 +558,7 @@ ii  software-properties-common          0.96.24.32.5                      all   
 ii  sosreport                           3.5-1ubuntu3.18.04.1              amd64        Set of tools to gather troubleshooting data from a system
 ii  squashfs-tools                      1:4.3-6ubuntu0.18.04.1            amd64        Tool to create and append to squashfs filesystems
 ii  ssh-import-id                       5.7-0ubuntu1.1                    all          securely retrieve an SSH public key and install it locally
+ii  sshpass                             1.06-1                            amd64        Non-interactive ssh password authentication
 ii  ssl-cert                            1.0.39                            all          simple debconf wrapper for OpenSSL
 ii  strace                              4.21-1ubuntu1                     amd64        System call tracer
 ii  sudo                                1.8.21p2-3ubuntu1                 amd64        Provide limited super user privileges to specific users
@@ -631,75 +605,23 @@ ii  xz-utils                            5.2.2-1.3                         amd64 
 ii  zerofree                            1.0.4-1                           amd64        zero free blocks from ext2, ext3 and ext4 file-systems
 ii  zlib1g:amd64                        1:1.2.11.dfsg-0ubuntu2            amd64        compression library - runtime
 ================================================================
-7> No Oracle Database configured 
+8> List of Oracle Databases
 ================================================================
-8> Apache Configuration
+9> Apache Configuration
 VirtualHost configuration:
 *:80                   10.0.1.5 (/etc/apache2/sites-enabled/000-default.conf:1)
 ServerRoot: "/etc/apache2"
 Main DocumentRoot: "/var/www/html"
 Main ErrorLog: "/var/log/apache2/error.log"
-Mutex watchdog-callback: using_defaults
 Mutex default: dir="/var/run/apache2/" mechanism=default 
+Mutex watchdog-callback: using_defaults
 PidFile: "/var/run/apache2/apache2.pid"
 Define: DUMP_VHOSTS
 Define: DUMP_RUN_CFG
-User: name="www-data" id=33
-Group: name="www-data" id=33
+User: name="www-data" id=33 not_used
+Group: name="www-data" id=33 not_used
 ================================================================
-9> No file share deployed 
+10> No file share deployed 
 ================================================================
-10> Cluster Information  
+11> No cluster configured on given node.
 ================================================================
-11> Computer Hardware Information
-RC: 1
-
-Bios Info:
-
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Key                  | Value                                                                                                                                                                                                                                                                                                                                                                                          |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| bios_vendor_name     | American Megatrends Inc.                                                                                                                                                                                                                                                                                                                                                                       |
-| system_product_name  | Virtual Machine                                                                                                                                                                                                                                                                                                                                                                                |
-| system_serial_number | 0000-0007-2672-6375-0381-6535-62                                                                                                                                                                                                                                                                                                                                                               |
-| chassis_type         | Desktop                                                                                                                                                                                                                                                                                                                                                                                        |
-| system_uuid          | E081DA64-929A-3A4E-B608-BF8571F3AB5B                                                                                                                                                                                                                                                                                                                                                           |
-| system_manufacturer  | Microsoft Corporation                                                                                                                                                                                                                                                                                                                                                                          |
-| socket_count         | 64                                                                                                                                                                                                                                                                                                                                                                                             |
-| bios_release_date    | 06/02/2017                                                                                                                                                                                                                                                                                                                                                                                     |
-| bios_version         | 090007                                                                                                                                                                                                                                                                                                                                                                                         |
-| socket_designation   | None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-CPU Info:
-
-+-----------+--------------+------------+-------+----------+------------------------------------------+----------+
-| processor |  vendor_id   | cpu_family | model | stepping |                model_name                | cpu_mhz  |
-+-----------+--------------+------------+-------+----------+------------------------------------------+----------+
-|     0     | GenuineIntel |     6      |   45  |    7     | Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz | 2194.712 |
-|     1     | GenuineIntel |     6      |   45  |    7     | Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz | 2194.712 |
-+-----------+--------------+------------+-------+----------+------------------------------------------+----------+
-
-Ethernet Controller Info:
-
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-| vendor_name | vendor_id | device_name | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-
-Storage Controller Info:
-
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-|    vendor_name    | vendor_id |       device_name       | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-| Intel Corporation |    8086   | 82371AB/EB/MB PIIX4 IDE |    7111   |    unknown     |   unknown    |    unknown     |   unknown    |
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-
-GPU Info:
-
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-|      vendor_name      | vendor_id |     device_name     | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-| Microsoft Corporation |    1414   | Hyper-V virtual VGA |    5353   |    unknown     |   unknown    |    unknown     |   unknown    |
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-

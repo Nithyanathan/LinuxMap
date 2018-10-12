@@ -1,49 +1,28 @@
 ================================================================
 * System Name: 	DemoCentOS
 * System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
-* Generated on: 		Thu Oct  4 14:15:11 UTC 2018
-* Running as: 			root
+* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
+* Running as: 			akundnani
 ================================================================
  Ouput of Server : DemoCentOS
 ================================================================
-1> BIOS and Serial Information 
+1> BIOS and System Information 
 ================================================================
-SMBIOS 2.3 present.
-BIOS Information
-		BIOS is upgradeable
-		BIOS shadowing is allowed
-		BIOS ROM is socketed
-		BIOS boot specification is supported
-BIOS Language Information
-System Information
-	Manufacturer: Microsoft Corporation
-	Product Name: Virtual Machine
-	Version: 7.0
-	Serial Number: 0000-0005-5281-0856-2508-3674-47
-	UUID: 72C9B74C-1BCC-5746-AFE7-F21E61356C3E
-	Wake-up Type: Power Switch
-
-Handle 0x0002, DMI type 2, 8 bytes
-Base Board Information
-	Manufacturer: Microsoft Corporation
+ BIOS 090007  06/02/2017
+0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
 ================================================================
-2> Disk Info and Disk Layout 
-================================================================
-Disk /dev/sda: 53.7 GB, 53687091200 bytes, 104857600 sectors
-/dev/sda1   *        2048      526335      262144   83  Linux
-/dev/sda2          526336   104857599    52165632   83  Linux
-Disk /dev/sdb: 21.5 GB, 21474836480 bytes, 41943040 sectors
-/dev/sdb1            2048    41940991    20969472   83  Linux
+2> Amount of Physical Memory: 
+7340032k
 ================================================================
 3> Block Device Details:
 ================================================================
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 fd0      2:0    1    4K  0 disk 
 sda      8:0    0   50G  0 disk 
-├─sda1   8:1    0  256M  0 part /boot
-└─sda2   8:2    0 49.8G  0 part /
+|-sda1   8:1    0  256M  0 part /boot
+`-sda2   8:2    0 49.8G  0 part /
 sdb      8:16   0   20G  0 disk 
-└─sdb1   8:17   0   20G  0 part /mnt/resource
+`-sdb1   8:17   0   20G  0 part /mnt/resource
 ================================================================
 4> File System Disk Usage:
 ================================================================
@@ -61,7 +40,9 @@ tmpfs          tmpfs     394M     0  394M   0% /run/user/1000
 ================================================================
 3.10.0-327.28.2.el7.x86_64
 ================================================================
-6> List of Packages
+6> IP Configuration of machine
+================================================================
+7> List of Packages
 ================================================================
 Loaded plugins: fastestmirror
 Installed Packages
@@ -432,81 +413,12 @@ yum-utils.noarch                     1.1.31-42.el7                    @base
 zlib.i686                            1.2.7-17.el7                     @base     
 zlib.x86_64                          1.2.7-17.el7                     @base     
 ================================================================
-7> No Oracle Database configured 
+8> List of Oracle Databases
 ================================================================
-8> Apache Configuration
-VirtualHost configuration:
-ServerRoot: "/etc/httpd"
-Main DocumentRoot: "/var/www/html"
-Main ErrorLog: "/etc/httpd/logs/error_log"
-Mutex proxy: using_defaults
-Mutex authn-socache: using_defaults
-Mutex default: dir="/run/httpd/" mechanism=default 
-Mutex mpm-accept: using_defaults
-Mutex authdigest-opaque: using_defaults
-Mutex proxy-balancer-shm: using_defaults
-Mutex rewrite-map: using_defaults
-Mutex authdigest-client: using_defaults
-PidFile: "/run/httpd/httpd.pid"
-Define: _RH_HAS_HTTPPROTOCOLOPTIONS
-Define: DUMP_VHOSTS
-Define: DUMP_RUN_CFG
-User: name="apache" id=48
-Group: name="apache" id=48
 ================================================================
-9> No file share deployed 
+9> Web Server Configuration
 ================================================================
-10> Cluster Information  
+10> No file share deployed 
 ================================================================
-11> Computer Hardware Information
-RC: 1
-
-Bios Info:
-
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Key                  | Value                                                                                                                                                                                                                                                                                                                                                                                          |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| bios_vendor_name     | American Megatrends Inc.                                                                                                                                                                                                                                                                                                                                                                       |
-| system_product_name  | Virtual Machine                                                                                                                                                                                                                                                                                                                                                                                |
-| system_serial_number | 0000-0005-5281-0856-2508-3674-47                                                                                                                                                                                                                                                                                                                                                               |
-| chassis_type         | Desktop                                                                                                                                                                                                                                                                                                                                                                                        |
-| system_uuid          | 72C9B74C-1BCC-5746-AFE7-F21E61356C3E                                                                                                                                                                                                                                                                                                                                                           |
-| system_manufacturer  | Microsoft Corporation                                                                                                                                                                                                                                                                                                                                                                          |
-| socket_count         | 64                                                                                                                                                                                                                                                                                                                                                                                             |
-| bios_release_date    | 06/02/2017                                                                                                                                                                                                                                                                                                                                                                                     |
-| bios_version         | 090007                                                                                                                                                                                                                                                                                                                                                                                         |
-| socket_designation   | None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None |
-+----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-CPU Info:
-
-+-----------+--------------+------------+-------+----------+------------------------------------------+----------+
-| processor |  vendor_id   | cpu_family | model | stepping |                model_name                | cpu_mhz  |
-+-----------+--------------+------------+-------+----------+------------------------------------------+----------+
-|     0     | GenuineIntel |     6      |   45  |    7     | Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz | 2194.683 |
-|     1     | GenuineIntel |     6      |   45  |    7     | Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz | 2194.683 |
-+-----------+--------------+------------+-------+----------+------------------------------------------+----------+
-
-Ethernet Controller Info:
-
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-| vendor_name | vendor_id | device_name | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-+-------------+-----------+-------------+-----------+----------------+--------------+----------------+--------------+
-
-Storage Controller Info:
-
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-|    vendor_name    | vendor_id |       device_name       | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-| Intel Corporation |    8086   | 82371AB/EB/MB PIIX4 IDE |    7111   |    unknown     |   unknown    |    unknown     |   unknown    |
-+-------------------+-----------+-------------------------+-----------+----------------+--------------+----------------+--------------+
-
-GPU Info:
-
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-|      vendor_name      | vendor_id |     device_name     | device_id | subvendor_name | subvendor_id | subdevice_name | subdevice_id |
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-| Microsoft Corporation |    1414   | Hyper-V virtual VGA |    5353   |    unknown     |   unknown    |    unknown     |   unknown    |
-+-----------------------+-----------+---------------------+-----------+----------------+--------------+----------------+--------------+
-
+11> No cluster configured on given node.
+================================================================

@@ -103,7 +103,11 @@ get_mysql() {
     read -s -p "MySQL Password: " mysqlpass
     echo "================================================================" >> $location
     echo "8> List of MySQL Databases" >> $location
-    mysql -u $mysqluser -p$mysqlpass -e "show databases;" >> $location
+    if [ -z "$mysqluser" ]; then
+        echo "Unable to connect MySQL instance with empty credentials" >> $location
+    else
+        mysql -u $mysqluser -p$mysqlpass -e "show databases;" | grep -v Database | grep -v schema >> $location
+    fi
 }
 
 get_web() {

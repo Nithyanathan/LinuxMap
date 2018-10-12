@@ -29,12 +29,14 @@ GetLinuxDistribution() {
 ## Parser Regex (?sxn)^(?>Distributor\ ID:\t(?'distributorId'[^\n]*)\n)(?>Description:\t(?'description'[^\n]*)\n)(?>Release:\t(?'release'[^\n]*)\n)(?>Codename:\t(?'codename'[^\n]*)\n)
     if [ -e /etc/redhat-release ];then
         iscentos=${?}
+        l_patch=`uname -a|awk -F ' ' '{print $3}'` >> $location
         l_distributor=`cat /etc/redhat-release |sed s/\ release.*//`
         l_release=`cat /etc/redhat-release | sed s/.*release\ // | sed s/\ .*//`
         c_codename=`cat /etc/redhat-release | sed s/.*\(// | sed s/\)//`
         l_description=$l_distributor' '$l_release' '$c_codename
         echo "Distributor ID: $l_distributor" >> $location
         echo "Description: $l_description" >> $location
+        echo "Current Patch Level: $l_path" >> $location
         echo "Release: $l_release" >> $location
         echo "Codename: $c_codename" >> $location
     elif [ -e /etc/os-release ];then
@@ -46,11 +48,13 @@ GetLinuxDistribution() {
         l_release=`cat /etc/os-release | sed -n -e 's/^VERSION_ID="\(.*\)"/\1/p'`
         echo "Distributor ID: $l_description" >> $location
         echo "Description: $l_description" >> $location
+        echo "Current Patch Level: $l_path" >> $location
         echo "Release: $l_release" >> $location
         echo "Codename: $c_codename" >> $location
     else
         echo "Distributor ID: UNKNOWN" >> $location
         echo "Description: UNKNOWN" >> $location
+        echo "Current Patch Level: $l_path" >> $location
         echo "Release: UNKNOWN" >> $location
         echo "Codename: UNKNOWN" >> $location
     fi
@@ -140,7 +144,8 @@ GetLinuxNetworkAdapters() {
         echo "TX packets: $l_txpackets errors: $l_txerrors" >> $location
         echo "RX bytes: $l_rxbytes TX bytes: $l_txbytes" >> $location
         #get description
-        l_description=""l_vendorFile="/sys/class/net/$i/device/vendor"
+        l_description=""
+        l_vendorFile="/sys/class/net/$i/device/vendor"
         l_deviceFile="/sys/class/net/$i/device/device"
         if [ -e "$l_vendorFile" -a -e "$l_deviceFile" ]; then
             l_vendor="$(cat $l_vendorFile)"
@@ -299,7 +304,11 @@ GetLinuxMySQLInstall() {
     read -p "MySQL UserName: " mysqluser
     echo "Enter MySQL admin Password"
     read -s -p "MySQL Password: " mysqlpass
-    mysql -u $mysqluser -p$mysqlpass -e "show databases;" | grep -v Database | grep -v schema >> $location
+    if [ -z "$mysqluser" ]; then
+        echo "Unable to connect MySQL instance with empty credentials" >> $location
+    else
+        mysql -u $mysqluser -p$mysqlpass -e "show databases;" | grep -v Database | grep -v schema >> $location
+    fi
 }
 
 GetLinuxWebInstall() {

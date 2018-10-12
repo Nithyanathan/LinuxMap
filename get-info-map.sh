@@ -308,6 +308,7 @@ GetLinuxMySQLInstall() {
     if [ [$mysqluser == *"echo"*] ]; then
         echo "Unable to connect MySQL instance with empty credentials" >> $location
     else
+        echo "MySQL Databases Configured: "
         mysql -u $mysqluser -p$mysqlpass -e "show databases;" | grep -v Database | grep -v schema >> $location
     fi
 }

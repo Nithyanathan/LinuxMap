@@ -1,361 +1,361 @@
-NAME,VERSION,RELEASE
-GeoIP,1.5.0,11.el7
-NetworkManager,1.10.2,13.el7
-NetworkManager-libnm,1.10.2,13.el7
-WALinuxAgent,2.2.14,1.0.1.el7
-acl,2.2.51,12.el7
-acpid,2.0.19,8.el7
-audit-libs,2.8.1,3.el7
-audit-libs-python,2.8.1,3.el7
-authconfig,6.2.8,30.el7
-basesystem,10.0,7.0.1.el7
-bash,4.2.46,28.el7
-bind-libs,9.9.4,61.el7
-bind-libs-lite,9.9.4,61.el7
-bind-license,9.9.4,61.el7
-bind-utils,9.9.4,61.el7
-binutils,2.25.1,31.base.el7
-btrfs-progs,4.9.1,1.0.2.el7
-bzip2-libs,1.0.6,13.el7
-ca-certificates,2017.2.14,71.el7
-checkpolicy,2.5,4.el7
-chkconfig,1.7.4,1.el7
-chrony,3.1,2.el7
-compat-libcap1,1.10,7.el7
-compat-libstdc++-33,3.2.3,72.el7
-coreutils,8.22,18.0.1.el7
-cpio,2.11,24.el7
-cpp,4.8.5,28.0.1.el7_5.1
-cracklib,2.9.0,11.el7
-cracklib-dicts,2.9.0,11.el7
-cronie,1.4.11,19.el7
-cronie-anacron,1.4.11,19.el7
-crontabs,1.11,6.20121102git.el7
-cryptsetup-libs,1.7.4,3.el7
-curl,7.29.0,46.el7
-cyrus-sasl-lib,2.1.26,21.el7
-dbus,1.10.24,7.0.1.el7
-dbus-glib,0.100,7.el7
-dbus-libs,1.10.24,7.0.1.el7
-dbus-python,1.1.1,9.el7
-device-mapper,1.02.140,8.0.1.el7
-device-mapper-libs,1.02.140,8.0.1.el7
-dhclient,4.2.5,68.0.1.el7
-dhcp-common,4.2.5,68.0.1.el7
-dhcp-libs,4.2.5,68.0.1.el7
-diffutils,3.3,4.el7
-dmidecode,3.0,5.el7
-dnsmasq,2.76,5.el7
-dracut,033,502.0.1.el7
-e2fsprogs,1.42.9,10.0.1.el7
-e2fsprogs-libs,1.42.9,10.0.1.el7
-ebtables,2.0.10,15.el7
-elfutils-default-yama-scope,0.168,8.el7
-elfutils-libelf,0.168,8.el7
-elfutils-libs,0.168,8.el7
-ethtool,4.8,1.el7
-expat,2.1.0,10.el7_3
-file,5.11,33.el7
-file-libs,5.11,33.el7
-filesystem,3.2,21.el7
-findutils,4.5.11,5.el7
-fipscheck,1.4.1,6.el7
-fipscheck-lib,1.4.1,6.el7
-firewalld-filesystem,0.4.4.4,6.el7
-fontconfig,2.10.95,11.el7
-fontpackages-filesystem,1.44,8.el7
-freetype,2.4.11,15.el7
-gawk,4.0.2,4.el7_3.1
-gcc,4.8.5,28.0.1.el7_5.1
-gcc-c++,4.8.5,28.0.1.el7_5.1
-gdbm,1.10,8.el7
-gettext,0.19.8.1,2.el7
-gettext-libs,0.19.8.1,2.el7
-glib2,2.54.2,2.el7
-glibc,2.17,222.el7
-glibc-common,2.17,222.el7
-glibc-devel,2.17,222.el7
-glibc-headers,2.17,222.el7
-gmp,6.0.0,15.el7
-gnupg2,2.0.22,4.el7
-gobject-introspection,1.50.0,1.el7
-gpg-pubkey,ec551f03,53619141
-gpgme,1.3.2,5.el7
-grep,2.20,3.el7
-groff-base,1.22.2,8.el7
-grub2,2.02,0.64.0.1.el7
-grub2-common,2.02,0.64.0.1.el7
-grub2-pc,2.02,0.64.0.1.el7
-grub2-pc-modules,2.02,0.64.0.1.el7
-grub2-tools,2.02,0.64.0.1.el7
-grub2-tools-extra,2.02,0.64.0.1.el7
-grub2-tools-minimal,2.02,0.64.0.1.el7
-grubby,8.28,23.0.1.el7
-gssproxy,0.7.0,17.el7
-gzip,1.5,9.el7
-hardlink,1.0,19.el7
-hostname,3.13,3.el7
-hwdata,0.252,8.6.el7
-hyperv-daemons-license,0,0.32.20161211git.el7
-hypervkvpd,0,0.32.20161211git.el7
-info,5.1,4.el7
-initscripts,9.49.39,1.0.1.el7
-iproute,3.10.0,87.0.1.el7
-ipset,6.29,1.el7
-ipset-libs,6.29,1.el7
-iptables,1.4.21,18.el7
-iptables-services,1.4.21,18.el7
-iputils,20160308,10.el7
-irqbalance,1.0.7,10.0.1.el7
-kbd,1.15.5,13.el7
-kbd-legacy,1.15.5,13.el7
-kbd-misc,1.15.5,13.el7
-kernel,3.10.0,862.0.0.0.1.el7
-kernel-headers,3.10.0,862.6.3.el7
-kernel-tools,3.10.0,862.0.0.0.1.el7
-kernel-tools-libs,3.10.0,862.0.0.0.1.el7
-kernel-uek,4.1.12,124.14.1.el7uek
-kernel-uek-firmware,4.1.12,124.14.1.el7uek
-keyutils,1.5.8,3.el7
-keyutils-libs,1.5.8,3.el7
-kmod,20,15.0.1.el7
-kmod-libs,20,15.0.1.el7
-kpartx,0.4.9,111.el7
-krb5-libs,1.15.1,19.el7
-ksh,20120801,137.0.1.el7
-less,458,9.el7
-libICE,1.0.9,9.el7
-libSM,1.2.2,2.el7
-libX11,1.6.5,1.el7
-libX11-common,1.6.5,1.el7
-libXau,1.0.8,2.1.el7
-libXaw,1.0.13,4.el7
-libXcursor,1.1.14,8.el7
-libXext,1.3.3,3.el7
-libXfixes,5.0.3,1.el7
-libXft,2.3.2,2.el7
-libXi,1.7.9,1.el7
-libXinerama,1.1.3,2.1.el7
-libXmu,1.1.2,2.el7
-libXpm,3.5.12,1.el7
-libXrandr,1.5.1,2.el7
-libXrender,0.9.10,1.el7
-libXt,1.1.5,3.el7
-libXtst,1.2.3,1.el7
-libXv,1.0.11,1.el7
-libXxf86dga,1.1.4,2.1.el7
-libXxf86misc,1.0.3,7.1.el7
-libXxf86vm,1.1.4,1.el7
-libacl,2.2.51,12.el7
-libaio,0.3.109,13.el7
-libaio-devel,0.3.109,13.el7
-libassuan,2.1.0,3.el7
-libattr,2.4.46,12.el7
-libbasicobjects,0.1.1,29.el7
-libblkid,2.23.2,43.el7
-libcap,2.22,9.el7
-libcap-ng,0.7.5,4.el7
-libcgroup,0.41,15.el7
-libcollection,0.7.0,29.el7
-libcom_err,1.42.9,10.0.1.el7
-libcroco,0.6.11,1.el7
-libcurl,7.29.0,46.el7
-libdaemon,0.14,7.el7
-libdb,5.3.21,20.el7
-libdb-utils,5.3.21,20.el7
-libdmx,1.1.3,3.el7
-libedit,3.0,12.20121213cvs.el7
-libestr,0.1.9,2.el7
-libevent,2.0.21,4.el7
-libfastjson,0.99.4,2.el7
-libffi,3.0.13,18.el7
-libfontenc,1.1.3,3.el7
-libgcc,4.8.5,28.0.1.el7_5.1
-libgcrypt,1.5.3,14.el7
-libgomp,4.8.5,28.0.1.el7_5.1
-libgpg-error,1.12,3.el7
-libgudev1,219,57.0.1.el7
-libidn,1.28,4.el7
-libini_config,1.3.1,29.el7
-libmnl,1.0.3,7.el7
-libmount,2.23.2,43.el7
-libmpc,1.0.1,3.el7
-libndp,1.2,7.el7
-libnetfilter_conntrack,1.0.6,1.el7_3
-libnfnetlink,1.0.1,4.el7
-libnfsidmap,0.25,19.el7
-libnl,1.1.4,3.el7
-libnl3,3.2.28,4.el7
-libpath_utils,0.2.1,29.el7
-libpipeline,1.2.3,3.el7
-libpng,1.5.13,7.el7_2
-libpwquality,1.2.3,4.el7
-libref_array,0.1.5,29.el7
-libseccomp,2.3.1,3.el7
-libselinux,2.5,12.el7
-libselinux-python,2.5,12.el7
-libselinux-utils,2.5,12.el7
-libsemanage,2.5,11.el7
-libsemanage-python,2.5,11.el7
-libsepol,2.5,8.1.el7
-libss,1.42.9,10.0.1.el7
-libssh2,1.4.3,10.el7_2.1
-libstdc++,4.8.5,28.0.1.el7_5.1
-libstdc++-devel,4.8.5,28.0.1.el7_5.1
-libsysfs,2.1.0,16.el7
-libtasn1,4.10,1.el7
-libtirpc,0.2.4,0.10.el7
-libunistring,0.9.3,9.el7
-libuser,0.60,7.el7_1
-libutempter,1.1.6,4.el7
-libuuid,2.23.2,43.el7
-libverto,0.2.5,4.el7
-libverto-libevent,0.2.5,4.el7
-libxcb,1.12,1.el7
-libxkbfile,1.0.9,3.el7
-libxml2,2.9.1,6.0.1.el7_2.3
-libxml2-python,2.9.1,6.0.1.el7_2.3
-linux-firmware,20180220,62.git6d51311.0.1.el7
-lm_sensors-libs,3.4.0,4.20160601gitf9185e5.el7
-logrotate,3.8.6,14.el7
-lua,5.1.4,15.el7
-lz4,1.7.5,2.el7
-lzo,2.06,8.el7
-m2crypto,0.21.1,17.el7
-mailx,12.5,19.el7
-make,3.82,23.el7
-man-db,2.6.3,9.el7
-mozjs17,17.0.0,20.el7
-mpfr,3.1.1,4.el7
-ncurses,5.9,13.20130511.el7
-ncurses-base,5.9,13.20130511.el7
-ncurses-libs,5.9,13.20130511.el7
-net-tools,2.0,0.22.20131004git.el7
-newt,0.52.15,4.el7
-newt-python,0.52.15,4.el7
-nfs-utils,1.3.0,0.54.0.1.el7
-nspr,4.17.0,1.el7
-nss,3.34.0,4.el7
-nss-pem,1.0.3,4.el7
-nss-softokn,3.34.0,2.0.1.el7
-nss-softokn-freebl,3.34.0,2.0.1.el7
-nss-sysinit,3.34.0,4.el7
-nss-tools,3.34.0,4.el7
-nss-util,3.34.0,2.el7
-numactl-libs,2.0.9,6.el7_2
-omi,1.4.1,0
-openldap,2.4.44,5.el7
-openssh,7.4p1,16.el7
-openssh-clients,7.4p1,16.el7
-openssh-server,7.4p1,16.el7
-openssl,1.0.2k,12.0.1.el7
-openssl-libs,1.0.2k,12.0.1.el7
-oracle-logos,70.0.3,4.0.7.el7
-oracle-rdbms-server-12cR1-preinstall,1.0,6.el7
-oraclelinux-release,7.4,1.0.4.el7
-os-prober,1.58,9.0.1.el7
-p11-kit,0.23.5,3.el7
-p11-kit-trust,0.23.5,3.el7
-pam,1.1.8,18.el7
-parted,3.1,29.el7
-passwd,0.79,4.el7
-pciutils,3.5.1,2.el7
-pciutils-libs,3.5.1,2.el7
-pcre,8.32,17.el7
-pinentry,0.8.1,17.el7
-pkgconfig,0.27.1,4.el7
-policycoreutils,2.5,22.0.1.el7
-policycoreutils-python,2.5,22.0.1.el7
-polkit,0.112,14.el7
-polkit-pkla-compat,0.1,4.el7
-popt,1.13,16.el7
-procps-ng,3.3.10,16.el7
-psmisc,22.20,15.el7
-pth,2.0.7,23.el7
-pyOpenSSL,0.13.1,3.el7
-pygobject2,2.28.6,11.el7
-pygpgme,0.3,9.el7
-pyliblzma,0.5.3,11.el7
-python,2.7.5,58.0.1.el7
-python-IPy,0.75,6.el7
-python-configobj,4.7.2,7.el7
-python-decorator,3.4.0,3.el7
-python-dmidecode,3.12.2,1.el7
-python-ethtool,0.8,5.el7
-python-firewall,0.4.4.4,6.el7
-python-gobject-base,3.22.0,1.el7
-python-gudev,147.2,7.el7
-python-hwdata,1.7.3,4.el7
-python-iniparse,0.4,9.el7
-python-libs,2.7.5,58.0.1.el7
-python-linux-procfs,0.4.9,3.el7
-python-perf,3.10.0,862.0.0.0.1.el7
-python-pycurl,7.19.0,19.el7
-python-pyudev,0.15,9.el7
-python-schedutils,0.4,6.el7
-python-slip,0.4.0,2.el7
-python-slip-dbus,0.4.0,2.el7
-python-urlgrabber,3.10,8.el7
-python2-pyasn1,0.1.9,7.el7
-pyxattr,0.5.1,5.el7
-qemu-guest-agent,2.8.0,2.el7
-qrencode-libs,3.4.1,3.el7
-quota,4.01,17.el7
-quota-nls,4.01,17.el7
-readline,6.2,10.el7
-redhat-release-server,7.4,18.0.1.el7
-rhn-check,2.0.2,17.0.1.el7
-rhn-client-tools,2.0.2,17.0.1.el7
-rhn-setup,2.0.2,17.0.1.el7
-rhnlib,2.5.65,4.0.1.el7
-rhnsd,5.0.13,7.0.1.el7
-rootfiles,8.1,11.el7
-rpcbind,0.2.0,44.el7
-rpm,4.11.3,25.el7
-rpm-build-libs,4.11.3,25.el7
-rpm-libs,4.11.3,25.el7
-rpm-python,4.11.3,25.el7
-rsyslog,8.24.0,12.el7
-scx,1.6.3,474
-sed,4.2.2,5.el7
-selinux-policy,3.13.1,166.0.2.el7
-selinux-policy-targeted,3.13.1,166.0.2.el7
-setools-libs,3.3.8,2.el7
-setup,2.8.71,7.el7
-shadow-utils,4.1.5.1,24.el7
-shared-mime-info,1.8,3.el7
-slang,2.2.4,11.el7
-smartmontools,6.5,1.el7
-sqlite,3.7.17,8.el7
-stix-fonts,1.1.0,5.el7
-sudo,1.8.19p2,10.el7
-sysstat,10.1.5,13.el7
-systemd,219,57.0.1.el7
-systemd-libs,219,57.0.1.el7
-systemd-sysv,219,57.0.1.el7
-sysvinit-tools,2.88,14.dsf.el7
-tar,1.26,32.el7
-tcp_wrappers,7.6,77.el7
-tcp_wrappers-libs,7.6,77.el7
-tmpwatch,2.11,5.el7
-tzdata,2017b,1.el7
-uname26,1.0,1.el7
-unzip,6.0,19.el7
-usermode,1.111,5.el7
-ustr,1.0.4,16.el7
-util-linux,2.23.2,43.el7
-vim-minimal,7.4.160,2.el7
-virt-what,1.13,10.el7
-which,2.20,7.el7
-wpa_supplicant,2.6,9.el7
-xfsprogs,4.5.0,12.0.1.el7
-xorg-x11-apps,7.7,7.el7
-xorg-x11-utils,7.5,22.el7
-xorg-x11-xauth,1.0.9,1.el7
-xz,5.2.2,1.el7
-xz-libs,5.2.2,1.el7
-yum,3.4.3,158.0.1.el7
-yum-metadata-parser,1.1.4,10.el7
-yum-plugin-ulninfo,0.2,13.el7
-yum-rhn-plugin,2.0.1,9.0.1.el7
-zlib,1.2.7,17.el7
+NAME,VERSION,RELEASE,GROUP,VENDOR,SUMMARY
+GeoIP,1.5.0,11.el7,Oracle America,Library for country/city/organization to IP address or hostname mapping
+NetworkManager,1.10.2,13.el7,Oracle America,Network connection manager and user applications
+NetworkManager-libnm,1.10.2,13.el7,Oracle America,Libraries for adding NetworkManager support to applications (new API).
+WALinuxAgent,2.2.14,1.0.1.el7,Microsoft Corporation <walinuxagent@microsoft.com>,The Microsoft Azure Linux Agent
+acl,2.2.51,12.el7,Oracle America,Access control list utilities
+acpid,2.0.19,8.el7,Oracle America,ACPI Event Daemon
+audit-libs,2.8.1,3.el7,Oracle America,Dynamic library for libaudit
+audit-libs-python,2.8.1,3.el7,Oracle America,Python bindings for libaudit
+authconfig,6.2.8,30.el7,Oracle America,Command line tool for setting up authentication from network services
+basesystem,10.0,7.0.1.el7,Oracle America,The skeleton package which defines a simple Oracle Linux system
+bash,4.2.46,28.el7,Oracle America,The GNU Bourne Again shell
+bind-libs,9.9.4,61.el7,Oracle America,Libraries used by the BIND DNS packages
+bind-libs-lite,9.9.4,61.el7,Oracle America,Libraries for working with the DNS protocol
+bind-license,9.9.4,61.el7,Oracle America,License of the BIND DNS suite
+bind-utils,9.9.4,61.el7,Oracle America,Utilities for querying DNS name servers
+binutils,2.25.1,31.base.el7,Oracle America,A GNU collection of binary utilities
+btrfs-progs,4.9.1,1.0.2.el7,Oracle America,Userspace programs for btrfs
+bzip2-libs,1.0.6,13.el7,Oracle America,Libraries for applications using bzip2
+ca-certificates,2017.2.14,71.el7,Oracle America,The Mozilla CA root certificate bundle
+checkpolicy,2.5,4.el7,Oracle America,SELinux policy compiler
+chkconfig,1.7.4,1.el7,Oracle America,A system tool for maintaining the /etc/rc*.d hierarchy
+chrony,3.1,2.el7,Oracle America,An NTP client/server
+compat-libcap1,1.10,7.el7,Oracle America,Library for getting and setting POSIX.1e capabilities
+compat-libstdc++-33,3.2.3,72.el7,Oracle America,Compatibility standard C++ libraries
+coreutils,8.22,18.0.1.el7,Oracle America,A set of basic GNU tools commonly used in shell scripts
+cpio,2.11,24.el7,Oracle America,A GNU archiving program
+cpp,4.8.5,28.0.1.el7_5.1,Oracle America,The C Preprocessor
+cracklib,2.9.0,11.el7,Oracle America,A password-checking library
+cracklib-dicts,2.9.0,11.el7,Oracle America,The standard CrackLib dictionaries
+cronie,1.4.11,19.el7,Oracle America,Cron daemon for executing programs at set times
+cronie-anacron,1.4.11,19.el7,Oracle America,Utility for running regular jobs
+crontabs,1.11,6.20121102git.el7,Oracle America,Root crontab files used to schedule the execution of programs
+cryptsetup-libs,1.7.4,3.el7,Oracle America,Cryptsetup shared library
+curl,7.29.0,46.el7,Oracle America,A utility for getting files from remote servers (FTP, HTTP, and others)
+cyrus-sasl-lib,2.1.26,21.el7,Oracle America,Shared libraries needed by applications which use Cyrus SASL
+dbus,1.10.24,7.0.1.el7,Oracle America,D-BUS message bus
+dbus-glib,0.100,7.el7,Oracle America,GLib bindings for D-Bus
+dbus-libs,1.10.24,7.0.1.el7,Oracle America,Libraries for accessing D-BUS
+dbus-python,1.1.1,9.el7,Oracle America,D-Bus Python Bindings
+device-mapper,1.02.140,8.0.1.el7,Oracle America,Device mapper utility
+device-mapper-libs,1.02.140,8.0.1.el7,Oracle America,Device-mapper shared library
+dhclient,4.2.5,68.0.1.el7,Oracle America,Provides the ISC DHCP client daemon and dhclient-script
+dhcp-common,4.2.5,68.0.1.el7,Oracle America,Common files used by ISC dhcp client and server
+dhcp-libs,4.2.5,68.0.1.el7,Oracle America,Shared libraries used by ISC dhcp client and server
+diffutils,3.3,4.el7,Oracle America,A GNU collection of diff utilities
+dmidecode,3.0,5.el7,Oracle America,Tool to analyse BIOS DMI data
+dnsmasq,2.76,5.el7,Oracle America,A lightweight DHCP/caching DNS server
+dracut,033,502.0.1.el7,Oracle America,Initramfs generator using udev
+e2fsprogs,1.42.9,10.0.1.el7,Oracle America,Utilities for managing ext2, ext3, and ext4 filesystems
+e2fsprogs-libs,1.42.9,10.0.1.el7,Oracle America,Ext2/3/4 filesystem-specific shared libraries
+ebtables,2.0.10,15.el7,Oracle America,Ethernet Bridge frame table administration tool
+elfutils-default-yama-scope,0.168,8.el7,Oracle America,Default yama attach scope sysctl setting
+elfutils-libelf,0.168,8.el7,Oracle America,Library to read and write ELF files
+elfutils-libs,0.168,8.el7,Oracle America,Libraries to handle compiled objects
+ethtool,4.8,1.el7,Oracle America,Settings tool for Ethernet NICs
+expat,2.1.0,10.el7_3,Oracle America,An XML parser library
+file,5.11,33.el7,Oracle America,A utility for determining file types
+file-libs,5.11,33.el7,Oracle America,Libraries for applications using libmagic
+filesystem,3.2,21.el7,Oracle America,The basic directory layout for a Linux system
+findutils,4.5.11,5.el7,Oracle America,The GNU versions of find utilities (find and xargs)
+fipscheck,1.4.1,6.el7,Oracle America,A library for integrity verification of FIPS validated modules
+fipscheck-lib,1.4.1,6.el7,Oracle America,Library files for fipscheck
+firewalld-filesystem,0.4.4.4,6.el7,Oracle America,Firewalld directory layout and rpm macros
+fontconfig,2.10.95,11.el7,Oracle America,Font configuration and customization library
+fontpackages-filesystem,1.44,8.el7,Oracle America,Directories used by font packages
+freetype,2.4.11,15.el7,Oracle America,A free and portable font rendering engine
+gawk,4.0.2,4.el7_3.1,Oracle America,The GNU version of the awk text processing utility
+gcc,4.8.5,28.0.1.el7_5.1,Oracle America,Various compilers (C, C++, Objective-C, Java, ...)
+gcc-c++,4.8.5,28.0.1.el7_5.1,Oracle America,C++ support for GCC
+gdbm,1.10,8.el7,Oracle America,A GNU set of database routines which use extensible hashing
+gettext,0.19.8.1,2.el7,Oracle America,GNU libraries and utilities for producing multi-lingual messages
+gettext-libs,0.19.8.1,2.el7,Oracle America,Libraries for gettext
+glib2,2.54.2,2.el7,Oracle America,A library of handy utility functions
+glibc,2.17,222.el7,Oracle America,The GNU libc libraries
+glibc-common,2.17,222.el7,Oracle America,Common binaries and locale data for glibc
+glibc-devel,2.17,222.el7,Oracle America,Object files for development using standard C libraries.
+glibc-headers,2.17,222.el7,Oracle America,Header files for development using standard C libraries.
+gmp,6.0.0,15.el7,Oracle America,A GNU arbitrary precision library
+gnupg2,2.0.22,4.el7,Oracle America,Utility for secure communication and data storage
+gobject-introspection,1.50.0,1.el7,Oracle America,Introspection system for GObject-based libraries
+gpg-pubkey,ec551f03,53619141,(none),gpg(Oracle OSS group (Open Source Software group) <build@oss.oracle.com>)
+gpgme,1.3.2,5.el7,Oracle America,GnuPG Made Easy - high level crypto API
+grep,2.20,3.el7,Oracle America,Pattern matching utilities
+groff-base,1.22.2,8.el7,Oracle America,Parts of the groff formatting system required to display manual pages
+grub2,2.02,0.64.0.1.el7,Oracle America,Bootloader with support for Linux, Multiboot and more
+grub2-common,2.02,0.64.0.1.el7,Oracle America,grub2 common layout
+grub2-pc,2.02,0.64.0.1.el7,Oracle America,Bootloader with support for Linux, Multiboot, and more
+grub2-pc-modules,2.02,0.64.0.1.el7,Oracle America,Modules used to build custom grub images
+grub2-tools,2.02,0.64.0.1.el7,Oracle America,Support tools for GRUB.
+grub2-tools-extra,2.02,0.64.0.1.el7,Oracle America,Support tools for GRUB.
+grub2-tools-minimal,2.02,0.64.0.1.el7,Oracle America,Support tools for GRUB.
+grubby,8.28,23.0.1.el7,Oracle America,Command line tool for updating bootloader configs
+gssproxy,0.7.0,17.el7,Oracle America,GSSAPI Proxy
+gzip,1.5,9.el7,Oracle America,The GNU data compression program
+hardlink,1.0,19.el7,Oracle America,Create a tree of hardlinks
+hostname,3.13,3.el7,Oracle America,Utility to set/show the host name or domain name
+hwdata,0.252,8.6.el7,Oracle America,Hardware identification and configuration data
+hyperv-daemons-license,0,0.32.20161211git.el7,Oracle America,License of the HyperV daemons suite
+hypervkvpd,0,0.32.20161211git.el7,Oracle America,HyperV key value pair (KVP) daemon
+info,5.1,4.el7,Oracle America,A stand-alone TTY-based reader for GNU texinfo documentation
+initscripts,9.49.39,1.0.1.el7,Oracle America,The inittab file and the /etc/init.d scripts
+iproute,3.10.0,87.0.1.el7,Oracle America,Advanced IP routing and network device configuration tools
+ipset,6.29,1.el7,Oracle America,Manage Linux IP sets
+ipset-libs,6.29,1.el7,Oracle America,Shared library providing the IP sets functionality
+iptables,1.4.21,18.el7,Oracle America,Tools for managing Linux kernel packet filtering capabilities
+iptables-services,1.4.21,18.el7,Oracle America,iptables and ip6tables services for iptables
+iputils,20160308,10.el7,Oracle America,Network monitoring tools including ping
+irqbalance,1.0.7,10.0.1.el7,Oracle America,IRQ balancing daemon
+kbd,1.15.5,13.el7,Oracle America,Tools for configuring the console (keyboard, virtual terminals, etc.)
+kbd-legacy,1.15.5,13.el7,Oracle America,Legacy data for kbd package
+kbd-misc,1.15.5,13.el7,Oracle America,Data for kbd package
+kernel,3.10.0,862.0.0.0.1.el7,Oracle America,The Linux kernel
+kernel-headers,3.10.0,862.6.3.el7,Oracle America,Header files for the Linux kernel for use by glibc
+kernel-tools,3.10.0,862.0.0.0.1.el7,Oracle America,Assortment of tools for the Linux kernel
+kernel-tools-libs,3.10.0,862.0.0.0.1.el7,Oracle America,Libraries for the kernels-tools
+kernel-uek,4.1.12,124.14.1.el7uek,Oracle America,The Linux kernel
+kernel-uek-firmware,4.1.12,124.14.1.el7uek,Oracle America,Firmware files used by the Linux kernel
+keyutils,1.5.8,3.el7,Oracle America,Linux Key Management Utilities
+keyutils-libs,1.5.8,3.el7,Oracle America,Key utilities library
+kmod,20,15.0.1.el7,Oracle America,Linux kernel module management utilities
+kmod-libs,20,15.0.1.el7,Oracle America,Libraries to handle kernel module loading and unloading
+kpartx,0.4.9,111.el7,Oracle America,Partition device manager for device-mapper devices
+krb5-libs,1.15.1,19.el7,Oracle America,The non-admin shared libraries used by Kerberos 5
+ksh,20120801,137.0.1.el7,Oracle America,The Original ATT Korn Shell
+less,458,9.el7,Oracle America,A text file browser similar to more, but better
+libICE,1.0.9,9.el7,Oracle America,X.Org X11 ICE runtime library
+libSM,1.2.2,2.el7,Oracle America,X.Org X11 SM runtime library
+libX11,1.6.5,1.el7,Oracle America,Core X11 protocol client library
+libX11-common,1.6.5,1.el7,Oracle America,Common data for libX11
+libXau,1.0.8,2.1.el7,Oracle America,Sample Authorization Protocol for X
+libXaw,1.0.13,4.el7,Oracle America,X Athena Widget Set
+libXcursor,1.1.14,8.el7,Oracle America,Cursor management library
+libXext,1.3.3,3.el7,Oracle America,X.Org X11 libXext runtime library
+libXfixes,5.0.3,1.el7,Oracle America,X Fixes library
+libXft,2.3.2,2.el7,Oracle America,X.Org X11 libXft runtime library
+libXi,1.7.9,1.el7,Oracle America,X.Org X11 libXi runtime library
+libXinerama,1.1.3,2.1.el7,Oracle America,X.Org X11 libXinerama runtime library
+libXmu,1.1.2,2.el7,Oracle America,X.Org X11 libXmu/libXmuu runtime libraries
+libXpm,3.5.12,1.el7,Oracle America,X.Org X11 libXpm runtime library
+libXrandr,1.5.1,2.el7,Oracle America,X.Org X11 libXrandr runtime library
+libXrender,0.9.10,1.el7,Oracle America,X.Org X11 libXrender runtime library
+libXt,1.1.5,3.el7,Oracle America,X.Org X11 libXt runtime library
+libXtst,1.2.3,1.el7,Oracle America,X.Org X11 libXtst runtime library
+libXv,1.0.11,1.el7,Oracle America,X.Org X11 libXv runtime library
+libXxf86dga,1.1.4,2.1.el7,Oracle America,X.Org X11 libXxf86dga runtime library
+libXxf86misc,1.0.3,7.1.el7,Oracle America,X.Org X11 libXxf86misc runtime library
+libXxf86vm,1.1.4,1.el7,Oracle America,X.Org X11 libXxf86vm runtime library
+libacl,2.2.51,12.el7,Oracle America,Dynamic library for access control list support
+libaio,0.3.109,13.el7,Oracle America,Linux-native asynchronous I/O access library
+libaio-devel,0.3.109,13.el7,Oracle America,Development files for Linux-native asynchronous I/O access
+libassuan,2.1.0,3.el7,Oracle America,GnuPG IPC library
+libattr,2.4.46,12.el7,Oracle America,Dynamic library for extended attribute support
+libbasicobjects,0.1.1,29.el7,Oracle America,Basic object types for C
+libblkid,2.23.2,43.el7,Oracle America,Block device ID library
+libcap,2.22,9.el7,Oracle America,Library for getting and setting POSIX.1e capabilities
+libcap-ng,0.7.5,4.el7,Oracle America,An alternate posix capabilities library
+libcgroup,0.41,15.el7,Oracle America,Library to control and monitor control groups
+libcollection,0.7.0,29.el7,Oracle America,Collection data-type for C
+libcom_err,1.42.9,10.0.1.el7,Oracle America,Common error description library
+libcroco,0.6.11,1.el7,Oracle America,A CSS2 parsing library
+libcurl,7.29.0,46.el7,Oracle America,A library for getting files from web servers
+libdaemon,0.14,7.el7,Oracle America,Library for writing UNIX daemons
+libdb,5.3.21,20.el7,Oracle America,The Berkeley DB database library for C
+libdb-utils,5.3.21,20.el7,Oracle America,Command line tools for managing Berkeley DB databases
+libdmx,1.1.3,3.el7,Oracle America,X.Org X11 DMX runtime library
+libedit,3.0,12.20121213cvs.el7,Oracle America,The NetBSD Editline library
+libestr,0.1.9,2.el7,Oracle America,String handling essentials library
+libevent,2.0.21,4.el7,Oracle America,Abstract asynchronous event notification library
+libfastjson,0.99.4,2.el7,Oracle America,A JSON implementation in C
+libffi,3.0.13,18.el7,Oracle America,A portable foreign function interface library
+libfontenc,1.1.3,3.el7,Oracle America,X.Org X11 libfontenc runtime library
+libgcc,4.8.5,28.0.1.el7_5.1,Oracle America,GCC version 4.8 shared support library
+libgcrypt,1.5.3,14.el7,Oracle America,A general-purpose cryptography library
+libgomp,4.8.5,28.0.1.el7_5.1,Oracle America,GCC OpenMP v3.0 shared support library
+libgpg-error,1.12,3.el7,Oracle America,Library for error values used by GnuPG components
+libgudev1,219,57.0.1.el7,Oracle America,Libraries for adding libudev support to applications that use glib
+libidn,1.28,4.el7,Oracle America,Internationalized Domain Name support library
+libini_config,1.3.1,29.el7,Oracle America,INI file parser for C
+libmnl,1.0.3,7.el7,Oracle America,A minimalistic Netlink library
+libmount,2.23.2,43.el7,Oracle America,Device mounting library
+libmpc,1.0.1,3.el7,Oracle America,C library for multiple precision complex arithmetic
+libndp,1.2,7.el7,Oracle America,Library for Neighbor Discovery Protocol
+libnetfilter_conntrack,1.0.6,1.el7_3,Oracle America,Netfilter conntrack userspace library
+libnfnetlink,1.0.1,4.el7,Oracle America,Netfilter netlink userspace library
+libnfsidmap,0.25,19.el7,Oracle America,NFSv4 User and Group ID Mapping Library
+libnl,1.1.4,3.el7,Oracle America,Convenience library for kernel netlink sockets
+libnl3,3.2.28,4.el7,Oracle America,Convenience library for kernel netlink sockets
+libpath_utils,0.2.1,29.el7,Oracle America,Filesystem Path Utilities
+libpipeline,1.2.3,3.el7,Oracle America,A pipeline manipulation library
+libpng,1.5.13,7.el7_2,Oracle America,A library of functions for manipulating PNG image format files
+libpwquality,1.2.3,4.el7,Oracle America,A library for password generation and password quality checking
+libref_array,0.1.5,29.el7,Oracle America,A refcounted array for C
+libseccomp,2.3.1,3.el7,Oracle America,Enhanced seccomp library
+libselinux,2.5,12.el7,Oracle America,SELinux library and simple utilities
+libselinux-python,2.5,12.el7,Oracle America,SELinux python bindings for libselinux
+libselinux-utils,2.5,12.el7,Oracle America,SELinux libselinux utilies
+libsemanage,2.5,11.el7,Oracle America,SELinux binary policy manipulation library
+libsemanage-python,2.5,11.el7,Oracle America,semanage python bindings for libsemanage
+libsepol,2.5,8.1.el7,Oracle America,SELinux binary policy manipulation library
+libss,1.42.9,10.0.1.el7,Oracle America,Command line interface parsing library
+libssh2,1.4.3,10.el7_2.1,Oracle America,A library implementing the SSH2 protocol
+libstdc++,4.8.5,28.0.1.el7_5.1,Oracle America,GNU Standard C++ Library
+libstdc++-devel,4.8.5,28.0.1.el7_5.1,Oracle America,Header files and libraries for C++ development
+libsysfs,2.1.0,16.el7,Oracle America,Shared library for interfacing with sysfs
+libtasn1,4.10,1.el7,Oracle America,The ASN.1 library used in GNUTLS
+libtirpc,0.2.4,0.10.el7,Oracle America,Transport Independent RPC Library
+libunistring,0.9.3,9.el7,Oracle America,GNU Unicode string library
+libuser,0.60,7.el7_1,Oracle America,A user and group account administration library
+libutempter,1.1.6,4.el7,Oracle America,A privileged helper for utmp/wtmp updates
+libuuid,2.23.2,43.el7,Oracle America,Universally unique ID library
+libverto,0.2.5,4.el7,Oracle America,Main loop abstraction library
+libverto-libevent,0.2.5,4.el7,Oracle America,libevent module for libverto
+libxcb,1.12,1.el7,Oracle America,A C binding to the X11 protocol
+libxkbfile,1.0.9,3.el7,Oracle America,X.Org X11 libxkbfile runtime library
+libxml2,2.9.1,6.0.1.el7_2.3,Oracle America,Library providing XML and HTML support
+libxml2-python,2.9.1,6.0.1.el7_2.3,Oracle America,Python bindings for the libxml2 library
+linux-firmware,20180220,62.git6d51311.0.1.el7,Oracle America,Firmware files used by the Linux kernel
+lm_sensors-libs,3.4.0,4.20160601gitf9185e5.el7,Oracle America,Lm_sensors core libraries
+logrotate,3.8.6,14.el7,Oracle America,Rotates, compresses, removes and mails system log files
+lua,5.1.4,15.el7,Oracle America,Powerful light-weight programming language
+lz4,1.7.5,2.el7,Oracle America,Extremely fast compression algorithm
+lzo,2.06,8.el7,Oracle America,Data compression library with very fast (de)compression
+m2crypto,0.21.1,17.el7,Oracle America,Support for using OpenSSL in python scripts
+mailx,12.5,19.el7,Oracle America,Enhanced implementation of the mailx command
+make,3.82,23.el7,Oracle America,A GNU tool which simplifies the build process for users
+man-db,2.6.3,9.el7,Oracle America,Tools for searching and reading man pages
+mozjs17,17.0.0,20.el7,Oracle America,JavaScript interpreter and libraries
+mpfr,3.1.1,4.el7,Oracle America,A C library for multiple-precision floating-point computations
+ncurses,5.9,13.20130511.el7,Oracle America,Ncurses support utilities
+ncurses-base,5.9,13.20130511.el7,Oracle America,Descriptions of common terminals
+ncurses-libs,5.9,13.20130511.el7,Oracle America,Ncurses libraries
+net-tools,2.0,0.22.20131004git.el7,Oracle America,Basic networking tools
+newt,0.52.15,4.el7,Oracle America,A library for text mode user interfaces
+newt-python,0.52.15,4.el7,Oracle America,Python bindings for newt
+nfs-utils,1.3.0,0.54.0.1.el7,Oracle America,NFS utilities and supporting clients and daemons for the kernel NFS server
+nspr,4.17.0,1.el7,Oracle America,Netscape Portable Runtime
+nss,3.34.0,4.el7,Oracle America,Network Security Services
+nss-pem,1.0.3,4.el7,Oracle America,PEM file reader for Network Security Services (NSS)
+nss-softokn,3.34.0,2.0.1.el7,Oracle America,Network Security Services Softoken Module
+nss-softokn-freebl,3.34.0,2.0.1.el7,Oracle America,Freebl library for the Network Security Services
+nss-sysinit,3.34.0,4.el7,Oracle America,System NSS Initialization
+nss-tools,3.34.0,4.el7,Oracle America,Tools for the Network Security Services
+nss-util,3.34.0,2.el7,Oracle America,Network Security Services Utilities Library
+numactl-libs,2.0.9,6.el7_2,Oracle America,libnuma libraries
+omi,1.4.1,0,Microsoft Corporation,Open Management Infrastructure
+openldap,2.4.44,5.el7,Oracle America,LDAP support libraries
+openssh,7.4p1,16.el7,Oracle America,An open source implementation of SSH protocol versions 1 and 2
+openssh-clients,7.4p1,16.el7,Oracle America,An open source SSH client applications
+openssh-server,7.4p1,16.el7,Oracle America,An open source SSH server daemon
+openssl,1.0.2k,12.0.1.el7,Oracle America,Utilities from the general purpose cryptography library with TLS implementation
+openssl-libs,1.0.2k,12.0.1.el7,Oracle America,A general purpose cryptography library with TLS implementation
+oracle-logos,70.0.3,4.0.7.el7,Oracle America,Oracle-related icons and pictures
+oracle-rdbms-server-12cR1-preinstall,1.0,6.el7,Oracle,Sets the system for Oracle Database single instance and Real Application Cluster install for Oracle Linux 7
+oraclelinux-release,7.4,1.0.4.el7,Oracle America,Oracle Linux 7 release file
+os-prober,1.58,9.0.1.el7,Oracle America,Probes disks on the system for installed operating systems
+p11-kit,0.23.5,3.el7,Oracle America,Library for loading and sharing PKCS#11 modules
+p11-kit-trust,0.23.5,3.el7,Oracle America,System trust module from p11-kit
+pam,1.1.8,18.el7,Oracle America,An extensible library which provides authentication for applications
+parted,3.1,29.el7,Oracle America,The GNU disk partition manipulation program
+passwd,0.79,4.el7,Oracle America,An utility for setting or changing passwords using PAM
+pciutils,3.5.1,2.el7,Oracle America,PCI bus related utilities
+pciutils-libs,3.5.1,2.el7,Oracle America,Linux PCI library
+pcre,8.32,17.el7,Oracle America,Perl-compatible regular expression library
+pinentry,0.8.1,17.el7,Oracle America,Collection of simple PIN or passphrase entry dialogs
+pkgconfig,0.27.1,4.el7,Oracle America,A tool for determining compilation options
+policycoreutils,2.5,22.0.1.el7,Oracle America,SELinux policy core utilities
+policycoreutils-python,2.5,22.0.1.el7,Oracle America,SELinux policy core python utilities
+polkit,0.112,14.el7,Oracle America,An authorization framework
+polkit-pkla-compat,0.1,4.el7,Oracle America,Rules for polkit to add compatibility with pklocalauthority
+popt,1.13,16.el7,Oracle America,C library for parsing command line parameters
+procps-ng,3.3.10,16.el7,Oracle America,System and process monitoring utilities
+psmisc,22.20,15.el7,Oracle America,Utilities for managing processes on your system
+pth,2.0.7,23.el7,Oracle America,The GNU Portable Threads library
+pyOpenSSL,0.13.1,3.el7,Oracle America,Python wrapper module around the OpenSSL library
+pygobject2,2.28.6,11.el7,Oracle America,Python 2 bindings for GObject
+pygpgme,0.3,9.el7,Oracle America,Python module for working with OpenPGP messages
+pyliblzma,0.5.3,11.el7,Oracle America,Python bindings for lzma
+python,2.7.5,58.0.1.el7,Oracle America,An interpreted, interactive, object-oriented programming language
+python-IPy,0.75,6.el7,Oracle America,Python module for handling IPv4 and IPv6 Addresses and Networks
+python-configobj,4.7.2,7.el7,Oracle America,Config file reading, writing, and validation
+python-decorator,3.4.0,3.el7,Oracle America,Module to simplify usage of decorators
+python-dmidecode,3.12.2,1.el7,Oracle America,Python module to access DMI data
+python-ethtool,0.8,5.el7,Oracle America,Ethernet settings python bindings
+python-firewall,0.4.4.4,6.el7,Oracle America,Python2 bindings for firewalld
+python-gobject-base,3.22.0,1.el7,Oracle America,Python 2 bindings for GObject Introspection base package
+python-gudev,147.2,7.el7,Oracle America,Python (PyGObject) bindings to the GUDev library
+python-hwdata,1.7.3,4.el7,Oracle America,Python bindings to hwdata package
+python-iniparse,0.4,9.el7,Oracle America,Python Module for Accessing and Modifying Configuration Data in INI files
+python-libs,2.7.5,58.0.1.el7,Oracle America,Runtime libraries for Python
+python-linux-procfs,0.4.9,3.el7,Oracle America,Linux /proc abstraction classes
+python-perf,3.10.0,862.0.0.0.1.el7,Oracle America,Python bindings for apps which will manipulate perf events
+python-pycurl,7.19.0,19.el7,Oracle America,A Python interface to libcurl
+python-pyudev,0.15,9.el7,Oracle America,A libudev binding
+python-schedutils,0.4,6.el7,Oracle America,Linux scheduler python bindings
+python-slip,0.4.0,2.el7,Oracle America,Miscellaneous convenience, extension and workaround code for Python
+python-slip-dbus,0.4.0,2.el7,Oracle America,Convenience functions for dbus services
+python-urlgrabber,3.10,8.el7,Oracle America,A high-level cross-protocol url-grabber
+python2-pyasn1,0.1.9,7.el7,Oracle America,ASN.1 tools for Python 2
+pyxattr,0.5.1,5.el7,Oracle America,Extended attributes library wrapper for Python
+qemu-guest-agent,2.8.0,2.el7,Oracle America,QEMU guest agent
+qrencode-libs,3.4.1,3.el7,Oracle America,QR Code encoding library - Shared libraries
+quota,4.01,17.el7,Oracle America,System administration tools for monitoring users' disk usage
+quota-nls,4.01,17.el7,Oracle America,Gettext catalogs for disk quota tools
+readline,6.2,10.el7,Oracle America,A library for editing typed command lines
+redhat-release-server,7.4,18.0.1.el7,Oracle America,Red Hat Enterprise Linux Server release file
+rhn-check,2.0.2,17.0.1.el7,Oracle America,Check for RHN actions
+rhn-client-tools,2.0.2,17.0.1.el7,Oracle America,Support programs and libraries for Red Hat Satellite
+rhn-setup,2.0.2,17.0.1.el7,Oracle America,Configure and register an Red Hat Satellite client
+rhnlib,2.5.65,4.0.1.el7,Oracle America,Python libraries for the Spacewalk project
+rhnsd,5.0.13,7.0.1.el7,Oracle America,Spacewalk query daemon
+rootfiles,8.1,11.el7,Oracle America,The basic required files for the root user's directory
+rpcbind,0.2.0,44.el7,Oracle America,Universal Addresses to RPC Program Number Mapper
+rpm,4.11.3,25.el7,Oracle America,The RPM package management system
+rpm-build-libs,4.11.3,25.el7,Oracle America,Libraries for building and signing RPM packages
+rpm-libs,4.11.3,25.el7,Oracle America,Libraries for manipulating RPM packages
+rpm-python,4.11.3,25.el7,Oracle America,Python bindings for apps which will manipulate RPM packages
+rsyslog,8.24.0,12.el7,Oracle America,Enhanced system logging and kernel message trapping daemon
+scx,1.6.3,474,http://www.microsoft.com,Microsoft System Center 2012 Operations Manager for UNIX/Linux agent
+sed,4.2.2,5.el7,Oracle America,A GNU stream text editor
+selinux-policy,3.13.1,166.0.2.el7,Oracle America,SELinux policy configuration
+selinux-policy-targeted,3.13.1,166.0.2.el7,Oracle America,SELinux targeted base policy
+setools-libs,3.3.8,2.el7,Oracle America,Policy analysis support libraries for SELinux
+setup,2.8.71,7.el7,Oracle America,A set of system configuration and setup files
+shadow-utils,4.1.5.1,24.el7,Oracle America,Utilities for managing accounts and shadow password files
+shared-mime-info,1.8,3.el7,Oracle America,Shared MIME information database
+slang,2.2.4,11.el7,Oracle America,The shared library for the S-Lang extension language
+smartmontools,6.5,1.el7,Oracle America,Tools for monitoring SMART capable hard disks
+sqlite,3.7.17,8.el7,Oracle America,Library that implements an embeddable SQL database engine
+stix-fonts,1.1.0,5.el7,Oracle America,Scientific and engineering fonts
+sudo,1.8.19p2,10.el7,Oracle America,Allows restricted root access for specified users
+sysstat,10.1.5,13.el7,Oracle America,Collection of performance monitoring tools for Linux
+systemd,219,57.0.1.el7,Oracle America,A System and Service Manager
+systemd-libs,219,57.0.1.el7,Oracle America,systemd libraries
+systemd-sysv,219,57.0.1.el7,Oracle America,SysV tools for systemd
+sysvinit-tools,2.88,14.dsf.el7,Oracle America,Tools used for process and utmp management.
+tar,1.26,32.el7,Oracle America,A GNU file archiving program
+tcp_wrappers,7.6,77.el7,Oracle America,A security tool which acts as a wrapper for TCP daemons
+tcp_wrappers-libs,7.6,77.el7,Oracle America,Libraries for tcp_wrappers
+tmpwatch,2.11,5.el7,Oracle America,A utility for removing files based on when they were last accessed
+tzdata,2017b,1.el7,Oracle America,Timezone data
+uname26,1.0,1.el7,Oracle America,Force uname system call to return a 2.6 kernel number
+unzip,6.0,19.el7,Oracle America,A utility for unpacking zip files
+usermode,1.111,5.el7,Oracle America,Tools for certain user account management tasks
+ustr,1.0.4,16.el7,Oracle America,String library, very low memory overhead, simple to import
+util-linux,2.23.2,43.el7,Oracle America,A collection of basic system utilities
+vim-minimal,7.4.160,2.el7,Oracle America,A minimal version of the VIM editor
+virt-what,1.13,10.el7,Oracle America,Detect if we are running in a virtual machine
+which,2.20,7.el7,Oracle America,Displays where a particular program in your path is located
+wpa_supplicant,2.6,9.el7,Oracle America,WPA/WPA2/IEEE 802.1X Supplicant
+xfsprogs,4.5.0,12.0.1.el7,Oracle America,Utilities for managing the XFS filesystem
+xorg-x11-apps,7.7,7.el7,Oracle America,X.Org X11 applications
+xorg-x11-utils,7.5,22.el7,Oracle America,X.Org X11 X client utilities
+xorg-x11-xauth,1.0.9,1.el7,Oracle America,X.Org X11 X authority utilities
+xz,5.2.2,1.el7,Oracle America,LZMA compression utilities
+xz-libs,5.2.2,1.el7,Oracle America,Libraries for decoding LZMA compression
+yum,3.4.3,158.0.1.el7,Oracle America,RPM package installer/updater/manager
+yum-metadata-parser,1.1.4,10.el7,Oracle America,A fast metadata parser for yum
+yum-plugin-ulninfo,0.2,13.el7,Oracle America,ULN support for yum
+yum-rhn-plugin,2.0.1,9.0.1.el7,Oracle America,Spacewalk support for yum
+zlib,1.2.7,17.el7,Oracle America,The compression and decompression library

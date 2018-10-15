@@ -1,52 +1,192 @@
 ================================================================
-* System Name: 	DemoWeb
-* System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
-* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
-* Running as: 			akundnani
+-e System Name: 	DemoWeb
+-e System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
+-e Generated on: 		Fri Oct 12 19:33:40 UTC 2018
+-e Running as: 			akundnani
 ================================================================
- Ouput of Server : DemoWeb
+Output of Server: DemoWeb
 ================================================================
 1> BIOS and System Information 
+Distributor ID: "Ubuntu 18.04.1 LTS"
+Description: "Ubuntu 18.04.1 LTS"
+Current Patch Level: 4.15.0-1023-azure
+Release: 18.04
+Codename: 
 ================================================================
- BIOS 090007  06/02/2017
-0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
+2> Processor Information 
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.710
+cache size	: 20480 KB
+physical id	: 0
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 4389.42
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.710
+cache size	: 20480 KB
+physical id	: 0
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 4389.42
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
 ================================================================
-2> Amount of Physical Memory: 
-4193848K
+3> Memory Information 
+MemTotal:        4040580 kB
+MemFree:         3526424 kB
+MemAvailable:    3535968 kB
+Buffers:           14320 kB
+Cached:           195724 kB
+SwapCached:            0 kB
+Active:           165728 kB
+Inactive:         127632 kB
+Active(anon):      83680 kB
+Inactive(anon):      552 kB
+Active(file):      82048 kB
+Inactive(file):   127080 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               884 kB
+Writeback:             0 kB
+AnonPages:         79620 kB
+Mapped:            57708 kB
+Shmem:               924 kB
+Slab:              58116 kB
+SReclaimable:      27348 kB
+SUnreclaim:        30768 kB
+KernelStack:        3120 kB
+PageTables:         5512 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2020288 kB
+Committed_AS:     768356 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     12288 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       67520 kB
+DirectMap2M:     2029568 kB
+DirectMap1G:     4194304 kB
 ================================================================
-3> Block Device Details:
+4> Network Information 
+++++++++++++++++++++++++++++++++++++++++++
+Adapter Name: lo
+Link encap: Local Loopback
+HWaddr: 00:00:00:00:00:00
+inet addr: 127.0.0.1 Bcast: host Mask: 8
+MTU: 65536 
+RX packets: 328 errors: 0
+TX packets: 328 errors: 0
+RX bytes: 27150 TX bytes: 27150
+Description: 
+Active: false
+++++++++++++++++++++++++++++++++++++++++++
+Adapter Name: eth0
+Link encap: Ethernet
+HWaddr: 00:0d:3a:a2:b0:a9
+inet addr: 10.0.1.5 Bcast: 10.0.1.255 Mask: 24
+MTU: 1500 
+RX packets: 13697 errors: 0
+TX packets: 14049 errors: 0
+RX bytes: 5616478 TX bytes: 4105790
+Description: 
+Active: true
 ================================================================
-NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda       8:0    0   30G  0 disk 
-├─sda1    8:1    0 29.9G  0 part /
-├─sda14   8:14   0    4M  0 part 
-└─sda15   8:15   0  106M  0 part /boot/efi
-sdb       8:16   0   20G  0 disk 
-└─sdb1    8:17   0   20G  0 part /mnt
+5> File System Information 
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda1
+1kb_blocks: 30308240
+blocks_used: 1329636
+blocks_available: 28962220
+percent_used: 5
+mount_point: /
+type: ext4
+mode: rw,relatime,discard,data=ordered
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda15
+1kb_blocks: 106858
+blocks_used: 3419
+blocks_available: 103439
+percent_used: 4
+mount_point: /boot/efi
+type: vfat
+mode: rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro,discard
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sdb1
+1kb_blocks: 20509264
+blocks_used: 45084
+blocks_available: 19399324
+percent_used: 1
+mount_point: /mnt
+type: ext4
+mode: rw,relatime,data=ordered
 ================================================================
-4> File System Disk Usage:
+6> BIOS Information 
+BIOS Version: 090007
+BIOS Release Date: 06/02/2017
+BIOS Manufacturer: Microsoft Corporation
+Product Name: Virtual Machine
+Hardware Version: 
+Hardware Serial Number: 
+Hardware UUID: 
 ================================================================
-Filesystem     Type      Size  Used Avail Use% Mounted on
-udev           devtmpfs  2.0G     0  2.0G   0% /dev
-tmpfs          tmpfs     395M  656K  394M   1% /run
-/dev/sda1      ext4       29G  1.3G   28G   5% /
-tmpfs          tmpfs     2.0G     0  2.0G   0% /dev/shm
-tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
-tmpfs          tmpfs     2.0G     0  2.0G   0% /sys/fs/cgroup
-/dev/sda15     vfat      105M  3.4M  102M   4% /boot/efi
-/dev/sdb1      ext4       20G   45M   19G   1% /mnt
-tmpfs          tmpfs     395M     0  395M   0% /run/user/1000
+7> PCI Devices Information 
+0000:00:00.0 Host bridge: Intel Corporation 440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled) (rev 03)
+0000:00:07.0 ISA bridge: Intel Corporation 82371AB/EB/MB PIIX4 ISA (rev 01)
+0000:00:07.1 IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)
+0000:00:07.3 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 02)
+0000:00:08.0 VGA compatible controller: Microsoft Corporation Hyper-V virtual VGA
 ================================================================
-5> Current Patch level of the System 
-================================================================
-4.15.0-1023-azure
-================================================================
-6> IP Configuration of machine
-eth0 10.0.1.5/24
-eth0 fe80::20d:3aff:fea2:b0a9/64
-================================================================
-7> List of Packages
-================================================================
+8> Packages Installed 
 Desired=Unknown/Install/Remove/Purge/Hold
 | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
 |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
@@ -133,8 +273,8 @@ ii  gdisk                               1.0.3-1                           amd64 
 ii  geoip-database                      20180315-1                        all          IP lookup command line tools that use the GeoIP library (country database)
 ii  gettext-base                        0.19.8.1-6                        amd64        GNU Internationalization utilities for the base system
 ii  gir1.2-glib-2.0:amd64               1.56.1-1                          amd64        Introspection data for GLib, GObject, Gio and GModule
-ii  git                                 1:2.17.1-1ubuntu0.1               amd64        fast, scalable, distributed revision control system
-ii  git-man                             1:2.17.1-1ubuntu0.1               all          fast, scalable, distributed revision control system (manual pages)
+ii  git                                 1:2.17.1-1ubuntu0.3               amd64        fast, scalable, distributed revision control system
+ii  git-man                             1:2.17.1-1ubuntu0.3               all          fast, scalable, distributed revision control system (manual pages)
 ii  gnupg                               2.2.4-1ubuntu1.1                  amd64        GNU privacy guard - a free PGP replacement
 ii  gnupg-l10n                          2.2.4-1ubuntu1.1                  all          GNU privacy guard - localization files
 ii  gnupg-utils                         2.2.4-1ubuntu1.1                  amd64        GNU privacy guard - utility programs
@@ -605,9 +745,11 @@ ii  xz-utils                            5.2.2-1.3                         amd64 
 ii  zerofree                            1.0.4-1                           amd64        zero free blocks from ext2, ext3 and ext4 file-systems
 ii  zlib1g:amd64                        1:1.2.11.dfsg-0ubuntu2            amd64        compression library - runtime
 ================================================================
-8> List of Oracle Databases
+9> Databases Configured 
+Database Installed: NA
 ================================================================
-9> Apache Configuration
+10> Web App Configured 
+Web Application Installed: Apache
 VirtualHost configuration:
 *:80                   10.0.1.5 (/etc/apache2/sites-enabled/000-default.conf:1)
 ServerRoot: "/etc/apache2"
@@ -620,8 +762,3 @@ Define: DUMP_VHOSTS
 Define: DUMP_RUN_CFG
 User: name="www-data" id=33 not_used
 Group: name="www-data" id=33 not_used
-================================================================
-10> No file share deployed 
-================================================================
-11> No cluster configured on given node.
-================================================================

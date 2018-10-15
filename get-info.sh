@@ -69,12 +69,12 @@ get_info() {
         #check if yum is installed
         if [ -x "$(command -v yum)" ]; then
             sudo yum list installed >> $location
-            echo "NAME,VERSION,RELEASE" > $packagecsv
-            sudo rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
+            echo "NAME,VERSION,RELEASE,VENDOR,SUMMARY" > $packagecsv
+            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE},%{VENDOR},%{SUMMARY}\n" | sort -t\; -k 1 >> $packagecsv
         else
             sudo rpm -qa >> $location
-            echo "NAME,VERSION,RELEASE" > $packagecsv
-            sudo rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
+            echo "NAME,VERSION,RELEASE,VENDOR,SUMMARY" > $packagecsv
+            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE},%{VENDOR},%{SUMMARY}\n" | sort -t\; -k 1 >> $packagecsv
         fi
     elif [ $isubuntu -eq 0 ];then
         sudo dpkg -l >> $location

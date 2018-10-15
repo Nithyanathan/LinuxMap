@@ -1,49 +1,181 @@
 ================================================================
-* System Name: 	MyubuntuVM
-* System Domain Name: 	gfvsy5txustexhl35ayj0aa3vd.ix.internal.cloudapp.net
-* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
-* Running as: 			akundnani
+-e System Name: 	MyubuntuVM
+-e System Domain Name: 	gfvsy5txustexhl35ayj0aa3vd.ix.internal.cloudapp.net
+-e Generated on: 		Fri Oct 12 19:33:10 UTC 2018
+-e Running as: 			akundnani
 ================================================================
- Ouput of Server : MyubuntuVM
+Output of Server: MyubuntuVM
 ================================================================
 1> BIOS and System Information 
+Distributor ID: "Ubuntu 14.04.5 LTS"
+Description: "Ubuntu 14.04.5 LTS"
+Current Patch Level: 4.4.0-137-generic
+Release: 14.04
+Codename: 
 ================================================================
- BIOS 090007  06/02/2017
-0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
+2> Processor Information 
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.672
+cache size	: 20480 KB
+physical id	: 0
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 4389.34
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.672
+cache size	: 20480 KB
+physical id	: 0
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 4389.34
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
 ================================================================
-2> Amount of Physical Memory: 
-3669560K
+3> Memory Information 
+MemTotal:        3512304 kB
+MemFree:         2808996 kB
+MemAvailable:    2744496 kB
+Buffers:           11228 kB
+Cached:            92792 kB
+SwapCached:            0 kB
+Active:           544360 kB
+Inactive:          45468 kB
+Active(anon):     485864 kB
+Inactive(anon):      252 kB
+Active(file):      58496 kB
+Inactive(file):    45216 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                52 kB
+Writeback:             0 kB
+AnonPages:        485820 kB
+Mapped:            27340 kB
+Shmem:               348 kB
+Slab:              36236 kB
+SReclaimable:      17076 kB
+SUnreclaim:        19160 kB
+KernelStack:        4368 kB
+PageTables:         3560 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1756152 kB
+Committed_AS:     850340 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       51136 kB
+DirectMap2M:     1521664 kB
+DirectMap1G:     2097152 kB
 ================================================================
-3> Block Device Details:
+4> Network Information 
+++++++++++++++++++++++++++++++++++++++++++
+Adapter Name: lo
+Link encap: Local Loopback
+HWaddr: 00:00:00:00:00:00
+inet addr: 127.0.0.1 Bcast: host Mask: 8
+MTU: 65536 
+RX packets: 0 errors: 0
+TX packets: 0 errors: 0
+RX bytes: 0 TX bytes: 0
+Description: 
+Active: false
+++++++++++++++++++++++++++++++++++++++++++
+Adapter Name: eth0
+Link encap: Ethernet
+HWaddr: 00:0d:3a:a0:84:99
+inet addr: 10.0.0.4 Bcast: 10.0.0.255 Mask: 24
+MTU: 1500 
+RX packets: 21448 errors: 0
+TX packets: 23255 errors: 0
+RX bytes: 15972851 TX bytes: 8054847
+Description: 
+Active: true
 ================================================================
-NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda      8:0    0    30G  0 disk 
-└─sda1   8:1    0    30G  0 part /
-sdb      8:16   0   135G  0 disk 
-└─sdb1   8:17   0   135G  0 part /mnt
+5> File System Information 
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda1
+1kb_blocks: 30929916
+blocks_used: 1298356
+blocks_available: 28336036
+percent_used: 5
+mount_point: /
+type: ext4
+mode: rw,relatime,discard,data=ordered
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sdb1
+1kb_blocks: 139203560
+blocks_used: 60928
+blocks_available: 132048464
+percent_used: 1
+mount_point: /mnt
+type: ext4
+mode: rw,relatime,data=ordered
 ================================================================
-4> File System Disk Usage:
+6> BIOS Information 
+BIOS Version: 090007
+BIOS Release Date: 06/02/2017
+BIOS Manufacturer: Microsoft Corporation
+Product Name: Virtual Machine
+Hardware Version: 
+Hardware Serial Number: 
+Hardware UUID: 
 ================================================================
-Filesystem     Type      Size  Used Avail Use% Mounted on
-udev           devtmpfs  1.7G  8.0K  1.7G   1% /dev
-tmpfs          tmpfs     343M  336K  343M   1% /run
-/dev/sda1      ext4       30G  1.3G   28G   5% /
-none           tmpfs     4.0K     0  4.0K   0% /sys/fs/cgroup
-none           tmpfs     5.0M     0  5.0M   0% /run/lock
-none           tmpfs     1.7G     0  1.7G   0% /run/shm
-none           tmpfs     100M     0  100M   0% /run/user
-/dev/sdb1      ext4      133G   60M  126G   1% /mnt
+7> PCI Devices Information 
+0000:00:00.0 Host bridge: Intel Corporation 440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled) (rev 03)
+0000:00:07.0 ISA bridge: Intel Corporation 82371AB/EB/MB PIIX4 ISA (rev 01)
+0000:00:07.1 IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)
+0000:00:07.3 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 02)
+0000:00:08.0 VGA compatible controller: Microsoft Corporation Hyper-V virtual VGA
 ================================================================
-5> Current Patch level of the System 
-================================================================
-4.4.0-137-generic
-================================================================
-6> IP Configuration of machine
-eth0 10.0.0.4/24
-eth0 fe80::20d:3aff:fea0:8499/64
-================================================================
-7> List of Packages
-================================================================
+8> Packages Installed 
 Desired=Unknown/Install/Remove/Purge/Hold
 | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
 |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
@@ -536,12 +668,9 @@ ii  xz-utils                               5.1.1alpha+20120614-2ubuntu2         
 ii  zerofree                               1.0.2-1ubuntu1                                       amd64        zero free blocks from ext2, ext3 and ext4 file-systems
 ii  zlib1g:amd64                           1:1.2.8.dfsg-1ubuntu1.1                              amd64        compression library - runtime
 ================================================================
-8> List of MySQL Databases
+9> Databases Configured 
+Database Installed: MySQL
+mysql
 ================================================================
-================================================================
-9> Web Server Configuration
-================================================================
-10> No file share deployed 
-================================================================
-11> No cluster configured on given node.
-================================================================
+10> Web App Configured 
+Web Application Installed: NA

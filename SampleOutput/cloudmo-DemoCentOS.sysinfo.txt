@@ -1,49 +1,159 @@
 ================================================================
-* System Name: 	DemoCentOS
-* System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
-* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
-* Running as: 			akundnani
+System Name: 	DemoCentOS
+System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
+Generated on: 		Fri Oct 12 19:33:05 UTC 2018
+Running as: 			akundnani
 ================================================================
- Ouput of Server : DemoCentOS
+Output of Server: DemoCentOS
 ================================================================
 1> BIOS and System Information 
+Distributor ID: CentOS Linux
+Description: CentOS Linux 7.2.1511 Core 
+Current Patch Level: 3.10.0-327.28.2.el7.x86_64
+Release: 7.2.1511
+Codename: Core 
 ================================================================
- BIOS 090007  06/02/2017
-0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
+2> Processor Information 
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.499
+cache size	: 20480 KB
+physical id	: 0
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bogomips	: 4388.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.499
+cache size	: 20480 KB
+physical id	: 0
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bogomips	: 4388.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
 ================================================================
-2> Amount of Physical Memory: 
-7340032k
+3> Memory Information 
+MemTotal:        4030920 kB
+MemFree:         3698664 kB
+MemAvailable:    3690492 kB
+Buffers:            2252 kB
+Cached:           140552 kB
+SwapCached:            0 kB
+Active:           131812 kB
+Inactive:          79728 kB
+Active(anon):      68836 kB
+Inactive(anon):     8392 kB
+Active(file):      62976 kB
+Inactive(file):    71336 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         68608 kB
+Mapped:            23116 kB
+Shmem:              8496 kB
+Slab:              39728 kB
+SReclaimable:      18268 kB
+SUnreclaim:        21460 kB
+KernelStack:        7904 kB
+PageTables:         6348 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4112608 kB
+Committed_AS:     260696 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       87116 kB
+VmallocChunk:   34359648244 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      2048 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       57280 kB
+DirectMap2M:     2039808 kB
+DirectMap1G:     4194304 kB
 ================================================================
-3> Block Device Details:
+4> Network Information 
 ================================================================
-NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-fd0      2:0    1    4K  0 disk 
-sda      8:0    0   50G  0 disk 
-|-sda1   8:1    0  256M  0 part /boot
-`-sda2   8:2    0 49.8G  0 part /
-sdb      8:16   0   20G  0 disk 
-`-sdb1   8:17   0   20G  0 part /mnt/resource
+5> File System Information 
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda2
+1kb_blocks: 52155392
+blocks_used: 1538092
+blocks_available: 50617300
+percent_used: 3
+mount_point: /
+type: xfs
+mode: rw,relatime,attr2,inode64,noquota
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda1
+1kb_blocks: 245679
+blocks_used: 126267
+blocks_available: 102209
+percent_used: 56
+mount_point: /boot
+type: ext4
+mode: rw,relatime,discard,data=ordered
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sdb1
+1kb_blocks: 20509264
+blocks_used: 2142240
+blocks_available: 17302168
+percent_used: 12
+mount_point: /mnt/resource
+type: ext4
+mode: rw,noatime,discard,data=ordered
 ================================================================
-4> File System Disk Usage:
+6> BIOS Information 
+BIOS Version: 090007
+BIOS Release Date: 06/02/2017
+BIOS Manufacturer: Microsoft Corporation
+Product Name: Virtual Machine
+Hardware Version: 
+Hardware Serial Number: 
+Hardware UUID: 
 ================================================================
-Filesystem     Type      Size  Used Avail Use% Mounted on
-/dev/sda2      xfs        50G  1.4G   49G   3% /
-devtmpfs       devtmpfs  2.0G     0  2.0G   0% /dev
-tmpfs          tmpfs     2.0G     0  2.0G   0% /dev/shm
-tmpfs          tmpfs     2.0G  8.3M  2.0G   1% /run
-tmpfs          tmpfs     2.0G     0  2.0G   0% /sys/fs/cgroup
-/dev/sda1      ext4      240M  124M  100M  56% /boot
-/dev/sdb1      ext4       20G  2.1G   17G  12% /mnt/resource
-tmpfs          tmpfs     394M     0  394M   0% /run/user/1000
+7> PCI Devices Information 
 ================================================================
-5> Current Patch level of the System 
-================================================================
-3.10.0-327.28.2.el7.x86_64
-================================================================
-6> IP Configuration of machine
-================================================================
-7> List of Packages
-================================================================
+8> Packages Installed 
 Loaded plugins: fastestmirror
 Installed Packages
 GeoIP.x86_64                         1.5.0-11.el7                     @base     
@@ -413,12 +523,8 @@ yum-utils.noarch                     1.1.31-42.el7                    @base
 zlib.i686                            1.2.7-17.el7                     @base     
 zlib.x86_64                          1.2.7-17.el7                     @base     
 ================================================================
-8> List of Oracle Databases
+9> Databases Configured 
+Database Installed: NA
 ================================================================
-================================================================
-9> Web Server Configuration
-================================================================
-10> No file share deployed 
-================================================================
-11> No cluster configured on given node.
-================================================================
+10> Web App Configured 
+Web Application Installed: httpd

@@ -1,0 +1,732 @@
+﻿<MapsMetadata>
+  <SshClass ClassName="LinuxDistribution"
+            Guid="B0F61EE6-F61D-4BB0-9328-A34EBD2E58C3">
+    <DataGroup Name="Linux"/>
+    <Query>
+       if [ "$(which lsb_release 2> /dev/null)" != "" ];then
+         lsb_release -idrc
+	elif [ -e /etc/redhat-release ];then
+  l_description=`cat /etc/redhat-release |sed s/\ release.*//`
+  l_release=`cat /etc/redhat-release | sed s/.*release\ // | sed s/\ .*//`
+	c_codename=`cat /etc/redhat-release | sed s/.*\(// | sed s/\)//`
+	l_description=$l_description' '$l_release' '$c_codename
+  echo "Distributor ID:	$l_description"
+  echo "Description:	$l_description"
+  echo "Release:	$l_release"
+  echo "Codename:	$c_codename"
+  elif [ -e /etc/os-release ];then
+  l_description=`cat /etc/os-release | sed -n -e 's/^PRETTY_NAME=\(.*\)/\1/p'`
+  l_release=`cat /etc/os-release | sed -n -e 's/^VERSION_ID="\(.*\)"/\1/p'`
+  echo "Distributor ID:	$l_description"
+  echo "Description:	$l_description"
+  echo "Release:	$l_release"
+  echo "Codename:	$c_codename"
+  else
+  echo "Distributor ID:	UNKNOWN"
+  echo "Description:	UNKNOWN"
+  echo "Release:	UNKNOWN"
+  echo "Codename:	UNKNOWN"
+  fi
+    </Query>
+    <QueryOutputParser>
+      <InstanceParserRegex>
+        (?sxn)^(?>Distributor\ ID:\t(?'distributorId'[^\n]*)\n)
+               (?>Description:\t(?'description'[^\n]*)\n)
+               (?>Release:\t(?'release'[^\n]*)\n)
+               (?>Codename:\t(?'codename'[^\n]*)\n)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxDistribution]" Table="[Linux_Inventory].[Distribution]"/>
+    <Attribute Source="distributorId" Destination="@DistributorId" />
+    <Attribute Source="description" Destination="@Description" />
+    <Attribute Source="release" Destination="@Release" />
+    <Attribute Source="codename" Destination="@Codename" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxProcessors"
+            Guid="EAF54740-AD65-43B8-81BF-2C17D0198A20">
+    <DataGroup Name="Linux"/>
+    <Query>
+      cat /proc/cpuinfo | sed -e 's/flags[[:space:]]*:.* lm .*/address width\t: 64/;
+              s/flags[[:space:]]*:.*/address width\t: 32/;/siblings[[:space:]]*:.*/d'
+    </Query>
+    <QueryOutputParser>
+      <InstanceSeparatorRegex>(?&lt;=\n)\n</InstanceSeparatorRegex>
+      <InstanceParserRegex>
+        (?sixn)^(?>processor[ \t]*:\ (?'processor'\d+)).*?
+                (?>\nvendor_id[ \t]*:\ (?'vendor_id'[^\n]+)).*?
+                (?>\ncpu\ family[ \t]*:\ (?'cpu_family'\d+)).*?
+                (?>\nmodel[ \t]*:\ (?'model'\d+)).*?
+                (?>\nmodel\ name[ \t]*:\ (?'model_name'[^\n]+)).*?
+                (?>\nstepping[ \t]*:\ (?'stepping'\d+)).*?
+                (?>\ncpu\ MHz[ \t]*:\ (?'cpu_mhz'\d+)).*?
+                (?>\ncache\ size[ \t]*:\ (?'cache_size_kb'\d+)\ KB).*?
+                (?>(\nphysical\ id[ \t]*:\ (?'physical_id'\d+))?).*?
+                (?>(\ncore\ id[ \t]*:\ (?'core_id'\d+))?).*?
+                (?>\naddress\ width[ \t]*:\ (?'address_width'\d+))
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxProcessors]" Table="[Linux_Inventory].[Processors]"/>
+    <Attribute Source="processor"
+               Destination="@Processor" DestinationType="short" IsKeyField="true" />
+    <Attribute Source="vendor_id" Destination="@VendorId" />
+    <Attribute Source="cpu_family" Destination="@CpuFamily" DestinationType="short" />
+    <Attribute Source="model" Destination="@Model" DestinationType="short" />
+    <Attribute Source="model_name" Destination="@ModelName" />
+    <Attribute Source="stepping" Destination="@Stepping" DestinationType="short" />
+    <Attribute Source="cpu_mhz" Destination="@CpuMhz" DestinationType="float" />
+    <Attribute Source="cache_size_kb" Destination="@CacheSizeKb" DestinationType="int" />
+    <Attribute Source="physical_id" Destination="@PhysicalId" DestinationType="short" />
+    <Attribute Source="core_id" Destination="@CoreId" DestinationType="short" />
+    <Attribute Source="address_width" Destination="@AddressWidth" DestinationType="byte" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxMemoryInfo"
+            Guid="FF5A0C40-F441-44A1-8CC6-8C858D7B38BC">
+    <DataGroup Name="Linux"/>
+    <Query>cat /proc/meminfo</Query>
+    <QueryOutputParser>
+      <InstanceParserRegex>
+        (?sixn)(?>MemTotal:[ \t]*(?'mem_total_kb'\d+)\ kB).*?
+               (?>MemFree:[ \t]*(?'mem_free_kb'\d+)\ kB).*?
+               (?>Buffers:[ \t]*(?'buffers_kb'\d+)\ kB).*?
+               (?>Cached:[ \t]*(?'cached_kb'\d+)\ kB).*?
+               (?>SwapCached:[ \t]*(?'swap_cached_kb'\d+)\ kB).*?
+               (?>Active:[ \t]*(?'active_kb'\d+)\ kB).*?
+               (?>Inactive:[ \t]*(?'inactive_kb'\d+)\ kB).*?
+               (?>SwapTotal:[ \t]*(?'swap_total_kb'\d+)\ kB).*?
+               (?>SwapFree:[ \t]*(?'swap_free_kb'\d+)\ kB).*?
+               (?>VmallocTotal:[ \t]*(?'vm_alloc_total_kb'\d+)\ kB).*?
+               (?>VmallocUsed:[ \t]*(?'vm_alloc_used_kb'\d+)\ kB).*?
+               (?>VmallocChunk:[ \t]*(?'vm_alloc_chunk_kb'\d+)\ kB)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxMemoryInfo]" 
+                     Table="[Linux_Inventory].[MemoryInfo]"/>
+    <!-- Total amount of physical RAM, in kilobytes. -->
+    <Attribute Source="mem_total_kb" Destination="@MemTotalKb" DestinationType="int" />
+    <!-- The amount of physical RAM, in kilobytes, left unused by the system. -->
+    <Attribute Source="mem_free_kb" Destination="@MemFreeKb" DestinationType="int" />
+    <!-- The amount of physical RAM, in kilobytes, used for file buffers. -->
+    <Attribute Source="buffers_kb" Destination="@BuffersKb" DestinationType="int" />
+    <!-- The amount of physical RAM, in kilobytes, used as cache memory. -->
+    <Attribute Source="cached_kb" Destination="@CachedKb" DestinationType="int" />
+    <!-- The amount of swap, in kilobytes, used as cache memory. -->
+    <Attribute Source="swap_cached_kb" Destination="@SwapCachedKb" DestinationType="int" />
+    <!-- The total amount of buffer or page cache memory, in kilobytes, that is
+      == in active use. This is memory that has been recently used and is usually
+      == not reclaimed for other purposes.
+      -->
+    <Attribute Source="active_kb" Destination="@ActiveKb" DestinationType="int" />
+    <!-- The total amount of buffer or page cache memory, in kilobytes, that are
+      == free and available. This is memory that has not been recently used and
+      == can be reclaimed for other purposes.
+      -->
+    <Attribute Source="inactive_kb" Destination="@InactiveKb" DestinationType="int" />
+    <!-- The total amount of swap available, in kilobytes.-->
+    <Attribute Source="swap_total_kb" Destination="@SwapTotalKb" DestinationType="int" />
+    <!-- The total amount of swap free, in kilobytes. -->
+    <Attribute Source="swap_free_kb" Destination="@SwapFreeKb" DestinationType="int" />
+    <!-- The total amount of memory, in kilobytes, of total allocated virtual
+      == address space.
+      -->
+    <Attribute Source="vm_alloc_total_kb" Destination="@VmAllocTotalKb" DestinationType="long" />
+    <!-- The total amount of memory, in kilobytes, of used virtual address space.-->
+    <Attribute Source="vm_alloc_used_kb" Destination="@VmAllocUsedKb" DestinationType="long" />
+    <!-- The largest contiguous block of memory, in kilobytes, of available
+      == virtual address space.
+      -->
+    <Attribute Source="vm_alloc_chunk_kb" Destination="@VmAllocChunkKb" DestinationType="long" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxNetworkAdapters"
+            Guid="F093DC1A-AD48-4BC2-8524-5A128C150642">
+    <DataGroup Name="Linux"/>
+    <Query>
+     #important : do not remove bash global variable 
+IFS='
+'
+#loop through all reported interfaces.
+#TODO : remove Lo as this is present by default in all machines.
+for i in $(ip -o link show | awk -F': ' '{print $2}')
+ do
+	
+	
+	#echo the interface name
+	echo $i
+	
+	
+	#get link type from specified file path
+	l_linktype="$(cat /sys/class/net/$i/type)"
+	
+	#check if the file "wireless" is present or not.
+	if [ -d /sys/class/net/$i/wireless ] ; then
+		l_linkencap="WireLess"
+		
+	elif [ $l_linktype -eq 1 ]; then
+		l_linkencap="Ethernet"
+		
+	elif [ $l_linktype -eq 772 ]; then
+		l_linkencap="Local Loopback"
+	fi
+		#echo the value
+		echo "Link encap:$l_linkencap"
+
+	#get the MAC address
+	l_macaddress="$(cat /sys/class/net/$i/address)"
+		#echo the value
+		echo "HWaddr $l_macaddress"
+	
+	
+	#get the ipv4 address details 
+	
+	#special logic for Local loopback adapter
+	if [ $i == "lo" ]; then
+		l_ipv4="$(ip addr show $i |grep -w inet | awk '{ print $2}'| cut -d "/" -f 1)"
+		l_ipv4prefix="$(ip addr show $i |grep -w inet | awk '{ print $2}'| cut -d "/" -f 2)"
+			#echo the value
+				echo "inet addr:$l_ipv4  Mask:$l_ipv4prefix"
+		
+	else
+		#the code for all interfaces other than "Lo"
+		l_ipv4="$(ip addr show $i |grep -w inet | awk '{ print $2}'| cut -d "/" -f 1)"
+		l_ipv4prefix="$(ip addr show $i |grep -w inet | awk '{ print $2}'| cut -d "/" -f 2)"
+		l_ipv4bcast="$(ip addr show $i |grep -w inet |  awk '{ print $4}')"
+		l_ipv4assignmenttype="$(ip addr show $i | grep -w inet |  awk '{ print $7}')"
+			#echo the value
+			echo "inet addr:$l_ipv4  Bcast:$l_ipv4bcast  Mask:$l_ipv4prefix"
+	fi	
+	
+	#get the ipv6 address details for specified interface in variable $i
+	    temp="$(ip -6 addr show $i | grep -w inet6 )"
+        
+			for line in $temp ; 
+			do
+						#get the IP address
+						ipv6=$(echo "$line" | awk '{ print $2}' )
+                        #ipv6="$(grep -v ::1 &lt;&lt;&lt; $line | awk '{ print $2}')"
+						#get the IP scope
+						ipv6scope=$(echo "$line" | awk '{ print $4}')
+						#ipv6scope="$(grep -v ::1 &lt;&lt;&lt; $line | awk '{ print $4}')"
+                        #echo op to screen
+						echo "inet6 addr: $ipv6 # Scope:$ipv6scope"
+			done
+	#get MTU
+	#MTU echo must end with a space, as the MAP XML pulls value from : to next space 
+	l_mtu="$(cat /sys/class/net/$i/mtu)"
+		echo "MTU:$l_mtu "
+
+	
+	#get RX / TX packet details
+	l_rxpackets="$(cat /sys/class/net/$i/statistics/rx_packets)"
+	l_txpackets="$(cat /sys/class/net/$i/statistics/tx_packets)"
+	
+	l_rxerrors="$(cat /sys/class/net/$i/statistics/rx_errors)"
+	l_txerrors="$(cat /sys/class/net/$i/statistics/tx_errors)"
+	
+	l_rxdropped="$(cat /sys/class/net/$i/statistics/rx_dropped)"
+	l_txdropped="$(cat /sys/class/net/$i/statistics/tx_dropped)"
+	
+	#get RX / TX bytes details
+	l_rxbytes="$(cat /sys/class/net/$i/statistics/rx_bytes)"
+	l_txbytes="$(cat /sys/class/net/$i/statistics/tx_bytes)"	
+		
+		echo "RX packets:$l_rxpackets errors:$l_rxerrors"
+		echo "TX packets:$l_txpackets errors:$l_txerrors"
+		echo "RX bytes:$l_rxbytes TX bytes:$l_txbytes"
+		
+	
+	#get description
+	l_description=""
+      l_vendorFile="/sys/class/net/$i/device/vendor"
+      l_deviceFile="/sys/class/net/$i/device/device"
+      if [ -e "$l_vendorFile" -a -e "$l_deviceFile" ]; then
+		l_vendor="$(cat $l_vendorFile)"
+		l_device="$(cat $l_deviceFile)"
+		l_description=$(lspci -d $l_vendor:$l_device | head -n 1 | awk -F ': ' '{print $2}')
+		if [ -z "$l_description" ]; then
+			l_description="$(lsusb -d $l_vendor:$l_device | head -n 1 | awk --posix -F '[[:alnum:]]{4}:[[:alnum:]]{4} ' '{print $2}')"
+		fi
+      fi
+			echo "Description:$l_description"
+	
+	
+	#get link state
+	l_linkstate="$(cat /sys/class/net/$i/operstate)"
+	
+		if [ $l_linkstate = "up" ]; then
+			echo "Active:true"
+		else
+			echo "Active:false"
+		fi
+	
+done
+  </Query>
+    <QueryOutputParser>
+      <InstanceSeparatorRegex>(?&lt;=Active:\S+)\n</InstanceSeparatorRegex>
+      <InstanceParserRegex>
+       (?sixn)^(?>(?'interface_name'[^\n]*)\n)
+        (?>Link\ encap:(?'type'[^\n]*)\n)
+        (?>HWaddr\ (?'mac_address'[^\n]*)\n)?
+        (?>inet\ addr:\s*(?'ipv4_addr'\S+)(\s*Bcast:\s*(?'broadcast_addr'\S+))?\s+Mask:\s*(?'net_mask'\S+))?
+        (?>inet6\ addr:\s*(?'ipv6_addr'\S+).*?)?
+        (?>.*?MTU:\s*(?'mtu'\d+).*?\n)
+        (?>RX\ packets:\s*(?'rx_packets'\d+)\s+errors:\s*(?'rx_errors'\d+).*?\n)
+        (?>TX\ packets:\s*(?'tx_packets'\d+)\s+errors:\s*(?'tx_errors'\d+).*?\n).*?
+        (?>RX\ bytes:\s*(?'rx_bytes'\d+)[^TX]+TX\ bytes:\s*(?'tx_bytes'\d+).*?\n).*?
+        (?>Description:(?'description'[^\n]*)\n)
+        (?>Active:(?'active'\S+))
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxNetworkAdapters]" Table="[Linux_Inventory].[NetworkAdapters]"/>
+    <Attribute Source="interface_name" Destination="@InterfaceName" IsKeyField="true" />
+    <Attribute Source="type" Destination="@Type" />
+    <Attribute Source="description" Destination="@Description" />
+    <Attribute Source="active" Destination="@Active" DestinationType="bool" />
+    <Attribute Source="mac_address" Destination="@MacAddress" />
+    <Attribute Source="ipv4_addr" Destination="@Ipv4Addr" />
+    <Attribute Source="broadcast_addr" Destination="@BroadcastAddr" />
+    <Attribute Source="net_mask" Destination="@NetMask" />
+    <Attribute Source="ipv6_addr" Destination="@Ipv6Addr" />
+    <Attribute Source="mtu" Destination="@Mtu" DestinationType="int" />
+    <Attribute Source="rx_packets" Destination="@RxPackets" DestinationType="long" />
+    <Attribute Source="rx_bytes" Destination="@RxBytes" DestinationType="long" />
+    <Attribute Source="rx_errors" Destination="@RxErrors" DestinationType="long" />
+    <Attribute Source="tx_packets" Destination="@TxPackets" DestinationType="long" />
+    <Attribute Source="tx_bytes" Destination="@TxBytes" DestinationType="long" />
+    <Attribute Source="tx_errors" Destination="@TxErrors" DestinationType="long" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxFilesystems"
+            Guid="30BD8AEC-316F-4737-9803-AF1A6BFA2793">
+    <DataGroup Name="Linux"/>
+    <!--
+      == IMPORTANT: Don't indent the script in the Query element out of the
+      ==            first column of this file because it won't work any more.
+      -->
+    <Query>
+#this script uses bash to get disk mount information from local Linux machine.
+#df utility must be installed , available on most installations except core linux.
+
+#split on new line only. Also IFS=$'\n' in bash/ksh93/zsh/mksh
+IFS='
+'
+
+#disable globbing
+#no longer required.
+#ser -o noglog
+
+#skips the tmpfs file system as these are RAM drives
+df -T -x tmpfs -x devtmpfs | awk 'NR>1 { print $1 " " $2 " " $3 " " $4  " " $5 " " $6 " " $7}' |
+{
+	while read output
+	do
+		l_filesystem=$(echo $output | awk '{ print $1 }')
+		l_1kb_blocks=$(echo $output | awk '{ print $3 }')
+		l_blocks_used=$(echo $output | awk '{ print $4 }')
+		l_blocks_available=$(echo $output | awk '{ print $5 }')
+		l_percent_used=$(echo $output | sed 's/\%//g'  | awk '{ print $6 }')
+		l_mount_point=$(echo $output | awk '{ print $7 }')
+		l_type=$(echo $output | awk '{ print $2 }')
+		#l_type=$(findmnt -rn $l_mount_point | awk '{ print $3 }' )	
+		l_mode=$(findmnt -rn $l_mount_point | awk '{ print $4 }' )	
+		
+		#echo the values
+		echo "filesystem=$l_filesystem"
+		echo "1kb_blocks=$l_1kb_blocks"
+		echo "blocks_used=$l_blocks_used"
+		echo "blocks_available=$l_blocks_available"
+		echo "percent_used=$l_percent_used"
+		echo "mount_point=$l_mount_point"
+		echo "type=$l_type"
+		echo "mode=$l_mode"
+	done
+}
+    </Query>
+    <QueryOutputParser>
+      <InstanceSeparatorRegex>(?&lt;=mode=[^\n]*)\n</InstanceSeparatorRegex>
+      <InstanceParserRegex>
+        (?sxn)^(?>filesystem=(?'filesystem'[^\n]*)\n)
+               (?>1kb_blocks=(?'onekb_blocks'[^\n]*)\n)
+               (?>blocks_used=(?'blocks_used'[^\n]*)\n)
+               (?>blocks_available=(?'blocks_available'[^\n]*)\n)
+               (?>percent_used=(?'percent_used'[^\n]*)\n)
+               (?>mount_point=(?'mount_point'[^\n]*)\n)
+               (?>type=(?'type'[^\n]*)\n)
+               (?>mode=(?'mode'[^\n]*))
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxFilesystems]" Table="[Linux_Inventory].[Filesystems]"/>
+    <Attribute Source="filesystem" Destination="@Filesystem" IsKeyField="true" />
+    <Attribute Source="onekb_blocks" Destination="@1kbBlocks" DestinationType="long" />
+    <Attribute Source="blocks_used" Destination="@BlocksUsed" DestinationType="long" />
+    <Attribute Source="blocks_available" Destination="@BlocksAvailable" DestinationType="long" />
+    <Attribute Source="percent_used" Destination="@PercentUsed" DestinationType="int" />
+    <Attribute Source="mount_point" Destination="@MountPoint" />
+    <Attribute Source="type" Destination="@Type" />
+    <Attribute Source="mode" Destination="@Mode" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxSmbiosInfo"
+            Guid="4CDA96E5-B2E5-4FB8-B37A-4E4C830B7A08">
+    <DataGroup Name="Linux"/>
+    <Query>
+       # First try identifying Xen
+      # Detect Xen paravirtualized systems (which includes dom0 and domU PV).
+      # If /proc/xen is detected, this means that the machine is either
+      # Xen dom0 or Xen domU PV (paravirtualized).  Detect which one it is.
+      #Dom0 vs Xen DomU PV.  Fully virtualized Xen VMs are detected below.
+      virt_info=""
+      if [ -e /proc/xen ]; then
+      # /dev/xvc0 only exists on Xen domU PV systems. It does not exist on HVM DomU
+      if [ -e /dev/xvc0 ]; then
+      machine_type="Virtual"
+      virt_info="Xen (domU PV)"
+      else
+      machine_type="Physical"
+      virt_info="Xen (dom0)"
+      fi
+      fi
+      # Try hal first as regular user, then dmicode as root
+      # Return "Access Denied" if not running as root.
+      # NOTE: Consider using lshw or parsing dmesg incase the
+      # options below fail.
+      if [ "$(which dmesg 2> /dev/null)" != "" ]; then
+      echo
+      echo "BIOS Information"
+      #biosvendor=$(hal-get-property --udi /org/freedesktop/Hal/devices/computer --key system.firmware.vendor 2> /dev/null)
+      #if [ $? -ne 0 ]; then
+      #  biosvendor=$(hal-get-property --udi /org/freedesktop/Hal/devices/computer --key smbios.bios.vendor)
+      #fi
+      echo "Vendor: $biosvendor"
+      version=`dmesg|grep -i 'DMI:'|sed 's/.*\(BIOS.*\)/\1/' | awk '{print $2}'`
+      echo "Version: $version"
+      biosdate=`dmesg|grep -i 'DMI:'|sed 's/.*\(BIOS.*\)/\1/' | awk '{print $3}'`
+      echo "Release Date: $biosdate"
+      echo
+      echo "System Information"
+      hwvendor=`dmesg|grep -i 'DMI:'|sed 's/.*\(DMI.*\)/\1/' | awk '{print $2,$3}'`
+      echo "Manufacturer: $hwvendor"
+      # If we got a Xen (dom0) VM, we will append this information to the end of the 'Product Name'
+      # If we got a Xen (domU PV) VM, we append that as well, but it will be the only string since there is no hal entry
+      prodname=`dmesg|grep -i 'DMI:'|sed 's/.*\(Virtual.*\)/\1/' | awk '{print $1,$2}'|awk -F"/" '{print $1}'|awk -F"," '{print $1}'`
+      if [ -n "$virt_info" ]; then
+      echo "Product Name: $prodname $virt_info"
+      else
+      echo "Product Name: $prodname"
+      fi
+
+      echo "Version: $hwver"
+
+      echo "Serial Number: $hwserial"
+
+      echo "UUID: $hwid"
+      echo
+      else
+      if [ `id -u` != "0" ]; then
+      echo __MAP_INVENTORY_ACCESS_DENIED__ 1>&amp;2
+        else
+        dmidecode -t 0,1
+        fi
+      fi
+    </Query>
+    <QueryOutputParser>
+      <InstanceParserRegex>
+        (?sixn)(?>\nBIOS\ Information\n)
+               (?>\s*Vendor:\ *(?'bios_vendor'[^\n]*)\n)
+               (?>\s*Version:\ *(?'bios_version'[^\n]*)\n)
+               (?>\s*Release\ Date:\ *(?'bios_release_date'[^\n]*)\n).*?
+               (?>\nSystem\ Information\n)
+               (?>\s*Manufacturer:\ *(?'system_manufacturer'[^\n]*)\n)
+               (?>\s*Product\ Name:\ *(?'system_product_name'[^\n]*)\n)
+               (?>\s*Version:\ *(?'system_version'[^\n]*)\n)
+               (?>\s*Serial\ Number:\ *(?'system_serial_number'[^\n]*)\n)
+               (?>\s*UUID:\ *(?'system_uuid'[^\n]*)\n)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxSmbiosInfo]" Table="[Linux_Inventory].[SmbiosInfo]"/>
+    <Attribute Source="bios_vendor" Destination="@BiosVendor" />
+    <Attribute Source="bios_version" Destination="@BiosVersion" />
+    <Attribute Source="bios_release_date" Destination="@BiosReleaseDate" />
+    <Attribute Source="system_manufacturer" Destination="@SystemManufacturer" />
+    <Attribute Source="system_product_name" Destination="@SystemProductName" />
+    <Attribute Source="system_version" Destination="@SystemVersion" />
+    <Attribute Source="system_serial_number" Destination="@SystemSerialNumber" />
+    <Attribute Source="system_uuid" Destination="@SystemUuid" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxPciDevices"
+            Guid="00EF3B42-EE74-4DBB-9F2E-8BC72F960D33">
+    <DataGroup Name="Linux"/>
+    <Query>lspci -D</Query>
+    <QueryOutputParser>
+      <InstanceSeparatorRegex>\n</InstanceSeparatorRegex>
+      <InstanceParserRegex>
+        (?n)^(?'pci_device_id'\S+)\s+(?'type'[^:]+):\s+(?'description'.*)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxPciDevices]" Table="[Linux_Inventory].[PciDevices]"/>
+    <Attribute Source="pci_device_id" Destination="@PciDeviceId" IsKeyField="true" />
+    <Attribute Source="type" Destination="@Type" />
+    <Attribute Source="description" Destination="@Description" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxCdromDrives"
+            Guid="EE069F16-799F-497E-AD4D-CE802F284E02">
+    <DataGroup Name="Linux"/>
+    <!--
+      == IMPORTANT: Don't indent the script in the Query element out of the
+      ==            first column of this file because it won't work any more.
+      -->
+    <Query>
+perl - &lt;&lt;'PERL_SCRIPT'
+if (-l "/dev/cdrom" &amp;&amp;
+    `ls -l /dev/cdrom` =~ m/\/dev\/cdrom -> (\S+)/) {
+    $cdrom = $1;
+    print "device_name=/dev/$cdrom\n";
+
+    if (-e "/proc/ide/$cdrom/model") {
+        print "model=", `cat "/proc/ide/$cdrom/model"`;
+    }
+    elsif (-e "/sys/block/$cdrom/device/model") {
+        print "model=", `cat "/sys/block/$cdrom/device/model"`;
+    }
+    else {
+        print "model=\n";
+    }
+
+    if (-e "/proc/ide/$cdrom/vendor") {
+        print "vendor=", `cat "/proc/ide/$cdrom/vendor"`;
+    }
+    elsif (-e "/sys/block/$cdrom/device/vendor") {
+        print "vendor=", `cat "/sys/block/$cdrom/device/vendor"`;
+    }
+    else {
+        print "vendor=\n";
+    }
+   
+    # TODO: Extract additional info w/ hdparm, but this requires root access.
+}
+PERL_SCRIPT
+    </Query>
+    <QueryOutputParser>
+      <InstanceParserRegex>
+        (?sxn)^(?>device_name=(?'device_name'[^\n]*)\n)
+               (?>model=(?'model'[^\n]*)\n)
+               (?>vendor=(?'vendor'[^\n]*)\n)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxCdromDrives]" Table="[Linux_Inventory].[CdromDrives]"/>
+    <Attribute Source="device_name" Destination="@DeviceName" IsKeyField="true" />
+    <Attribute Source="model" Destination="@Model" />
+    <Attribute Source="vendor" Destination="@Vendor" />
+  </SshClass>
+
+  <SshClass ClassName="RPMPackages"
+            Guid="CC0F141C-8EE0-4a7d-8391-4D1BB0FC984E">
+    <DataGroup Name="Linux"/>
+    <PreprocessingQuery SubstitutionTargets="Query">
+      <Variable Name="AppList"/>
+      <Sql>
+        BEGIN
+          EXEC [Linux_Inventory].[PreprocessorGetLinuxProductMask]
+        END
+      </Sql>
+    </PreprocessingQuery>
+    <Query>
+      if [ "$(which rpm 2> /dev/null)" != "" ]; then
+        appspec="$AppList"
+
+        inventory=`rpm -qa`
+        export inventory
+        cmdpacklong1="rpm -q --queryformat 'Name: %{NAME}\nVersion: %{VERSION}\nVendor: %{VENDOR}\nSummary: %{SUMMARY}\nEOFEOF\n\n'"
+        cmdpacklong2="| sed -e '/^EOFEOF/q'"
+        export cmdpacklong1
+        export cmdpacklong2
+
+        separator=`echo $appspec | cut -c 1`
+        fildsep=`echo $appspec | cut -d $separator -f 2`
+        recsep=`echo $appspec | cut -d $separator -f 3`
+        applist=`echo $appspec | cut -d $separator -f 4-`
+        export fildsep
+        export recsep
+        export applist
+
+        perl - &lt;&lt;'PERL_SCRIPT'
+
+        $fieldseparator = $ENV{'fildsep'};
+        $recordseparator = $ENV{'recsep'};
+        $appliststring = $ENV{'applist'};
+        @reclist = split(/$recordseparator/,$appliststring);
+        @applist = ();
+
+        foreach $record (@reclist) {
+          my %temph = ();
+          @fieldlist = split(/$fieldseparator/,$record);
+          $temph{'package_mask'}=$fieldlist[0];
+          $temph{'package_name'}=$fieldlist[1];
+          $temph{'package_exe'}=$fieldlist[2];
+          $temph{'package_stack'}=$fieldlist[3];
+          push(@applist, \%temph);
+        }
+
+        $appinventory = $ENV{'inventory'};
+        @invlist = split(/\n/,$appinventory);
+
+        $psoutput='ps aux | tr -s " " | cut -d" " -f11 | sed "s/.*\///"';
+        @processlist=split(/\n/,`$psoutput`);
+
+        foreach $inva (@invlist){
+          foreach $rec (@applist){
+            if( $inva =~ $rec->{'package_mask'}){
+              $packagecontent = `$ENV{'cmdpacklong1'} $inva $ENV{'cmdpacklong2'}`;
+              print "AppStack: $rec->{'package_stack'}\n";
+              if ( grep ( /$rec->{'package_exe'}/, @processlist )) {
+                print "IsRunning: 1\n";
+              }
+              else {
+                print "IsRunning: 0\n";
+              }
+              print "$packagecontent\n";
+            }
+          }
+        }
+PERL_SCRIPT
+      fi
+    </Query>
+    <QueryOutputParser>
+      <InstanceSeparatorRegex>(?&lt;=EOFEOF\n)\n</InstanceSeparatorRegex>
+      <InstanceParserRegex>
+        (?sxn)^(?>AppStack:\ (?'appstack'[^\n]*)\n)
+        (?>IsRunning:\ (?'isrunning'[^\n]*)\n)
+        (?>Name:\ (?'packagename'[^\n]*)\n)
+        (?>Version:\ (?'packageversion'[^\n]*)\n)
+        (?>Vendor:\ (?'packagevendor'[^\n]*)\n)
+        (?>Summary:\ (?'packagesummary'[^\n]*)\n)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxProducts]" Table="[Linux_Inventory].[Products]"/>
+    <Attribute Source="packagename" Destination="@Name" IsKeyField="true" />
+    <Attribute Source="packageversion" Destination="@Version" IsKeyField="true" />
+    <Attribute Source="packagesummary" Destination="@Description" />
+    <Attribute Source="packagevendor" Destination="@Vendor" />
+    <Attribute Source="isrunning" Destination="@Status" />
+    <Attribute Source="appstack" Destination="@AppStack" />
+  </SshClass>
+
+  <SshClass ClassName="DPKGPackages"
+            Guid="F0049752-4C34-4d1c-82FB-778D29282BA2">
+    <DataGroup Name="Linux"/>
+    <PreprocessingQuery SubstitutionTargets="Query">
+      <Variable Name="AppList"/>
+      <Sql>
+        BEGIN
+        EXEC [Linux_Inventory].[PreprocessorGetLinuxProductMask]
+        END
+      </Sql>
+    </PreprocessingQuery>
+    <Query>
+      if [ "$(which dpkg-query 2> /dev/null)" != "" ]; then
+      appspec="$AppList"
+
+      separator=`echo $appspec | cut -c 1`
+      fildsep=`echo $appspec | cut -d $separator -f 2`
+      recsep=`echo $appspec | cut -d $separator -f 3`
+      applist=`echo $appspec | cut -d $separator -f 4-`
+      export fildsep
+      export recsep
+      export applist
+
+      perl - &lt;&lt;'PERL_SCRIPT'
+
+        $fieldseparator = $ENV{'fildsep'};
+        $recordseparator = $ENV{'recsep'};
+        $appliststring = $ENV{'applist'};
+        @reclist = split(/$recordseparator/,$appliststring);
+        @applist = ();
+
+        foreach $record (@reclist) {
+          my %temph = ();
+          @fieldlist = split(/$fieldseparator/,$record);
+          $temph{'package_mask'}=$fieldlist[0];
+          $temph{'package_name'}=$fieldlist[1];
+          $temph{'package_exe'}=$fieldlist[2];
+          $temph{'package_stack'}=$fieldlist[3];
+          push(@applist, \%temph);
+        }
+
+        $appinventory = $ENV{'inventory'};
+        @invlist = `dpkg-query -W -f='\${Package}\n'`;
+        chomp @invlist;
+
+        $psoutput='ps aux | tr -s " " | cut -d" " -f11 | sed "s/.*\///"';
+        @processlist=split(/\n/,`$psoutput`);
+
+        foreach $inva (@invlist){
+          foreach $rec (@applist){
+            if( $inva =~ $rec->{'package_mask'}){
+              $packagecontent = `dpkg-query -W -f='Name: \${Package}\nVersion: \${Version}\nVendor: \${Origin}\nSummary: \${Description}\nEOFEOF\n' $inva`;
+              print "AppStack: $rec->{'package_stack'}\n";
+              if ( grep ( /$rec->{'package_exe'}/, @processlist )) {
+                print "IsRunning: 1\n";
+              }
+              else {
+                print "IsRunning: 0\n";
+              }
+              print "$packagecontent\n";
+            }
+          }
+        }
+PERL_SCRIPT
+      fi
+    </Query>
+    <QueryOutputParser>
+      <InstanceSeparatorRegex>EOFEOF\n\n</InstanceSeparatorRegex>
+      <!-- Note: Parsing of 'packageversion' differs from the RPG case because PKMG package version includes distribution -->
+      <InstanceParserRegex>
+        (?sxn)^(?>AppStack:\ (?'appstack'[^\n]*)\n)
+        (?>IsRunning:\ (?'isrunning'[^\n]*)\n)
+        (?>Name:\ (?'packagename'[^\n]*)\n)
+        (?>Version:\ (?'packageversion'[^-\n]*)[^\n]*\n)
+        (?>Vendor:\ (?'packagevendor'[^\n]*)\n)
+        (?>Summary:\ (?'packagesummary'[^\n]*)\n)
+      </InstanceParserRegex>
+    </QueryOutputParser>
+    <StoredProcedure Name="[ZZGenerated].[InsupdLinuxProducts]"/>
+    <Attribute Source="packagename" Destination="@Name" IsKeyField="true" />
+    <Attribute Source="packageversion" Destination="@Version" IsKeyField="true" />
+    <Attribute Source="packagesummary" Destination="@Description" />
+    <Attribute Source="packagevendor" Destination="@Vendor" />
+    <Attribute Source="isrunning" Destination="@Status" />
+    <Attribute Source="appstack" Destination="@AppStack" />
+  </SshClass>
+
+  <SshClass ClassName="LinuxOracleInstall"
+          Guid="5C73C78F-2F6C-4D17-A6A8-ACFCBF5989F4">
+        <DataGroup Name="Linux"/>
+        <Query>
+            if [ -e /etc/oratab ]; then
+              for oraInstall in `cat /etc/oratab|egrep ':N|:Y'|grep -v \*`
+              do
+               oraSid=`echo $oraInstall | cut -f1 -d':'`
+               oraHome=`echo $oraInstall | cut -f2 -d':'`
+               oraVersion=`strings $oraHome/bin/oracle | grep NLSRTL`
+               echo "$oraSid $oraHome $oraVersion"
+               done
+            fi
+        </Query>
+        <QueryOutputParser>
+            <InstanceSeparatorRegex>\s*\n</InstanceSeparatorRegex>
+            <InstanceParserRegex>
+                (?sxni)(?'name'\S*)\s(?'install_path'\S*)\D*(?'version'[0-9.]+)
+            </InstanceParserRegex>
+        </QueryOutputParser>
+      <StoredProcedure Name="[ZZGenerated].[InsupdLinuxProducts]"/>
+      <Attribute Source="name" Destination="@Name" IsKeyField="true" />
+      <Attribute Source="version" Destination="@Version" IsKeyField="true" />
+      <Attribute Source="install_path" Destination="@Description" />
+      <Attribute Default="Oracle" Destination="@Vendor" />
+      <Attribute Default="0" Destination="@Status" />
+      <Attribute Default="5" Destination="@AppStack" />
+  </SshClass>
+</MapsMetadata>

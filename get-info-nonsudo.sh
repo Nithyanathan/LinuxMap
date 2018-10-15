@@ -72,17 +72,17 @@ get_info() {
         #check if yum is installed
         if [ -x "$(command -v yum)" ]; then
             yum list installed >> $location
-            echo "NAME,VERSION,RELEASE" > $packagecsv
-            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
+            echo "NAME,VERSION,RELEASE,VENDOR,SUMMARY" > $packagecsv
+            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE},%{VENDOR},%{SUMMARY}\n" | sort -t\; -k 1 >> $packagecsv
         else
             rpm -qa >> $location
-            echo "NAME,VERSION,RELEASE" > $packagecsv
-            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE}\n" | sort -t\; -k 1 >> $packagecsv
+            echo "NAME,VERSION,RELEASE,VENDOR,SUMMARY" > $packagecsv
+            rpm -qa --queryformat "%{NAME},%{VERSION},%{RELEASE},%{VENDOR},%{SUMMARY}\n" | sort -t\; -k 1 >> $packagecsv
         fi
     elif [ $isubuntu -eq 0 ];then
         dpkg -l >> $location
-        echo "Name,Version,Section,Homepage,Source" > $packagecsv
-        dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source}\n' | sort >> $packagecsv
+        echo "Name,Version,Section,Homepage,Source,Architecture" > $packagecsv
+        dpkg-query -Wf '${Package},${Version},${Section},${Homepage},${Source},${Architecture}\n' | sort >> $packagecsv
     elif [ $issuse -eq 0 ];then
         zypper se --installed-only -s >> $location
     else
@@ -103,7 +103,11 @@ get_mysql() {
     read -s -p "MySQL Password: " mysqlpass
     echo "================================================================" >> $location
     echo "8> List of MySQL Databases" >> $location
-    mysql -u $mysqluser -p$mysqlpass -e "show databases;" >> $location
+    if [ -z "$mysqluser" ]; then
+        echo "Unable to connect MySQL instance with empty credentials" >> $location
+    else
+        mysql -u $mysqluser -p$mysqlpass -e "show databases;" | grep -v Database | grep -v schema >> $location
+    fi
 }
 
 get_web() {

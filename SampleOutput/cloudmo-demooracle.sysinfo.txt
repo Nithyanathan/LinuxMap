@@ -1,51 +1,215 @@
 ================================================================
-* System Name: 	demooracle
-* System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
-* Generated on: 		Mon Oct  8 12:35:52 UTC 2018
-* Running as: 			akundnani
+System Name: 	demooracle
+System Domain Name: 	w0mt4oklkcbutfv22finezrhga.ix.internal.cloudapp.net
+Generated on: 		Fri Oct 12 19:33:30 UTC 2018
+Running as: 			akundnani
 ================================================================
- Ouput of Server : demooracle
+Output of Server: demooracle
 ================================================================
 1> BIOS and System Information 
+Distributor ID: Red Hat Enterprise Linux Server
+Description: Red Hat Enterprise Linux Server 7.4 Maipo
+Current Patch Level: 4.1.12-124.14.1.el7uek.x86_64
+Release: 7.4
+Codename: Maipo
 ================================================================
- BIOS 090007  06/02/2017
-0.000000] DMI: Microsoft Corporation Virtual Machine/Virtual Machine
+2> Processor Information 
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.711
+cache size	: 20480 KB
+physical id	: 0
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 4389.42
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.711
+cache size	: 20480 KB
+physical id	: 0
+core id		: 1
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 4389.42
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.711
+cache size	: 20480 KB
+physical id	: 0
+core id		: 2
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 4389.42
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 45
+model name	: Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz
+stepping	: 7
+microcode	: 0xffffffff
+cpu MHz		: 2194.711
+cache size	: 20480 KB
+physical id	: 0
+core id		: 3
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+address width	: 64
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 4389.42
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 44 bits physical, 48 bits virtual
+power management:
+
 ================================================================
-2> Amount of Physical Memory: 
-7339576K
+3> Memory Information 
+MemTotal:        7124096 kB
+MemFree:         6699084 kB
+MemAvailable:    6875432 kB
+Buffers:            3024 kB
+Cached:           214756 kB
+SwapCached:            0 kB
+Active:           181092 kB
+Inactive:          87268 kB
+Active(anon):      50692 kB
+Inactive(anon):    16552 kB
+Active(file):     130400 kB
+Inactive(file):    70716 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:               160 kB
+Writeback:             0 kB
+AnonPages:         50304 kB
+Mapped:            36584 kB
+Shmem:             16668 kB
+Slab:              55428 kB
+SReclaimable:      21356 kB
+SUnreclaim:        34072 kB
+KernelStack:        4784 kB
+PageTables:         4400 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5659196 kB
+Committed_AS:     301624 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       91400 kB
+VmallocChunk:   34359644160 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+CmaTotal:          16384 kB
+CmaFree:           16384 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       96192 kB
+DirectMap2M:     2000896 kB
+DirectMap1G:     7340032 kB
 ================================================================
-3> Block Device Details:
+4> Network Information 
 ================================================================
-NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-fd0      2:0    1    4K  0 disk 
-sda      8:0    0   30G  0 disk 
-|-sda1   8:1    0  500M  0 part /boot
-`-sda2   8:2    0 29.5G  0 part /
-sdb      8:16   0  120G  0 disk 
-`-sdb1   8:17   0  120G  0 part /mnt/resource
-sdc      8:32   0   50G  0 disk 
-sdd      8:48   0   50G  0 disk 
+5> File System Information 
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda2
+1kb_blocks: 30944256
+blocks_used: 17736296
+blocks_available: 11404984
+percent_used: 61
+mount_point: /
+type: btrfs
+mode: rw,relatime,seclabel,space_cache,subvolid=257,subvol=/root
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sda1
+1kb_blocks: 508588
+blocks_used: 119068
+blocks_available: 389520
+percent_used: 24
+mount_point: /boot
+type: xfs
+mode: rw,relatime,seclabel,attr2,inode64,noquota
+++++++++++++++++++++++++++++++++++++++++++
+filesystem: /dev/sdb1
+1kb_blocks: 123721280
+blocks_used: 2158624
+blocks_available: 115254920
+percent_used: 2
+mount_point: /mnt/resource
+type: ext4
+mode: rw,relatime,seclabel,data=ordered
 ================================================================
-4> File System Disk Usage:
+6> BIOS Information 
+BIOS Version: 090007
+BIOS Release Date: 06/02/2017
+BIOS Manufacturer: Microsoft Corporation
+Product Name: Virtual Machine
+Hardware Version: 
+Hardware Serial Number: 
+Hardware UUID: 
 ================================================================
-Filesystem     Type      Size  Used Avail Use% Mounted on
-devtmpfs       devtmpfs  3.4G     0  3.4G   0% /dev
-tmpfs          tmpfs     3.4G     0  3.4G   0% /dev/shm
-tmpfs          tmpfs     3.4G   17M  3.4G   1% /run
-tmpfs          tmpfs     3.4G     0  3.4G   0% /sys/fs/cgroup
-/dev/sda2      btrfs      30G   17G   11G  61% /
-/dev/sda1      xfs       497M  117M  381M  24% /boot
-/dev/sdb1      ext4      118G  2.1G  110G   2% /mnt/resource
-tmpfs          tmpfs     696M     0  696M   0% /run/user/54322
+7> PCI Devices Information 
 ================================================================
-5> Current Patch level of the System 
-================================================================
-4.1.12-124.14.1.el7uek.x86_64
-================================================================
-6> IP Configuration of machine
-================================================================
-7> List of Packages
-================================================================
+8> Packages Installed 
 Loaded plugins: ulninfo
 Installed Packages
 GeoIP.x86_64                          1.5.0-11.el7                   installed  
@@ -409,16 +573,20 @@ yum-plugin-ulninfo.noarch             0.2-13.el7                     installed
 yum-rhn-plugin.noarch                 2.0.1-9.0.1.el7                installed  
 zlib.x86_64                           1.2.7-17.el7                   installed  
 ================================================================
-8> List of Oracle Databases
-# /etc/oratab
-cdb1:/u01/app/oracle/product/12.2.0/dbhome_1:N
-cdb2:/u01/app/oracle/product/12.2.0/dbhome_1:N
-cdb3:/u01/app/oracle/product/12.2.0/dbhome_1:N
+9> Databases Configured 
+Database Installed: Oracle
+++++++++++++++++++++++++++++++++++++++++++
+Oracle Database Name: cdb1
+Oracle Home Directory: /u01/app/oracle/product/12.2.0/dbhome_1
+Oracle Version: 12.2.0
+++++++++++++++++++++++++++++++++++++++++++
+Oracle Database Name: cdb2
+Oracle Home Directory: /u01/app/oracle/product/12.2.0/dbhome_1
+Oracle Version: 12.2.0
+++++++++++++++++++++++++++++++++++++++++++
+Oracle Database Name: cdb3
+Oracle Home Directory: /u01/app/oracle/product/12.2.0/dbhome_1
+Oracle Version: 12.2.0
 ================================================================
-================================================================
-9> Web Server Configuration
-================================================================
-10> No file share deployed 
-================================================================
-11> No cluster configured on given node.
-================================================================
+10> Web App Configured 
+Web Application Installed: NA

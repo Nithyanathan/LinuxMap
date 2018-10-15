@@ -23,4 +23,5 @@ Fixes Required:
     1. check_web function - returning isweb 1 even though no port 80/443 configured - Tested for Ubuntu
     2. MySQL username / password prompt when running on multiple computers.
     3. httpd command not returning output when running remotely.
-    4. Network configuration not collected for remote CentOS, works for Ubuntu.
+    4. Network configuration not collected for remote CentOS, works for Ubuntu. Most likely due to bash.rc profile
+    5. PCI device configuration not collected for remote CentOS, works for Ubuntu. Most likely due to bash profile

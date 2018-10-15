@@ -1,0 +1,368 @@
+NAME,VERSION,RELEASE,GROUP,VENDOR,SUMMARY
+GeoIP,1.5.0,11.el7,CentOS,Library for country/city/organization to IP address or hostname mapping
+NetworkManager,1.8.0,9.el7,CentOS,Network connection manager and user applications
+NetworkManager-libnm,1.8.0,9.el7,CentOS,Libraries for adding NetworkManager support to applications (new API).
+NetworkManager-ppp,1.8.0,9.el7,CentOS,PPP plugin for NetworkManager
+NetworkManager-team,1.8.0,9.el7,CentOS,Team device plugin for NetworkManager
+NetworkManager-tui,1.8.0,9.el7,CentOS,NetworkManager curses-based UI
+WALinuxAgent,2.2.18,1.el7.centos,Microsoft Corporation <walinuxagent@microsoft.com>,The Microsoft Azure Linux Agent
+acl,2.2.51,12.el7,CentOS,Access control list utilities
+aic94xx-firmware,30,6.el7,CentOS,Adaptec SAS 44300, 48300, 58300 Sequencer Firmware for AIC94xx driver
+alsa-firmware,1.0.28,2.el7,CentOS,Firmware for several ALSA-supported sound cards
+alsa-lib,1.1.3,3.el7,CentOS,The Advanced Linux Sound Architecture (ALSA) library
+alsa-tools-firmware,1.1.0,1.el7,CentOS,ALSA tools for uploading firmware to some soundcards
+apr,1.4.8,3.el7_4.1,CentOS,Apache Portable Runtime library
+apr-util,1.5.2,6.el7,CentOS,Apache Portable Runtime Utility library
+audit,2.7.6,3.el7,CentOS,User space tools for 2.6 kernel auditing
+audit-libs,2.7.6,3.el7,CentOS,Dynamic library for libaudit
+audit-libs,2.7.6,3.el7,CentOS,Dynamic library for libaudit
+authconfig,6.2.8,30.el7,CentOS,Command line tool for setting up authentication from network services
+avahi-autoipd,0.6.31,17.el7,CentOS,Link-local IPv4 address automatic configuration daemon (IPv4LL)
+avahi-libs,0.6.31,17.el7,CentOS,Libraries for avahi run-time use
+basesystem,10.0,7.el7.centos,CentOS,The skeleton package which defines a simple CentOS Linux system
+bash,4.2.46,29.el7_4,CentOS,The GNU Bourne Again shell
+bind-libs,9.9.4,51.el7,CentOS,Libraries used by the BIND DNS packages
+bind-libs-lite,9.9.4,51.el7,CentOS,Libraries for working with the DNS protocol
+bind-license,9.9.4,51.el7,CentOS,License of the BIND DNS suite
+bind-utils,9.9.4,51.el7,CentOS,Utilities for querying DNS name servers
+binutils,2.25.1,32.base.el7_4.1,CentOS,A GNU collection of binary utilities
+biosdevname,0.7.2,2.el7,CentOS,Udev helper for naming devices per BIOS names
+btrfs-progs,4.9.1,1.el7,CentOS,Userspace programs for btrfs
+bzip2-libs,1.0.6,13.el7,CentOS,Libraries for applications using bzip2
+bzip2-libs,1.0.6,13.el7,CentOS,Libraries for applications using bzip2
+ca-certificates,2017.2.14,71.el7,CentOS,The Mozilla CA root certificate bundle
+centos-logos,70.0.6,3.el7.centos,CentOS,CentOS-related icons and pictures
+centos-release,7,2.1511.el7.centos.2.10,CentOS,CentOS Linux release file
+chkconfig,1.7.4,1.el7,CentOS,A system tool for maintaining the /etc/rc*.d hierarchy
+chrony,3.1,2.el7.centos,CentOS,An NTP client/server
+coreutils,8.22,18.el7,CentOS,A set of basic GNU tools commonly used in shell scripts
+cpio,2.11,25.el7_4,CentOS,A GNU archiving program
+cracklib,2.9.0,11.el7,CentOS,A password-checking library
+cracklib,2.9.0,11.el7,CentOS,A password-checking library
+cracklib-dicts,2.9.0,11.el7,CentOS,The standard CrackLib dictionaries
+cronie,1.4.11,17.el7,CentOS,Cron daemon for executing programs at set times
+cronie-anacron,1.4.11,17.el7,CentOS,Utility for running regular jobs
+crontabs,1.11,6.20121102git.el7,CentOS,Root crontab files used to schedule the execution of programs
+cryptsetup-libs,1.7.4,3.el7,CentOS,Cryptsetup shared library
+curl,7.29.0,42.el7,CentOS,A utility for getting files from remote servers (FTP, HTTP, and others)
+cyrus-sasl-lib,2.1.26,21.el7,CentOS,Shared libraries needed by applications which use Cyrus SASL
+dbus,1.6.12,17.el7,CentOS,D-BUS message bus
+dbus-glib,0.100,7.el7,CentOS,GLib bindings for D-Bus
+dbus-libs,1.6.12,17.el7,CentOS,Libraries for accessing D-BUS
+dbus-python,1.1.1,9.el7,CentOS,D-Bus Python Bindings
+device-mapper,1.02.140,8.el7,CentOS,Device mapper utility
+device-mapper-libs,1.02.140,8.el7,CentOS,Device-mapper shared library
+dhclient,4.2.5,58.el7.centos,CentOS,Provides the ISC DHCP client daemon and dhclient-script
+dhcp-common,4.2.5,58.el7.centos,CentOS,Common files used by ISC dhcp client and server
+dhcp-libs,4.2.5,58.el7.centos,CentOS,Shared libraries used by ISC dhcp client and server
+diffutils,3.3,4.el7,CentOS,A GNU collection of diff utilities
+dmidecode,3.0,5.el7,CentOS,Tool to analyse BIOS DMI data
+dnsmasq,2.76,2.el7_4.2,CentOS,A lightweight DHCP/caching DNS server
+dracut,033,502.el7,CentOS,Initramfs generator using udev
+dracut-config-rescue,033,502.el7,CentOS,dracut configuration to turn on rescue image generation
+dracut-network,033,502.el7,CentOS,dracut modules to build a dracut initramfs with network support
+e2fsprogs,1.42.9,10.el7,CentOS,Utilities for managing ext2, ext3, and ext4 filesystems
+e2fsprogs-libs,1.42.9,10.el7,CentOS,Ext2/3/4 filesystem-specific shared libraries
+ebtables,2.0.10,15.el7,CentOS,Ethernet Bridge frame table administration tool
+elfutils-default-yama-scope,0.168,8.el7,CentOS,Default yama attach scope sysctl setting
+elfutils-libelf,0.168,8.el7,CentOS,Library to read and write ELF files
+elfutils-libelf,0.168,8.el7,CentOS,Library to read and write ELF files
+elfutils-libs,0.168,8.el7,CentOS,Libraries to handle compiled objects
+elfutils-libs,0.168,8.el7,CentOS,Libraries to handle compiled objects
+ethtool,4.8,1.el7,CentOS,Settings tool for Ethernet NICs
+expat,2.1.0,10.el7_3,CentOS,An XML parser library
+file,5.11,33.el7,CentOS,A utility for determining file types
+file-libs,5.11,33.el7,CentOS,Libraries for applications using libmagic
+filesystem,3.2,21.el7,CentOS,The basic directory layout for a Linux system
+findutils,4.5.11,5.el7,CentOS,The GNU versions of find utilities (find and xargs)
+fipscheck,1.4.1,6.el7,CentOS,A library for integrity verification of FIPS validated modules
+fipscheck-lib,1.4.1,6.el7,CentOS,Library files for fipscheck
+firewalld,0.4.4.4,6.el7,CentOS,A firewall daemon with D-Bus interface providing a dynamic firewall
+firewalld-filesystem,0.4.4.4,6.el7,CentOS,Firewalld directory layout and rpm macros
+freetype,2.4.11,15.el7,CentOS,A free and portable font rendering engine
+fxload,2002_04_11,16.el7,CentOS,A helper program to download firmware into FX and FX2 EZ-USB devices
+gawk,4.0.2,4.el7_3.1,CentOS,The GNU version of the awk text processing utility
+gdbm,1.10,8.el7,CentOS,A GNU set of database routines which use extensible hashing
+gettext,0.19.8.1,2.el7,CentOS,GNU libraries and utilities for producing multi-lingual messages
+gettext-libs,0.19.8.1,2.el7,CentOS,Libraries for gettext
+glib-networking,2.50.0,1.el7,CentOS,Networking support for GLib
+glib2,2.50.3,3.el7,CentOS,A library of handy utility functions
+glibc,2.17,196.el7,CentOS,The GNU libc libraries
+glibc,2.17,196.el7,CentOS,The GNU libc libraries
+glibc-common,2.17,196.el7,CentOS,Common binaries and locale data for glibc
+gmp,6.0.0,15.el7,CentOS,A GNU arbitrary precision library
+gnupg2,2.0.22,4.el7,CentOS,Utility for secure communication and data storage
+gnutls,3.3.26,9.el7,CentOS,A TLS protocol implementation
+gobject-introspection,1.50.0,1.el7,CentOS,Introspection system for GObject-based libraries
+gpg-pubkey,f4a80eb5,53a7ff4b,(none),gpg(CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>)
+gpgme,1.3.2,5.el7,CentOS,GnuPG Made Easy - high level crypto API
+grep,2.20,3.el7,CentOS,Pattern matching utilities
+groff-base,1.22.2,8.el7,CentOS,Parts of the groff formatting system required to display manual pages
+grub2,2.02,0.64.el7.centos,CentOS,Bootloader with support for Linux, Multiboot and more
+grub2-common,2.02,0.64.el7.centos,CentOS,grub2 common layout
+grub2-pc,2.02,0.64.el7.centos,CentOS,Bootloader with support for Linux, Multiboot, and more
+grub2-pc-modules,2.02,0.64.el7.centos,CentOS,Modules used to build custom grub images
+grub2-tools,2.02,0.64.el7.centos,CentOS,Support tools for GRUB.
+grub2-tools-efi,2.02,0.64.el7.centos,CentOS,Support tools for GRUB.
+grub2-tools-extra,2.02,0.64.el7.centos,CentOS,Support tools for GRUB.
+grub2-tools-minimal,2.02,0.64.el7.centos,CentOS,Support tools for GRUB.
+grubby,8.28,23.el7,CentOS,Command line tool for updating bootloader configs
+gsettings-desktop-schemas,3.22.0,1.el7,CentOS,A collection of GSettings schemas
+gzip,1.5,9.el7,CentOS,The GNU data compression program
+hardlink,1.0,19.el7,CentOS,Create a tree of hardlinks
+hostname,3.13,3.el7,CentOS,Utility to set/show the host name or domain name
+httpd,2.4.6,80.el7.centos.1,CentOS,Apache HTTP Server
+httpd-tools,2.4.6,80.el7.centos.1,CentOS,Tools for use with the Apache HTTP Server
+hwdata,0.252,8.6.el7,CentOS,Hardware identification and configuration data
+info,5.1,4.el7,CentOS,A stand-alone TTY-based reader for GNU texinfo documentation
+initscripts,9.49.39,1.el7,CentOS,The inittab file and the /etc/init.d scripts
+iproute,3.10.0,87.el7,CentOS,Advanced IP routing and network device configuration tools
+iprutils,2.4.14.1,1.el7,CentOS,Utilities for the IBM Power Linux RAID adapters
+ipset,6.29,1.el7,CentOS,Manage Linux IP sets
+ipset-libs,6.29,1.el7,CentOS,Shared library providing the IP sets functionality
+iptables,1.4.21,18.0.1.el7.centos,CentOS,Tools for managing Linux kernel packet filtering capabilities
+iputils,20160308,10.el7,CentOS,Network monitoring tools including ping
+irqbalance,1.0.7,10.el7,CentOS,IRQ balancing daemon
+ivtv-firmware,20080701,26.el7,CentOS,Firmware for the Hauppauge PVR 250/350/150/500/USB2 model series
+iwl100-firmware,39.31.5.1,56.el7,CentOS,Firmware for Intel(R) Wireless WiFi Link 100 Series Adapters
+iwl1000-firmware,39.31.5.1,56.el7,CentOS,Firmware for Intel® PRO/Wireless 1000 B/G/N network adaptors
+iwl105-firmware,18.168.6.1,56.el7,CentOS,Firmware for Intel(R) Centrino Wireless-N 105 Series Adapters
+iwl135-firmware,18.168.6.1,56.el7,CentOS,Firmware for Intel(R) Centrino Wireless-N 135 Series Adapters
+iwl2000-firmware,18.168.6.1,56.el7,CentOS,Firmware for Intel(R) Centrino Wireless-N 2000 Series Adapters
+iwl2030-firmware,18.168.6.1,56.el7,CentOS,Firmware for Intel(R) Centrino Wireless-N 2030 Series Adapters
+iwl3160-firmware,22.0.7.0,56.el7,CentOS,Firmware for Intel(R) Dual Band Wireless-AC 3160 Series Adapters
+iwl3945-firmware,15.32.2.9,56.el7,CentOS,Firmware for Intel® PRO/Wireless 3945 A/B/G network adaptors
+iwl4965-firmware,228.61.2.24,56.el7,CentOS,Firmware for Intel® PRO/Wireless 4965 A/G/N network adaptors
+iwl5000-firmware,8.83.5.1_1,56.el7,CentOS,Firmware for Intel® PRO/Wireless 5000 A/G/N network adaptors
+iwl5150-firmware,8.24.2.2,56.el7,CentOS,Firmware for Intel® PRO/Wireless 5150 A/G/N network adaptors
+iwl6000-firmware,9.221.4.1,56.el7,CentOS,Firmware for Intel(R) Wireless WiFi Link 6000 AGN Adapter
+iwl6000g2a-firmware,17.168.5.3,56.el7,CentOS,Firmware for Intel(R) Wireless WiFi Link 6005 Series Adapters
+iwl6000g2b-firmware,17.168.5.2,56.el7,CentOS,Firmware for Intel(R) Wireless WiFi Link 6030 Series Adapters
+iwl6050-firmware,41.28.5.1,56.el7,CentOS,Firmware for Intel(R) Wireless WiFi Link 6050 Series Adapters
+iwl7260-firmware,22.0.7.0,56.el7,CentOS,Firmware for Intel(R) Dual Band Wireless-AC 7260 Series Adapters
+iwl7265-firmware,22.0.7.0,56.el7,CentOS,Firmware for Intel(R) Dual Band Wireless-AC 7265 Series Adapters
+jansson,2.10,1.el7,CentOS,C library for encoding, decoding and manipulating JSON data
+json-c,0.11,4.el7_0,CentOS,A JSON implementation in C
+kbd,1.15.5,13.el7,CentOS,Tools for configuring the console (keyboard, virtual terminals, etc.)
+kbd-legacy,1.15.5,13.el7,CentOS,Legacy data for kbd package
+kbd-misc,1.15.5,13.el7,CentOS,Data for kbd package
+kernel,3.10.0,327.18.2.el7,(none),The Linux kernel
+kernel,3.10.0,327.28.2.el7,CentOS,The Linux kernel
+kernel-tools,3.10.0,327.28.2.el7,CentOS,Assortment of tools for the Linux kernel
+kernel-tools-libs,3.10.0,327.28.2.el7,CentOS,Libraries for the kernels-tools
+kexec-tools,2.0.14,17.el7,CentOS,The kexec/kdump userspace component.
+keyutils-libs,1.5.8,3.el7,CentOS,Key utilities library
+kmod,20,5.el7,CentOS,Linux kernel module management utilities
+kmod-libs,20,5.el7,CentOS,Libraries to handle kernel module loading and unloading
+kmod-microsoft-hyper-v,4.2.3,20170925,(none),microsoft-hyper-v kernel module(s)
+kpartx,0.4.9,111.el7,CentOS,Partition device manager for device-mapper devices
+krb5-libs,1.15.1,8.el7,CentOS,The non-admin shared libraries used by Kerberos 5
+less,458,9.el7,CentOS,A text file browser similar to more, but better
+libacl,2.2.51,12.el7,CentOS,Dynamic library for access control list support
+libassuan,2.1.0,3.el7,CentOS,GnuPG IPC library
+libattr,2.4.46,12.el7,CentOS,Dynamic library for extended attribute support
+libattr,2.4.46,12.el7,CentOS,Dynamic library for extended attribute support
+libblkid,2.23.2,43.el7,CentOS,Block device ID library
+libcap,2.22,9.el7,CentOS,Library for getting and setting POSIX.1e capabilities
+libcap,2.22,9.el7,CentOS,Library for getting and setting POSIX.1e capabilities
+libcap-ng,0.7.5,4.el7,CentOS,An alternate posix capabilities library
+libcap-ng,0.7.5,4.el7,CentOS,An alternate posix capabilities library
+libcom_err,1.42.9,10.el7,CentOS,Common error description library
+libcroco,0.6.11,1.el7,CentOS,A CSS2 parsing library
+libcurl,7.29.0,42.el7,CentOS,A library for getting files from web servers
+libdaemon,0.14,7.el7,CentOS,Library for writing UNIX daemons
+libdb,5.3.21,20.el7,CentOS,The Berkeley DB database library for C
+libdb,5.3.21,20.el7,CentOS,The Berkeley DB database library for C
+libdb-utils,5.3.21,20.el7,CentOS,Command line tools for managing Berkeley DB databases
+libdrm,2.4.74,1.el7,CentOS,Direct Rendering Manager runtime library
+libedit,3.0,12.20121213cvs.el7,CentOS,The NetBSD Editline library
+libestr,0.1.9,2.el7,CentOS,String handling essentials library
+libfastjson,0.99.4,2.el7,CentOS,A JSON implementation in C
+libffi,3.0.13,18.el7,CentOS,A portable foreign function interface library
+libgcc,4.8.5,16.el7,CentOS,GCC version 4.8 shared support library
+libgcc,4.8.5,16.el7,CentOS,GCC version 4.8 shared support library
+libgcrypt,1.5.3,14.el7,CentOS,A general-purpose cryptography library
+libgcrypt,1.5.3,14.el7,CentOS,A general-purpose cryptography library
+libgomp,4.8.5,16.el7,CentOS,GCC OpenMP v3.0 shared support library
+libgpg-error,1.12,3.el7,CentOS,Library for error values used by GnuPG components
+libgpg-error,1.12,3.el7,CentOS,Library for error values used by GnuPG components
+libgudev1,219,42.el7_4.1,CentOS,Libraries for adding libudev support to applications that use glib
+libidn,1.28,4.el7,CentOS,Internationalized Domain Name support library
+libmnl,1.0.3,7.el7,CentOS,A minimalistic Netlink library
+libmodman,2.0.1,8.el7,CentOS,A simple library for managing C++ modules (plug-ins)
+libmount,2.23.2,43.el7,CentOS,Device mounting library
+libndp,1.2,7.el7,CentOS,Library for Neighbor Discovery Protocol
+libnetfilter_conntrack,1.0.6,1.el7_3,CentOS,Netfilter conntrack userspace library
+libnfnetlink,1.0.1,4.el7,CentOS,Netfilter netlink userspace library
+libnl3,3.2.28,4.el7,CentOS,Convenience library for kernel netlink sockets
+libnl3-cli,3.2.28,4.el7,CentOS,Command line interface utils for libnl3
+libpcap,1.5.3,9.el7,CentOS,A system-independent interface for user-level packet capture
+libpciaccess,0.13.4,3.el7_3,CentOS,PCI access library
+libpipeline,1.2.3,3.el7,CentOS,A pipeline manipulation library
+libproxy,0.4.11,10.el7,CentOS,A library handling all the details of proxy configuration
+libpwquality,1.2.3,4.el7,CentOS,A library for password generation and password quality checking
+libseccomp,2.3.1,3.el7,CentOS,Enhanced seccomp library
+libselinux,2.5,11.el7,CentOS,SELinux library and simple utilities
+libselinux,2.5,11.el7,CentOS,SELinux library and simple utilities
+libselinux-python,2.5,11.el7,CentOS,SELinux python bindings for libselinux
+libselinux-utils,2.5,11.el7,CentOS,SELinux libselinux utilies
+libsemanage,2.5,8.el7,CentOS,SELinux binary policy manipulation library
+libsepol,2.5,6.el7,CentOS,SELinux binary policy manipulation library
+libsepol,2.5,6.el7,CentOS,SELinux binary policy manipulation library
+libsoup,2.56.0,4.el7_4,CentOS,Soup, an HTTP library implementation
+libss,1.42.9,10.el7,CentOS,Command line interface parsing library
+libssh2,1.4.3,10.el7_2.1,CentOS,A library implementing the SSH2 protocol
+libstdc++,4.8.5,16.el7,CentOS,GNU Standard C++ Library
+libstdc++,4.8.5,16.el7,CentOS,GNU Standard C++ Library
+libsysfs,2.1.0,16.el7,CentOS,Shared library for interfacing with sysfs
+libtasn1,4.10,1.el7,CentOS,The ASN.1 library used in GNUTLS
+libteam,1.25,5.el7,CentOS,Library for controlling team network device
+libunistring,0.9.3,9.el7,CentOS,GNU Unicode string library
+libuser,0.60,7.el7_1,CentOS,A user and group account administration library
+libutempter,1.1.6,4.el7,CentOS,A privileged helper for utmp/wtmp updates
+libuuid,2.23.2,43.el7,CentOS,Universally unique ID library
+libverto,0.2.5,4.el7,CentOS,Main loop abstraction library
+libxml2,2.9.1,6.el7_2.3,CentOS,Library providing XML and HTML support
+libxml2-python,2.9.1,6.el7_2.3,CentOS,Python bindings for the libxml2 library
+linux-firmware,20170606,56.gitc990aae.el7,CentOS,Firmware files used by the Linux kernel
+logrotate,3.8.6,14.el7,CentOS,Rotates, compresses, removes and mails system log files
+lsscsi,0.27,6.el7,CentOS,List SCSI devices (or hosts) and associated information
+lua,5.1.4,15.el7,CentOS,Powerful light-weight programming language
+lzo,2.06,8.el7,CentOS,Data compression library with very fast (de)compression
+mailcap,2.1.41,2.el7,CentOS,Helper application and MIME type associations for file types
+make,3.82,23.el7,CentOS,A GNU tool which simplifies the build process for users
+man-db,2.6.3,9.el7,CentOS,Tools for searching and reading man pages
+mariadb-libs,5.5.56,2.el7,CentOS,The shared libraries required for MariaDB/MySQL clients
+microcode_ctl,2.1,22.el7,CentOS,Tool to transform and deploy CPU microcode update for x86.
+microsoft-hyper-v,4.2.3,20170925,(none),Microsoft hyper-v drivers and utilities
+microsoft-hyper-v-debuginfo,4.2.3,20170925,(none),Debug information for package microsoft-hyper-v
+mozjs17,17.0.0,19.el7,CentOS,JavaScript interpreter and libraries
+nano,2.3.1,10.el7,CentOS,A small text editor
+ncurses,5.9,14.20130511.el7_4,CentOS,Ncurses support utilities
+ncurses-base,5.9,14.20130511.el7_4,CentOS,Descriptions of common terminals
+ncurses-libs,5.9,14.20130511.el7_4,CentOS,Ncurses libraries
+net-tools,2.0,0.22.20131004git.el7,CentOS,Basic networking tools
+nettle,2.7.1,8.el7,CentOS,A low-level cryptographic library
+newt,0.52.15,4.el7,CentOS,A library for text mode user interfaces
+newt-python,0.52.15,4.el7,CentOS,Python bindings for newt
+nspr,4.13.1,1.0.el7_3,CentOS,Netscape Portable Runtime
+nss,3.28.4,12.el7_4,CentOS,Network Security Services
+nss-pem,1.0.3,4.el7,CentOS,PEM file reader for Network Security Services (NSS)
+nss-softokn,3.28.3,8.el7_4,CentOS,Network Security Services Softoken Module
+nss-softokn-freebl,3.28.3,8.el7_4,CentOS,Freebl library for the Network Security Services
+nss-softokn-freebl,3.28.3,8.el7_4,CentOS,Freebl library for the Network Security Services
+nss-sysinit,3.28.4,12.el7_4,CentOS,System NSS Initialization
+nss-tools,3.28.4,12.el7_4,CentOS,Tools for the Network Security Services
+nss-util,3.28.4,3.el7,CentOS,Network Security Services Utilities Library
+numactl-libs,2.0.9,6.el7_2,CentOS,libnuma libraries
+openldap,2.4.44,5.el7,CentOS,LDAP support libraries
+openssh,7.4p1,12.el7_4,CentOS,An open source implementation of SSH protocol versions 1 and 2
+openssh-clients,7.4p1,12.el7_4,CentOS,An open source SSH client applications
+openssh-server,7.4p1,12.el7_4,CentOS,An open source SSH server daemon
+openssl,1.0.2k,8.el7,CentOS,Utilities from the general purpose cryptography library with TLS implementation
+openssl-libs,1.0.2k,8.el7,CentOS,A general purpose cryptography library with TLS implementation
+os-prober,1.58,9.el7,CentOS,Probes disks on the system for installed operating systems
+p11-kit,0.23.5,3.el7,CentOS,Library for loading and sharing PKCS#11 modules
+p11-kit-trust,0.23.5,3.el7,CentOS,System trust module from p11-kit
+pam,1.1.8,18.el7,CentOS,An extensible library which provides authentication for applications
+pam,1.1.8,18.el7,CentOS,An extensible library which provides authentication for applications
+parted,3.1,28.el7,CentOS,The GNU disk partition manipulation program
+passwd,0.79,4.el7,CentOS,An utility for setting or changing passwords using PAM
+pciutils,3.5.1,2.el7,CentOS,PCI bus related utilities
+pciutils-libs,3.5.1,2.el7,CentOS,Linux PCI library
+pcre,8.32,17.el7,CentOS,Perl-compatible regular expression library
+pcre,8.32,17.el7,CentOS,Perl-compatible regular expression library
+pinentry,0.8.1,17.el7,CentOS,Collection of simple PIN or passphrase entry dialogs
+pkgconfig,0.27.1,4.el7,CentOS,A tool for determining compilation options
+plymouth,0.8.9,0.28.20140113.el7.centos,CentOS,Graphical Boot Animation and Logger
+plymouth-core-libs,0.8.9,0.28.20140113.el7.centos,CentOS,Plymouth core libraries
+plymouth-scripts,0.8.9,0.28.20140113.el7.centos,CentOS,Plymouth related scripts
+policycoreutils,2.5,17.1.el7,CentOS,SELinux policy core utilities
+polkit,0.112,12.el7_3,CentOS,An authorization framework
+polkit-pkla-compat,0.1,4.el7,CentOS,Rules for polkit to add compatibility with pklocalauthority
+popt,1.13,16.el7,CentOS,C library for parsing command line parameters
+postfix,2.10.1,6.el7,CentOS,Postfix Mail Transport Agent
+ppp,2.4.5,33.el7,CentOS,The Point-to-Point Protocol daemon
+procps-ng,3.3.10,16.el7,CentOS,System and process monitoring utilities
+pth,2.0.7,23.el7,CentOS,The GNU Portable Threads library
+pygpgme,0.3,9.el7,CentOS,Python module for working with OpenPGP messages
+pyliblzma,0.5.3,11.el7,CentOS,Python bindings for lzma
+python,2.7.5,58.el7,CentOS,An interpreted, interactive, object-oriented programming language
+python-cffi,1.6.0,5.el7,CentOS,Foreign Function Interface for Python to call C code
+python-chardet,2.2.1,1.el7_1,CentOS,Character encoding auto-detection in Python
+python-configobj,4.7.2,7.el7,CentOS,Config file reading, writing, and validation
+python-decorator,3.4.0,3.el7,CentOS,Module to simplify usage of decorators
+python-ecdsa,0.11,3.el7.centos,CentOS,ECDSA cryptographic signature library
+python-enum34,1.0.4,1.el7,CentOS,Backport of Python 3.4 Enum
+python-firewall,0.4.4.4,6.el7,CentOS,Python2 bindings for firewalld
+python-gobject-base,3.22.0,1.el7,CentOS,Python 2 bindings for GObject Introspection base package
+python-idna,2.4,1.el7,CentOS,Internationalized Domain Names in Applications (IDNA)
+python-iniparse,0.4,9.el7,CentOS,Python Module for Accessing and Modifying Configuration Data in INI files
+python-ipaddress,1.0.16,2.el7,CentOS,Port of the python 3.3+ ipaddress module to 2.6+
+python-kitchen,1.1.1,5.el7,CentOS,Small, useful pieces of code to make python coding easier
+python-libs,2.7.5,58.el7,CentOS,Runtime libraries for Python
+python-linux-procfs,0.4.9,3.el7,CentOS,Linux /proc abstraction classes
+python-paramiko,2.1.1,2.el7,CentOS,SSH2 protocol library for python
+python-perf,3.10.0,693.2.2.el7,CentOS,Python bindings for apps which will manipulate perf events
+python-ply,3.4,11.el7,CentOS,Python Lex-Yacc
+python-pycparser,2.14,1.el7,CentOS,C parser and AST generator written in Python
+python-pycrypto,2.6.1,40.1,obs://build.opensuse.org/home:KGronlund,Cryptographic modules for Python
+python-pycurl,7.19.0,19.el7,CentOS,A Python interface to libcurl
+python-pyudev,0.15,9.el7,CentOS,A libudev binding
+python-schedutils,0.4,6.el7,CentOS,Linux scheduler python bindings
+python-six,1.9.0,2.el7,CentOS,Python 2 and 3 compatibility utilities
+python-slip,0.4.0,2.el7,CentOS,Miscellaneous convenience, extension and workaround code for Python
+python-slip-dbus,0.4.0,2.el7,CentOS,Convenience functions for dbus services
+python-urlgrabber,3.10,8.el7,CentOS,A high-level cross-protocol url-grabber
+python2-cryptography,1.7.2,1.el7,CentOS,PyCA's cryptography library
+python2-pyasn1,0.1.9,7.el7,CentOS,ASN.1 tools for Python 2
+pyxattr,0.5.1,5.el7,CentOS,Extended attributes library wrapper for Python
+qrencode-libs,3.4.1,3.el7,CentOS,QR Code encoding library - Shared libraries
+rdma-core,13,7.el7,CentOS,RDMA core userspace libraries and daemons
+rdma-core,13,7.el7,CentOS,RDMA core userspace libraries and daemons
+readline,6.2,10.el7,CentOS,A library for editing typed command lines
+rng-tools,5,11.el7,CentOS,Random number generator related utilities
+rootfiles,8.1,11.el7,CentOS,The basic required files for the root user's directory
+rpm,4.11.3,25.el7,CentOS,The RPM package management system
+rpm-build-libs,4.11.3,25.el7,CentOS,Libraries for building and signing RPM packages
+rpm-libs,4.11.3,25.el7,CentOS,Libraries for manipulating RPM packages
+rpm-python,4.11.3,25.el7,CentOS,Python bindings for apps which will manipulate RPM packages
+rsyslog,8.24.0,12.el7,CentOS,Enhanced system logging and kernel message trapping daemon
+sed,4.2.2,5.el7,CentOS,A GNU stream text editor
+selinux-policy,3.13.1,166.el7_4.4,CentOS,SELinux policy configuration
+selinux-policy-targeted,3.13.1,166.el7_4.4,CentOS,SELinux targeted base policy
+setup,2.8.71,7.el7,CentOS,A set of system configuration and setup files
+shadow-utils,4.1.5.1,24.el7,CentOS,Utilities for managing accounts and shadow password files
+shared-mime-info,1.8,3.el7,CentOS,Shared MIME information database
+slang,2.2.4,11.el7,CentOS,The shared library for the S-Lang extension language
+snappy,1.1.0,3.el7,CentOS,Fast compression and decompression library
+sqlite,3.7.17,8.el7,CentOS,Library that implements an embeddable SQL database engine
+sudo,1.8.19p2,11.el7_4,CentOS,Allows restricted root access for specified users
+systemd,219,42.el7_4.1,CentOS,A System and Service Manager
+systemd-libs,219,42.el7_4.1,CentOS,systemd libraries
+systemd-libs,219,42.el7_4.1,CentOS,systemd libraries
+systemd-sysv,219,42.el7_4.1,CentOS,SysV tools for systemd
+sysvinit-tools,2.88,14.dsf.el7,CentOS,Tools used for process and utmp management.
+tar,1.26,32.el7,CentOS,A GNU file archiving program
+tcp_wrappers-libs,7.6,77.el7,CentOS,Libraries for tcp_wrappers
+teamd,1.25,5.el7,CentOS,Team network device control daemon
+trousers,0.3.14,2.el7,CentOS,TCG's Software Stack v1.2
+tuned,2.8.0,5.el7,CentOS,A dynamic adaptive system tuning daemon
+tzdata,2017b,1.el7,CentOS,Timezone data
+ustr,1.0.4,16.el7,CentOS,String library, very low memory overhead, simple to import
+util-linux,2.23.2,43.el7,CentOS,A collection of basic system utilities
+vim-minimal,7.4.160,2.el7,CentOS,A minimal version of the VIM editor
+virt-what,1.13,10.el7,CentOS,Detect if we are running in a virtual machine
+wget,1.14,15.el7,CentOS,A utility for retrieving files using the HTTP or FTP protocols
+which,2.20,7.el7,CentOS,Displays where a particular program in your path is located
+wpa_supplicant,2.6,5.el7,CentOS,WPA/WPA2/IEEE 802.1X Supplicant
+xfsprogs,4.5.0,12.el7,CentOS,Utilities for managing the XFS filesystem
+xz,5.2.2,1.el7,CentOS,LZMA compression utilities
+xz-libs,5.2.2,1.el7,CentOS,Libraries for decoding LZMA compression
+xz-libs,5.2.2,1.el7,CentOS,Libraries for decoding LZMA compression
+yum,3.4.3,154.el7.centos,CentOS,RPM package installer/updater/manager
+yum-metadata-parser,1.1.4,10.el7,CentOS,A fast metadata parser for yum
+yum-plugin-fastestmirror,1.1.31,42.el7,CentOS,Yum plugin which chooses fastest repository from a mirrorlist
+yum-utils,1.1.31,42.el7,CentOS,Utilities based around the yum package manager
+zlib,1.2.7,17.el7,CentOS,The compression and decompression library
+zlib,1.2.7,17.el7,CentOS,The compression and decompression library

@@ -9,7 +9,7 @@
 #!/bin/bash
 
 username="akundnani"
-password="********"
+password="**********"
 
 check_script() {
     cat /tmp/get-info.sh

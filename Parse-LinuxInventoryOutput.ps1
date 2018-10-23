@@ -1,4 +1,11 @@
-﻿Function ParseOSInfo($sysinfo) {
+﻿<#
+#>
+
+param(
+    [parameter(Position=1,Mandatory=$true,ValueFromPipeline=$false,HelpMessage="Location of folder where output files are placed")][string]$OutputPath
+)
+
+Function ParseOSInfo($sysinfo) {
     #Parse Server Name
     $serverstring = ($sysinfo | Select-String "Output of Server: ").ToString(); $parserpos = $serverstring.IndexOf(":")
     $servername = ($serverstring.Substring($parserpos+1)).TrimStart()
@@ -117,9 +124,9 @@ Function Write-Packagecsv ($servername,$name,$version) {
 #Initiating Variables
 $global:sysinforesults = @();
 $global:pkginforesults = @();
-$OutputPath = "D:\ajkundna\Downloads\LabKeys"
-$outputsyscsv = $OutputPath + "\LinuxSysOutput.csv"
-$outputpkgcsv = $OutputPath + "\LinuxPkgOutput.csv"
+$outputsyscsv = $OutputPath + "\LinuxSysOutput.csv"; $outputsyscsv = $outputsyscsv.Replace('\\','\')
+$outputpkgcsv = $OutputPath + "\LinuxPkgOutput.csv"; $outputpkgcsv = $outputpkgcsv.Replace('\\','\')
+
 $sysoutputfiles = (Get-ChildItem -Path $OutputPath -Include cloudmo*.sysinfo.txt -Recurse).FullName
 
 foreach ($file in $sysoutputfiles) {

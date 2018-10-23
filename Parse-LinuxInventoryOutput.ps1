@@ -92,7 +92,8 @@ Function Write-Sysinfocsv($servername,$model,$osfamily,$osname,$patchlvl,$domain
     $configentry | Add-Member -MemberType:NoteProperty -Name:"OS Family" -Value $osfamily
     $configentry | Add-Member -MemberType:NoteProperty -Name:"Operating System (OS)" -Value $osname
     $configentry | Add-Member -MemberType:NoteProperty -Name:"Service Pack" -Value $patchlvl
-    $configentry | Add-Member -MemberType:NoteProperty -Name:"Domain/Workgroup" -Value $domainname
+    if (!($domainname)) {$configentry | Add-Member -MemberType:NoteProperty -Name:"Domain/Workgroup" -Value "Workgroup"}
+    else {$configentry | Add-Member -MemberType:NoteProperty -Name:"Domain/Workgroup" -Value $domainname}
     $configentry | Add-Member -MemberType:NoteProperty -Name:"OS Arch" -Value $osarch
     $configentry | Add-Member -MemberType:NoteProperty -Name:"CPU Arch" -Value $cpuarch
     $configentry | Add-Member -MemberType:NoteProperty -Name:"# CPUs" -Value $cpucount

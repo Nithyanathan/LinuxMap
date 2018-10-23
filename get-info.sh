@@ -356,16 +356,7 @@ echo "================================================================" >> $loca
 echo "7> PCI Devices Information " >> $location
 GetLinuxPCIDevices;
 echo "================================================================" >> $location
-echo "8> Packages Installed " >> $location
-if [ $iscentos -eq 0 ]; then
-    GetLinuxRpmPackages;
-elif [ $isubuntu -eq 0 ]; then
-    GetLinuxDpkgPackages;
-else
-    echo "Packages: Host Not supported"
-fi
-echo "================================================================" >> $location
-echo "9> Databases Configured " >> $location
+echo "8> Databases Configured " >> $location
 check_db;
 if [ $isoracle -eq 0 ]; then
     GetLinuxOracleInstall;
@@ -375,10 +366,19 @@ else
     echo "Database Installed: NA" >> $location
 fi
 echo "================================================================" >> $location
-echo "10> Web App Configured " >> $location
+echo "9> Web App Configured " >> $location
 check_web;
 if [ $isweb -eq 0 ]; then
     GetLinuxWebInstall;
 else
     echo "Web Application Installed: NA" >> $location
+fi
+echo "================================================================" >> $location
+echo "10> Packages Installed " >> $location
+if [ $iscentos -eq 0 ]; then
+    GetLinuxRpmPackages;
+elif [ $isubuntu -eq 0 ]; then
+    GetLinuxDpkgPackages;
+else
+    echo "Packages: Host Not supported"
 fi

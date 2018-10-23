@@ -27,15 +27,16 @@ elif [$isserverlist -ne 0]; then
     exit 1
 else
     mkdir -p /tmp/cloudmo/
+    touch /tmp/cloudmo/getlinuxinventory.log
 
     for host in `cat /tmp/servers.txt`; do
         echo "Running get-info.sh script on $host"
-        sshpass -p $password ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 $username@$host "bash -s" < /tmp/get-info.sh &
+        sshpass -p $password ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 $username@$host "bash -s" < /tmp/get-info.sh >> /tmp/cloudmo/getlinuxinventory.log 2>> /tmp/getlinuxinventory.log &
     done
     wait
     for host in `cat /tmp/servers.txt`; do
         echo "Copying files from $host to /tmp/cloudmo"
-        sshpass -p $password scp $username@$host:/tmp/cloudmo* /tmp/cloudmo/
+        sshpass -p $password scp $username@$host:/tmp/cloudmo* /tmp/cloudmo/ >> /tmp/cloudmo/getlinuxinventory.log 2>> /tmp/getlinuxinventory.log
     done
     wait
 fi
